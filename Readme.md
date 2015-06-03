@@ -1,0 +1,1 @@
+# A simple and lightning fast jQuery plugin to flip almost any html5 element
