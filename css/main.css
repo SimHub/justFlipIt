@@ -211,9 +211,16 @@ pre code {
     text-shadow : none;
     font-weight : 200;
 }
-.ui.label.my-demo-label{
-    background: none;
+
+.ui.label.my-demo-label {
+    background : none;
+    position   : absolute;
+    right: -10%;
+    text-shadow: none;
+    top        : 8%;
+    margin-left: 15%;
 }
+
 .ui.label.my-label-left {
     margin-bottom : 0.5%;
     width         : 290px;
