@@ -6,20 +6,32 @@
     <!--SEMANTC-UI CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.1/semantic.min.css"/>
 
+    <!--MAIN CSS-->
+    <link rel="stylesheet" href="css/main.css"/>
 
 </head>
 
 <body>
 
 <div style="position: relative;width: 300px;margin: 0 auto;text-align: center">
-    <h1>JustFlipIt <p style="position: absolute;right :3%;top: 8%" class="ui blue label"> DEMO</p></h1>
+    <h1>JustFlipIt <p style="position: absolute;right :3%;top: 8%" class="ui label my-demo-label"> DEMO</p></h1>
+    <br/><br/>
     <!--<div class="ui black label" style="font-size: 1.1em">SEMANTIC-UI</div>-->
 </div>
-<br/>
+
+<!--DOWNLOADS-->
+<section id="downloads" class="clearfix" style="text-align: center">
+    <a href="https://github.com/SimHub/justFlipIt/zipball/master" id="download-zip"
+       class="button"><span>Download .zip</span></a>
+    <a href="https://github.com/SimHub/justFlipIt/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+    <a href="https://github.com/SimHub/justFlipIt" id="view-on-github" class="button"><span>View on GitHub</span></a>
+</section>
+
 <hr/>
 <div style="text-align:center">
-<h3>EventListener</h3>
-<p>click / hover
+    <h3>EventListener</h3>
+
+    <p>click / hover
 </div>
 <hr/>
 
@@ -91,38 +103,44 @@
 
 
     <!--EXPLANATION-->
+
     <div class="row" style="min-height:100px;text-align: center">
-        <p style="margin-bottom:0.5%;width: 290px;margin-right: 0px;font-size: 0.9em" class="ui blue label">
-            <span class="ui blue label " style="height: 20px;margin-bottom: 23%"></span>
-        <span class="ui white label">
-        <code>$(element).justFlipIt();</code>
-        </span>
-
-        </p>
-
-        <p style="width: 290px;margin-right: 0px" class="ui blue label">
-            <span class="ui blue label " style="height: 20px;margin-bottom: 11.5%"></span>
-        <span class="ui white label">
-            <code>$(element).justFlipIt({Click: true});</code><br/>
+        <p class="ui label my-label-left">
+            <span class="ui black label">
+                <code>
+                    $(element).justFlipIt();<br/><br/>
+                </code>
+            <br><br/>
         </span>
         </p>
 
-
-        <p style="width: 290px;margin-right: 0px" class="ui blue label ">
+        <p class="ui  label my-label-middle">
+        <span class="ui black label">
+            <code>$(element).justFlipIt({<br/><br/>
+                Click: true <br/><br/>
+                });</code>
             <br/>
-            <i class="pointing right icon" style="font-size:1.7em;top:-2%" ></i>
-            <span class="ui red label caution ">CAUTION</span>
-            <br/><br/>
-        <span class="ui white label">
-        <code>
-            $(element).justFlipIt({
-            Click:'[element:name]'
-            });>
-        </code>
+            <br/>
         </span>
-
         </p>
 
+        <p class="ui  label my-label-right">
+            <br/>
+        <span class="ui black label">
+        <code>
+            $(element).justFlipIt({ <br><br/>
+            Click:'[element:name]' <br><br/>
+            });
+        </code>
+            <br><br/>
+        </span>
+            <!--CAUTION-->
+        </p>
+        <br/>
+        <br/>
+        <i class="pointing right icon" style="font-size:1.7em"></i>
+        <span class="ui red label caution">CAUTION</span>
+        <br/>
     </div>
     <!--END EXPLANATION-->
 
@@ -133,8 +151,9 @@
 <br/><br/><br/>
 <hr/>
 <div style="text-align:center">
-<h3>Template</h3>
-<p> text / html
+    <h3>Template</h3>
+
+    <p> text / html
 </div>
 <hr/>
 <br/><br/>
@@ -177,20 +196,31 @@
     <!--EXPLANATION-->
     <div class="row" style="min-height:100px;text-align: center">
 
-        <p style="width: 290px;margin-right: 0px" class="ui blue label">
+        <p class="ui label my-label-left">
 
-        <span class="ui white label">
-            <code>$(element).justFlipIt({</code><br/><code> Template:'text'});</code><br/>
+        <span class="ui black label">
+            <code>$(element).justFlipIt({<br/><br/>
+                Template:'text'<br/><br/>
+                });<br/>
+            </code>
         </span>
         </p>
 
-        <p style=" margin-bottom:1%;width: 290px;margin-right: 0px" class="ui blue label">
-        <span class="ui white label">
-            <code>$(element).justFlipIt({</code><br/><code>Template:'[html]'});</code><br/>
+        <p class="ui label my-label-middle">
+        <span class="ui black label">
+            <code>$(element).justFlipIt({<br/><br/>
+                Template:'[html]'<br/><br/>
+                });<br/>
+            </code>
         </span>
         </p>
     </div>
     <!--END OF ROW-->
+
+    <!--FOOTER-->
+    <footer>
+        Justflipit is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
+    </footer>
 
 </div>
 <!--END CONTAINER-->
@@ -202,7 +232,7 @@
 
     $('.caution').justFlipIt({
         Template: '  <code style=" font-size:1em;box-shadow:3px 3px 5px grey;margin-left: -100%;margin-top: -130%" class="ui red label caution">' +
-        'CAUTION:<br/><br/>If you also want to change the content on the back.<br/><br/>' +
+        'CAUTION: on <br/><small>[specify click event]</small><br/><br/>If you also want to change the content on the back.<br/><br/>' +
         'You have to have the same element with the same <em>[tag/.class/#id :name]</em> as defined in your <em>[{Click:\'[element:name]\'}]</em> property  placed in your <em>[{Template:\'\'}]</em> property to flip back' +
         '<br/><br/></code>'
     });
