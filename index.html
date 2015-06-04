@@ -14,7 +14,9 @@
 <body>
 
 <div style="position: relative;width: 300px;margin: 0 auto;text-align: center">
-    <p style="font-size: 3em;font-weight: 800">JustFlipIt</p> <p  class="ui label my-demo-label"> DEMO</p>
+    <p style="font-size: 3em;font-weight: 800">JustFlipIt</p>
+
+    <p class="ui label my-demo-label"> DEMO</p>
     <br/><br/>
     <!--<div class="ui black label" style="font-size: 1.1em">SEMANTIC-UI</div>-->
 </div>
@@ -33,6 +35,7 @@
 
     <p>click / hover
 </div>
+
 <hr/>
 
 <!--DEFAULT-->
@@ -52,7 +55,7 @@
             <!--<img src="img/helen.jpg">-->
         </div>
         <div class="content">
-            <div class="header">Default [hover]</div>
+            <div class="header">Default-[hover]</div>
             <div class="meta">
                 <a class="group"> </a>
             </div>
@@ -73,7 +76,7 @@
     <p class="ui label my-label-left">
             <span class="ui black label">
                 <code>
-                    <span style="font-size: 0.95em"> $('[element:name]').justFlipIt();</span><br/><br/>
+                    <span style="font-size: 0.95em"> $('[element:name]').justFlipIt();</span>
                 </code>
             <br><br/>
         </span>
@@ -82,10 +85,59 @@
 </div>
 <!--END ROW-->
 
+<hr/>
+
+<!--FLIP[Y]-->
+<div style="text-align: center" class="container">
+    <br/><br/>
+
+    <!--CLICK EVENTS-->
+    <div class="ui card flipY ">
+        <div class="image dimmable">
+            <div class="ui dimmer">
+                <div class="content">
+                    <div class="center">
+                        <div class="ui inverted button">Add Friend</div>
+                    </div>
+                </div>
+            </div>
+            <!--<img src="img/helen.jpg">-->
+        </div>
+        <div class="content">
+            <div class="header">flip[Y]</div>
+            <div class="meta">
+                <a class="group"> </a>
+            </div>
+            <div class="description">[Y]</div>
+        </div>
+        <div class="extra content">
+            <a class="right floated created"></a>
+            <a class="friends">
+                [Y]</a>
+        </div>
+    </div>
 
 
+</div>
+<!--END CONTAINER-->
+<div class="row" style="min-height:100px;text-align: center">
 
+    <p class="ui label my-label-left">
+            <span class="ui black label">
+                <code>
+   <span style="font-size: 0.95em"> $('[element:name]').justFlipIt({<br/><br/>
+                                FlipY:true,<br/><br/>
 
+                        });</span>
+                </code>
+            <br><br/>
+        </span>
+    </p>
+
+</div>
+<!--END ROW-->
+
+<hr/>
 
 <!--CLICK-->
 <div style="text-align: center" class="container">
@@ -94,21 +146,21 @@
     <!--CLICK EVENTS-->
 
     <div style="cursor: alias" class="ui card flip_03 ">
-    <div class="image">
-    </div>
-    <div class="content">
-    <div class="header">[Click]</div>
-    <div class="meta">
-    <span class="date"></span>
-    </div>
-    <div class="description">
-    [click]
-    </div>
-    </div>
-    <div class="extra content">
-    [click]
+        <div class="image">
+        </div>
+        <div class="content">
+            <div class="header">[Click]</div>
+            <div class="meta">
+                <span class="date"></span>
+            </div>
+            <div class="description">
+                [click]
+            </div>
+        </div>
+        <div class="extra content">
+            [click]
 
-    </div>
+        </div>
     </div>
 </div>
 
@@ -118,8 +170,8 @@
     <p class="ui label my-label-middle">
     <span class="ui black label">
     <code>$('[element:name]').justFlipIt({<br/><br/>
-    Click: true <br/><br/>
-    });</code>
+        Click: true <br/><br/>
+        });</code>
     <br/>
     <br/>
     </span>
@@ -128,8 +180,7 @@
 </div>
 <!--END ROW-->
 
-
-
+<hr/>
 
 <!--Specify click event-->
 <div style="text-align: center" class="container">
@@ -139,98 +190,94 @@
 
 
     <div class="ui card flip-01">
-    <div class="content">
-    <div class="header">[Specify click event]</div>
-    <div class="meta">
-    <span class="category"></span>
-    </div>
-    <div class="description">
-    </div>
-    </div>
-    <div class="extra content">
-    <div class="right floated author">
-    <a class="flip-here" style="cursor:alias">
-    <img class="ui avatar image " src="img/stevie.jpg" alt="avatar">
-    <em><strong style="color: #a4363b;">Click here</strong></em></a>
-    </div>
-    </div>
+        <div class="content">
+            <div class="header">[Specify click event]</div>
+            <div class="meta">
+                <span class="category"></span>
+            </div>
+            <div class="description">
+            </div>
+        </div>
+        <div class="extra content">
+            <div class="right floated author">
+                <a class="flip-here" style="cursor:alias">
+                    <img class="ui avatar image " src="img/stevie.jpg" alt="avatar">
+                    <em><strong style="color: #a4363b;">Click here</strong></em></a>
+            </div>
+        </div>
     </div>
 
-<!--END CONTAINER-->
-<div class="row" style="min-height:100px;text-align: center">
+    <!--END CONTAINER-->
+    <div class="row" style="min-height:100px;text-align: center">
 
-    <p class="ui  label my-label-right">
-    <br/>
+        <p class="ui  label my-label-right">
+            <br/>
     <span class="ui black label">
     <code>
-    $('[element:name]').justFlipIt({ <br><br/>
-    Click:'[element:name]' <br><br/>
-    });
+        $('[element:name]').justFlipIt({ <br><br/>
+        Click:'[element:name]' <br><br/>
+        });
     </code>
     <br><br/>
     </span>
-    <!--CAUTION-->
-    </p>
-    <br/>
-    <br/>
-    <i class="pointing right icon" style="font-size:1.7em"></i>
-    <span class="ui red label caution">CAUTION</span>
-    <br/>
+            <!--CAUTION-->
+        </p>
+        <br/>
+        <br/>
+        <i class="pointing right icon" style="font-size:1.7em"></i>
+        <span class="ui red label caution">CAUTION</span>
+        <br/>
 
-</div>
-<!--END ROW-->
-
-
+    </div>
+    <!--END ROW-->
 
 
-<!--<p class="ui  label my-label-middle">-->
-        <!--<span class="ui black label">-->
-            <!--<code>$('[element:name]').justFlipIt({<br/><br/>-->
-                <!--Click: true <br/><br/>-->
-                <!--});</code>-->
-            <!--<br/>-->
-            <!--<br/>-->
-        <!--</span>-->
+    <!--<p class="ui  label my-label-middle">-->
+    <!--<span class="ui black label">-->
+    <!--<code>$('[element:name]').justFlipIt({<br/><br/>-->
+    <!--Click: true <br/><br/>-->
+    <!--});</code>-->
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--</span>-->
     <!--</p>-->
 
 
-
-
     <!--<div style="cursor: alias" class="ui card flip_03 ">-->
-        <!--<div class="image">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-            <!--<div class="header">[Click]</div>-->
-            <!--<div class="meta">-->
-                <!--<span class="date"></span>-->
-            <!--</div>-->
-            <!--<div class="description">-->
-                <!--[click]-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-            <!--[click]-->
+    <!--<div class="image">-->
+    <!--</div>-->
+    <!--<div class="content">-->
+    <!--<div class="header">[Click]</div>-->
+    <!--<div class="meta">-->
+    <!--<span class="date"></span>-->
+    <!--</div>-->
+    <!--<div class="description">-->
+    <!--[click]-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="extra content">-->
+    <!--[click]-->
 
-        <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
 
 
     <!--<div class="ui card flip-01">-->
-        <!--<div class="content">-->
-            <!--<div class="header">[Specify click event]</div>-->
-            <!--<div class="meta">-->
-                <!--<span class="category"></span>-->
-            <!--</div>-->
-            <!--<div class="description">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-            <!--<div class="right floated author">-->
-                <!--<a class="flip-here" style="cursor:alias">-->
-                    <!--<img class="ui avatar image " src="img/stevie.jpg" alt="avatar">-->
-                    <!--<em><strong style="color: #a4363b;">Click here</strong></em></a>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--<div class="content">-->
+    <!--<div class="header">[Specify click event]</div>-->
+    <!--<div class="meta">-->
+    <!--<span class="category"></span>-->
+    <!--</div>-->
+    <!--<div class="description">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="extra content">-->
+    <!--<div class="right floated author">-->
+    <!--<a class="flip-here" style="cursor:alias">-->
+    <!--<img class="ui avatar image " src="img/stevie.jpg" alt="avatar">-->
+    <!--<em><strong style="color: #a4363b;">Click here</strong></em></a>-->
+    <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
 
 
@@ -238,99 +285,100 @@
 
     <!--<div class="row" style="min-height:100px;text-align: center">-->
     <!---->
-        <!--<p class="ui label my-label-left">-->
-            <!--<span class="ui black label">-->
-                <!--<code>-->
-                   <!--<span style="font-size: 0.95em"> $('[element:name]').justFlipIt();</span><br/><br/>-->
-                <!--</code>-->
-            <!--<br><br/>-->
-        <!--</span>-->
-        <!--</p>-->
+    <!--<p class="ui label my-label-left">-->
+    <!--<span class="ui black label">-->
+    <!--<code>-->
+    <!--<span style="font-size: 0.95em"> $('[element:name]').justFlipIt();</span><br/><br/>-->
+    <!--</code>-->
+    <!--<br><br/>-->
+    <!--</span>-->
+    <!--</p>-->
 
-        <!--<p class="ui  label my-label-middle">-->
-        <!--<span class="ui black label">-->
-            <!--<code>$('[element:name]').justFlipIt({<br/><br/>-->
-                <!--Click: true <br/><br/>-->
-                <!--});</code>-->
-            <!--<br/>-->
-            <!--<br/>-->
-        <!--</span>-->
-        <!--</p>-->
+    <!--<p class="ui  label my-label-middle">-->
+    <!--<span class="ui black label">-->
+    <!--<code>$('[element:name]').justFlipIt({<br/><br/>-->
+    <!--Click: true <br/><br/>-->
+    <!--});</code>-->
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--</span>-->
+    <!--</p>-->
 
-        <!--<p class="ui  label my-label-right">-->
-            <!--<br/>-->
-        <!--<span class="ui black label">-->
-        <!--<code>-->
-            <!--$('[element:name]').justFlipIt({ <br><br/>-->
-            <!--Click:'[element:name]' <br><br/>-->
-            <!--});-->
-        <!--</code>-->
-            <!--<br><br/>-->
-        <!--</span>-->
-            <!--&lt;!&ndash;CAUTION&ndash;&gt;-->
-        <!--</p>-->
-        <!--<br/>-->
-        <!--<br/>-->
-        <!--<i class="pointing right icon" style="font-size:1.7em"></i>-->
-        <!--<span class="ui red label caution">CAUTION</span>-->
-        <!--<br/>-->
+    <!--<p class="ui  label my-label-right">-->
+    <!--<br/>-->
+    <!--<span class="ui black label">-->
+    <!--<code>-->
+    <!--$('[element:name]').justFlipIt({ <br><br/>-->
+    <!--Click:'[element:name]' <br><br/>-->
+    <!--});-->
+    <!--</code>-->
+    <!--<br><br/>-->
+    <!--</span>-->
+    <!--&lt;!&ndash;CAUTION&ndash;&gt;-->
+    <!--</p>-->
+    <!--<br/>-->
+    <!--<br/>-->
+    <!--<i class="pointing right icon" style="font-size:1.7em"></i>-->
+    <!--<span class="ui red label caution">CAUTION</span>-->
+    <!--<br/>-->
     <!--</div>-->
 
     <!--END EXPLANATION-->
 
 
-<!--</div>-->
+    <!--</div>-->
     <!--END CONTAINER-->
 
-<br/><br/><br/>
-<hr/>
-<div style="text-align:center">
-    <h3>Template</h3>
+    <br/><br/><br/>
+    <hr/>
+    <div style="text-align:center">
+        <h3>Template</h3>
 
-    <p> text / html
-</div>
-<hr/>
-<br/><br/>
-
-<div style="text-align: center" class="container">
-
-    <!--TEMPLATE-->
-    <div style="cursor: alias" class="ui card template-03 ">
-        <div class="image">
-            <!--<img src="/images/avatar/large/stevie.jpg">-->
-        </div>
-        <div class="content">
-            <a class="header">justFlipIt_01</a>
-
-            <div class="meta">
-                <span class="date">Joined in 2014</span>
-            </div>
-            <div class="description">
-                Stevie Feliciano is a library scientist living in New York City. She likes to spend her time reading,
-                running, and writing.
-            </div>
-        </div>
-        <div class="extra content">
-            <a>
-                <i class="user icon"></i>
-                22 Friends
-            </a>
-        </div>
+        <p> text / html
     </div>
+    <hr/>
+    <br/><br/>
 
-    <div class="ui card  template-04">
-        <div class="image">
-            <img src="img/jenny.jpg">
+    <div style="text-align: center" class="container">
+
+        <!--TEMPLATE-->
+        <div style="cursor: alias" class="ui card template-03 ">
+            <div class="image">
+                <!--<img src="/images/avatar/large/stevie.jpg">-->
+            </div>
+            <div class="content">
+                <a class="header">justFlipIt_01</a>
+
+                <div class="meta">
+                    <span class="date">Joined in 2014</span>
+                </div>
+                <div class="description">
+                    Stevie Feliciano is a library scientist living in New York City. She likes to spend her time
+                    reading,
+                    running, and writing.
+                </div>
+            </div>
+            <div class="extra content">
+                <a>
+                    <i class="user icon"></i>
+                    22 Friends
+                </a>
+            </div>
         </div>
-        <div class="content">
-            <a class="header">Jenny Hess</a>
+
+        <div class="ui card  template-04">
+            <div class="image">
+                <img src="img/jenny.jpg">
+            </div>
+            <div class="content">
+                <a class="header">Jenny Hess</a>
+            </div>
         </div>
-    </div>
 
-    <!--EXPLANATION-->
-    <div class="row" style="min-height:100px;text-align: center">
+        <!--EXPLANATION-->
+        <div class="row" style="min-height:100px;text-align: center">
 
-        <p class="ui label my-label-left">
+            <p class="ui label my-label-left">
 
         <span class="ui black label">
             <code>$('[element:name]').justFlipIt({<br/><br/>
@@ -338,123 +386,150 @@
                 });<br/>
             </code>
         </span>
-        </p>
+            </p>
 
-        <p class="ui label my-label-middle">
+            <p class="ui label my-label-middle">
         <span class="ui black label">
             <code>$('[element:name]').justFlipIt({<br/><br/>
                 Template:'[html]'<br/><br/>
                 });<br/>
             </code>
         </span>
-        </p>
+            </p>
+        </div>
+        <!--END OF ROW-->
+
+        <!--FOOTER-->
+        <footer>
+            Justflipit is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
+        </footer>
+
     </div>
-    <!--END OF ROW-->
-
-    <!--FOOTER-->
-    <footer>
-        Justflipit is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
-    </footer>
-
+    <!--END CONTAINER-->
 </div>
-<!--END CONTAINER-->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.1/semantic.min.js"></script>
-<script src="src/justFlipIt.min.js"></script>
-<script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.1/semantic.min.js"></script>
+    <script src="src/justFlipIt.min.js"></script>
+    <script>
 
-    $('.caution').justFlipIt({
-        Template: '  <code style=" font-size:1em;box-shadow:3px 3px 5px grey;margin-left: -100%;margin-top: -130%" class="ui red label caution">' +
-        'CAUTION: on <br/><small>[specify click event]</small><br/><br/>If you also want to change the content on the back.<br/><br/>' +
-        'You have to have the same element with the same <em>[tag/.class/#id :name]</em> as defined in your <em>[{Click:\'[element:name]\'}]</em> property  placed in your <em>[{Template:\'\'}]</em> property to flip back' +
-        '<br/><br/></code>'
-    });
+        $('.caution').justFlipIt({
+            Template: '  <code style=" font-size:1em;box-shadow:3px 3px 5px grey;margin-left: -100%;margin-top: -130%" class="ui red label caution">' +
+            'CAUTION: on <br/><small>[specify click event]</small><br/><br/>If you also want to change the content on the back.<br/><br/>' +
+            'You have to have the same element with the same <em>[tag/.class/#id :name]</em> as defined in your <em>[{Click:\'[element:name]\'}]</em> property  placed in your <em>[{Template:\'\'}]</em> property to flip back' +
+            '<br/><br/></code>'
+        });
 
-    $('.flip-01').justFlipIt({
-        Click: '.flip-here',
-        Template: ' <a style="cursor:alias" class="flip-here">' +
-        '<img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
-        '<em><strong style="color: #a4363b;">Now Click here</strong></em></a>'
-    });
+        $('.flip-01').justFlipIt({
+            Click: '.flip-here',
+            Template: ' <a style="cursor:alias" class="flip-here">' +
+            '<img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
+            '<em><strong style="color: #a4363b;">Now Click here</strong></em></a>'
+        });
 
-    $('.flip-02').justFlipIt({
-        Template: '<div class="ui card ">' +
-        '<div class="image dimmable">' +
-        '<div class="ui dimmer">' +
-        '<div class="content">' +
-        '<div class="center">' +
-        '<div class="ui inverted button">Add Friend</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '<div class="content">' +
-        '<div class="header">Default[hover]' +
-        '</div>' +
-        '<div class="meta">' +
-        '<a class="group"></a>' +
-        '</div>' +
-        '<div class="description">[hover]</div>' +
-        '</div>' +
-        '<div class="extra content">' +
-        '<a class="right floated created">[hover]</a>' +
-        '<a class="friends">' +
-        '[hover]</a>' +
-        '</div>' +
-        '</div>'
-    });
+        $('.flipY').justFlipIt({
+            FlipY: true,
+            Template: '<div class="ui card ">' +
+            '<div class="image dimmable">' +
+            '<div class="ui dimmer">' +
+            '<div class="content">' +
+            '<div class="center">' +
+            '<div class="ui inverted button">Add Friend</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="content">' +
+            '<div class="header">flip[Y]' +
+            '</div>' +
+            '<div class="meta">' +
+            '<a class="group"></a>' +
+            '</div>' +
+            '<div class="description">flip[Y]</div>' +
+            '</div>' +
+            '<div class="extra content">' +
+            '<a class="right floated created">flip[Y]</a>' +
+            '<a class="friends">' +
+            'flip[Y]</a>' +
+            '</div>' +
+            '</div>'
+        });
+        $('.flip-02').justFlipIt({
+            Template: '<div class="ui card ">' +
+            '<div class="image dimmable">' +
+            '<div class="ui dimmer">' +
+            '<div class="content">' +
+            '<div class="center">' +
+            '<div class="ui inverted button">Add Friend</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="content">' +
+            '<div class="header">Default[hover]' +
+            '</div>' +
+            '<div class="meta">' +
+            '<a class="group"></a>' +
+            '</div>' +
+            '<div class="description">[hover]</div>' +
+            '</div>' +
+            '<div class="extra content">' +
+            '<a class="friends">' +
+            '[hover]</a>' +
+            '</div>' +
+            '</div>'
+        });
 
-    $('.flip_03').justFlipIt({
-        Click: true,
-        Template: '<div style="cursor: alias" class="ui card flip_03 ">' +
-        '<div class="image">' +
-        '</div>' +
-        '<div class="content">' +
-        '<a class="header">Click Again!</a>' +
-        '<div class="meta">' +
-        '<span class="date"></span>' +
-        '</div>' +
-        '<div class="description">' +
-        '[click]' +
-        '</div>' +
-        '</div>' +
-        '<div class="extra content">' +
-        '<a>' +
-        '[click]' +
-        '</a>' +
-        '</div>' +
-        '</div>'
-    });
+        $('.flip_03').justFlipIt({
+            Click: true,
+            Template: '<div style="cursor: alias" class="ui card flip_03 ">' +
+            '<div class="image">' +
+            '</div>' +
+            '<div class="content">' +
+            '<a class="header">Click Again!</a>' +
+            '<div class="meta">' +
+            '<span class="date"></span>' +
+            '</div>' +
+            '<div class="description">' +
+            '[click]' +
+            '</div>' +
+            '</div>' +
+            '<div class="extra content">' +
+            '<a>' +
+            '[click]' +
+            '</a>' +
+            '</div>' +
+            '</div>'
+        });
 
-    $('.flip-04').justFlipIt({
-        Template: '<div class="ui card  flip-03">' +
-        '<div class="image">' +
-        '<img src="img/stevie.jpg">' +
-        '</div>' +
-        '<div class="content">' +
-        '<a class="header">Stevie again :) </a>' +
-        '</div>' +
-        '</div>'
-    });
-
-
-    $('.template-03').justFlipIt({
-        Template: '[text]'
-    });
-
-    $('.template-04').justFlipIt({
-        Template: '<div class="ui card flip-03">' +
-        '<div class="image">' +
-        '<img src="img/stevie.jpg">' +
-        '</div>' +
-        '<div class="content">' +
-        '<a class="header"> < h1>Stevie again :)< /h1> </a>' +
-        '</div>' +
-        '</div>'
-    });
+        $('.flip-04').justFlipIt({
+            Template: '<div class="ui card  flip-03">' +
+            '<div class="image">' +
+            '<img src="img/stevie.jpg">' +
+            '</div>' +
+            '<div class="content">' +
+            '<a class="header">Stevie again :) </a>' +
+            '</div>' +
+            '</div>'
+        });
 
 
-</script>
+        $('.template-03').justFlipIt({
+            Template: '[text]'
+        });
+
+        $('.template-04').justFlipIt({
+            Template: '<div class="ui card flip-03">' +
+            '<div class="image">' +
+            '<img src="img/stevie.jpg">' +
+            '</div>' +
+            '<div class="content">' +
+            '<a class="header"> < h1>Stevie again :)< /h1> </a>' +
+            '</div>' +
+            '</div>'
+        });
+
+
+    </script>
 </body>
 </html>
