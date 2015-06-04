@@ -18,6 +18,7 @@
 
     <p class="ui label my-demo-label"> DEMO</p>
     <br/><br/>
+
     <!--<div class="ui black label" style="font-size: 1.1em">SEMANTIC-UI</div>-->
 </div>
 
@@ -492,8 +493,15 @@
         $('.caution').justFlipIt({
             Template: '  <code style=" font-size:1em;box-shadow:3px 3px 5px grey;margin-left: -100%;margin-top: -130%" class="ui red label caution">' +
             'CAUTION: on <br/><small>[specify click event]</small><br/><br/>If you also want to change the content on the back.<br/><br/>' +
-            'You have to have the same element with the same <em>[tag/.class/#id :name]</em> as defined in your <em>[{Click:\'[element:name]\'}]</em> property  placed in your <em>[{Template:\'\'}]</em> property to flip back' +
-            '<br/><br/></code>'
+
+           '<code> $([elem:name]).justFlipIt({'+
+               ' Click: [elem:name]***, <br>'+
+                'Template:  < a style="cursor:alias" class="[elem:name]***">' +
+                '< img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
+                '< em>< strong style="color: #a4363b;">Now Click here</strong></em></a>'+
+                '});</code> <br/> <br/>'+
+
+            '*** You have to name the target element inside your Template:[property] the same as in your Class:[property]'
         });
 
         $('.flip-01').justFlipIt({
