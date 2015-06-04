@@ -437,6 +437,21 @@
             Click:'[element:name]'
 
             }); </code>
+            <br/>
+            <br/>
+            CAUTION: <br/>
+            If you also want to change the content on the back,<br/>
+            you have to name the target element inside your Template:[property***] <br/>
+            the same as in your Class:[property***]<br/>
+            <br/>
+            <code> $([elem:name]).justFlipIt({ <br/>
+                Click: '[elem:name***]', <br>
+                Template: ' <br/>
+                < a style="cursor:alias" class="[elem:name***]"> <br/>
+                < img class="ui avatar image " src="img/stevie.jpg" alt="avatar"> <br/>
+                < em>< strong style="color: #a4363b;">Now Click here< /strong>< /em>< /a> <br/>
+                '});
+                </code>
         </td>
     </tr>
     <tr>
