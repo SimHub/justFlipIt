@@ -428,14 +428,20 @@
     <tbody>
     <tr>
         <td>Click</td>
-        <td style="color: red">false , true</td>
+        <td style="color: red">false , true &&  '[elem:name]'</td>
         <td>false</td>
-        <td></td>
+        <td>You can specify a element for the clickEventHandler <br/>
+        <code>$('[element:name]').justFlipIt({
+
+            Click:'[element:name]'
+
+            }); </code>
+        </td>
     </tr>
     <tr>
         <td>FlipY</td>
         <td style="color: red"> true</td>
-        <td>X</td>
+        <td>false = X</td>
         <td>The axis that you want to rotate around. <br/>
            <code>$('[elem:name]').justFlipIt({
             FlypY:true
@@ -447,7 +453,19 @@
         <td>Template</td>
         <td style="color: red">' [html , text] '<br/> - OR - <br/>' [everything your browser can read] '</td>
         <td>None</td>
-        <td></td>
+        <td>
+            You can specify the back site <br/>
+            <code>
+                $('.flip-04').justFlipIt({ <br/>
+                Template: ' <br/>
+                < div class="ui card  flip-03"> < div class="image"> <br/>
+                    < img src="img/stevie.jpg"> < /div> <br/>
+                < div class="content">< a class="header">Stevie again :) < /a> <br/>
+                    < /div>< /div> <br/>
+                '
+                });
+            </code>
+        </td>
     </tr>
     </tbody>
     <tfoot>
