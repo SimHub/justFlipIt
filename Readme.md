@@ -4,7 +4,8 @@
   justFlipIt.min.js  -  3 KB  
   
   Documentation && Live demo: http://simhub.github.io/justFlipIt/
-  
+# NPM (optional)
+    $ npm install justflipit
 # Usage
   Include the Javascript after jQuery
   <pre>
