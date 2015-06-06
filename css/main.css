@@ -393,7 +393,11 @@ footer a:hover {
 .clearfix {
     display : block;
 }
-
+.ribbon{
+    position: fixed;
+    right: 0;
+    min-width: 100px;
+}
 
 /*------------TABLE------------------*/
 .ui.sortable.celled.table th:nth-child(2){
