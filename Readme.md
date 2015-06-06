@@ -18,4 +18,6 @@
   </pre>
   
 # That's it!!!  
+
+License <a href="./LICENSE.md">MIT</a>
   
