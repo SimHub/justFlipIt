@@ -394,6 +394,18 @@ footer a:hover {
     display : block;
 }
 
+
+/*------------TABLE------------------*/
+.ui.sortable.celled.table th:nth-child(2){
+    color: #c84248;
+}
+.ui.sortable.celled.table th:nth-child(3){
+    color: #8da946;
+}
+.ui.sortable.celled.table th:nth-child(4){
+    color: #a4a08a;
+}
+
 /* #Media Queries
 ================================================== */
 
