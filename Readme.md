@@ -8,8 +8,8 @@
 # Usage
   Include the Javascript after jQuery
        <pre>
-       \<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>  
-          \<script src="src/justFlipIt.min.js"></script>
+       \<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+       \<script src="src/justFlipIt.min.js"></script>
        </pre>  
   
   Initialize the script:  
