@@ -16,6 +16,6 @@
   <pre>
   $('[element:name]').justFlipIt();
   </pre>
-            
+  
 # That's it!!!  
   
