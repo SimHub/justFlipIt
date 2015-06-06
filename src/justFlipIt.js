@@ -117,7 +117,7 @@
         defaults = {
             Template: "",
             Click: false,
-            FlipY: false
+            FlipX: false
         };
 
 
@@ -148,10 +148,10 @@
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.settings).
 
-            //console.log('first: ' + this.settings.FlipY);
+            //console.log('first: ' + this.settings.FlipX);
 
             //check if flip achses y is true
-            if (this.settings.FlipY === true) {
+            if (this.settings.FlipX === true) {
                 var flipClass = 'flip';
                 var backClass = 'back';
                 this._filpIt(backClass, flipClass);
@@ -162,7 +162,7 @@
                 this._filpIt(backClass, flipClass);
             }
 
-            //if (this.settings.FlipY === false) {
+            //if (this.settings.FlipX === false) {
             //   var flipClass ='flipY';
             //    var backClass='backY';
             //   this._filpIt(backClass,flipClass);
