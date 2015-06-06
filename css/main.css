@@ -94,7 +94,7 @@ header h2 {
 
 #container {
     min-height : 595px;
-    background : transparent url(../images/highlight-bg.jpg) 50% 0 no-repeat;
+    background : transparent url(../img/highlight-bg.jpg) 50% 0 no-repeat;
 }
 
 .inner {
@@ -147,7 +147,7 @@ a.button:hover {
     background    : -webkit-linear-gradient(top, #fdfdfd 0%, #f6f6f6 100%); /* Chrome10+,Safari5.1+ */
     background    : -o-linear-gradient(top, #fdfdfd 0%, #f6f6f6 100%); /* Opera 11.10+ */
     background    : -ms-linear-gradient(top, #fdfdfd 0%, #f6f6f6 100%); /* IE10+ */
-    background    : linear-gradient(top, #fdfdfd 0%, #f6f6f6, 100%); /* W3C */
+    background    : linear-gradient(top, #fdfdfd 0%, #f6f6f6 100%); /* W3C */
     filter        : progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#f6f6f6', GradientType=0); /* IE6-9 */
     border-top    : solid 1px #b7b7b7;
     border-right  : solid 1px #b3b3b3;
@@ -213,32 +213,32 @@ pre code {
 }
 
 .ui.label.my-demo-label {
-    background : none;
-    position   : absolute;
-    right: -10%;
-    text-shadow: none;
-    top        : 8%;
-    margin-left: 15%;
+    background  : none;
+    position    : absolute;
+    right       : -10%;
+    text-shadow : none;
+    top         : 8%;
+    margin-left : 15%;
 }
 
 .ui.label.my-label-left {
     margin-bottom : 0.5%;
-    width         : 290px;
-    margin-right  : 0px;
+    /*width         : 290px;*/
+    /*margin-right  : 0px;*/
     font-size     : 0.9em;
     background    : none;
 }
 
 .ui.label.my-label-middle {
-    width        : 290px;
-    margin-right : 0;
-    background   : none;
+    /*width        : 290px;*/
+    /*margin-right : 0;*/
+    background : none;
 }
 
 .ui.label.my-label-right {
-    width        : 290px;
-    margin-right : 0;
-    background   : none;
+    /*width        : 290px;*/
+    /*margin-right : 0;*/
+    background : none;
 }
 
 ul, ol, dl {
@@ -363,7 +363,6 @@ footer {
     margin-top     : 40px;
     font-size      : 13px;
     color          : #aaa;
-    background     : transparent url('../images/hr.png') 0 0 no-repeat;
 }
 
 footer a {
