@@ -187,12 +187,12 @@
         </div>
     </div>
 
-    </div>
-    <!--END CONTAINER-->
-    <div class="row" style="min-height:100px;text-align: center">
+</div>
+<!--END CONTAINER-->
+<div class="row" style="min-height:100px;text-align: center">
 
-        <p class="ui  label my-label-right">
-            <br/>
+    <p class="ui  label my-label-right">
+        <br/>
     <span class="ui black label">
     <code>
         $('[element:name]').justFlipIt({ <br><br/>
@@ -201,29 +201,29 @@
     </code>
     <br><br/>
     </span>
-            <!--CAUTION-->
-        </p>
-        <br/>
-        <br/>
-        <i class="pointing right icon" style="font-size:1.7em"></i>
-        <span class="ui red label caution">CAUTION</span>
-        <br/>
+        <!--CAUTION-->
+    </p>
+    <br/>
+    <br/>
+    <i class="pointing right icon" style="font-size:1.7em"></i>
+    <span class="ui red label caution">CAUTION</span>
+    <br/>
 
-    </div>
-    <!--END ROW-->
+</div>
+<!--END ROW-->
 
 
-    <br/><br/><br/>
-    <hr/>
+<br/><br/><br/>
+<hr/>
 
-    <!---------TEMPLATES------------>
-    <div style="text-align:center">
-        <h3>Template</h3>
+<!---------TEMPLATES------------>
+<div style="text-align:center">
+    <h3>Template</h3>
 
-        <p> text / html
-    </div>
-    <hr/>
-    <br/><br/>
+    <p> text / html
+</div>
+<hr/>
+<br/><br/>
 
 
 <div style="text-align: center" class="container">
@@ -257,29 +257,29 @@
 <!--END CONTAINER-->
 
 <div style="text-align: center" class="container">
-<div class="row" style="min-height:100px;text-align: center">
-    <p class="ui label my-label-left">
+    <div class="row" style="min-height:100px;text-align: center">
+        <p class="ui label my-label-left">
         <span class="ui black label">
             <code>$('[element:name]').justFlipIt({<br/><br/>
                 Template:'text'<br/><br/>
                 });<br/>
             </code>
         </span>
-    </p>
-</div>
+        </p>
     </div>
+</div>
 <!--END ROW-->
 <hr/>
 
 <div style="text-align: center" class="container">
-<div class="ui card  template-04">
-    <div class="image">
-        <img src="img/jenny.jpg">
+    <div class="ui card  template-04">
+        <div class="image">
+            <img src="img/jenny.jpg">
+        </div>
+        <div class="content">
+            <a class="header">Jenny Hess</a>
+        </div>
     </div>
-    <div class="content">
-        <a class="header">Jenny Hess</a>
-    </div>
-</div>
 </div>
 
 <div style="text-align: center" class="container">
@@ -292,7 +292,7 @@
         </span>
     </p>
 
-    </div>
+</div>
 <!---------------------------------------->
 
 
@@ -303,220 +303,236 @@
 <!--OPTION TABLE-->
 <div style="text-align: center;width: 95%;margin: 0 auto" class="container">
     <h3>Options</h3>
+
     <div>[ Click, FlipY, Template ]</div>
     <hr/>
     <br/>
     <table class="ui sortable celled table">
-    <thead>
-    <tr><th>Attribute</th>
-        <th>Possible value</th>
-        <th>Default</th>
-        <th>Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Click</td>
-        <td  class="negative">false , true &&  '[elem:name]'</td>
-        <td class="positive">false</td>
-        <td class="warning">You can specify a element for the clickEventHandler <br/>
-        <code>$('[element:name]').justFlipIt({
+        <thead>
+        <tr>
+            <th>Attribute</th>
+            <th>Possible value</th>
+            <th>Default</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Click</td>
+            <td class="negative">false , true && '[elem:name]'</td>
+            <td class="positive">false</td>
+            <td class="warning">You can specify a element for the clickEventHandler <br/>
+                <span class="ui black label">
+                    <code>$('[element:name]').justFlipIt({
 
-            Click:'[element:name]'
+                        Click:'[element:name]'
 
-            }); </code>
-            <br/>
-            <br/>
-            CAUTION: <br/>
-            If you also want to change the content on the back,<br/>
-            you have to name the target element inside your Template:[property***] <br/>
-            the same as in your Class:[property***]<br/>
-            <br/>
-            <code> $([elem:name]).justFlipIt({ <br/>
-                Click: '[elem:name***]', <br>
-                Template: ' <br/>
-                < a style="cursor:alias" class="[elem:name***]"> <br/>
-                < img class="ui avatar image " src="img/stevie.jpg" alt="avatar"> <br/>
-                < em>< strong style="color: #a4363b;">Now Click here< /strong>< /em>< /a> <br/>
-                '});
+                        });
+                    </code>
+                    </span>
+                <br/>
+                <br/>
+                CAUTION: <br/>
+                If you also want to change the content on the back,<br/>
+                you have to name the target element inside your Template:[property***] <br/>
+                the same as in your Class:[property***]<br/>
+                <br/>
+                <span class="ui black label">
+
+                    <code> $([elem:name]).justFlipIt({ <br/>
+                        Click: '[elem:name***]', <br>
+                        Template: ' <br/>
+                        < a style="cursor:alias" class="[elem:name***]"> <br/>
+                        < img class="ui avatar image " src="img/stevie.jpg" alt="avatar"> <br/>
+                        < em>< strong style="color: #a4363b;">Now Click here< /strong>< /em>< /a> <br/>
+                        '});
+                    </code>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td>FlipY</td>
+            <td class="negative"> true</td>
+            <td class="positive">false = X</td>
+            <td class="warning">The axis that you want to rotate around. <br/>
+                <span class="ui black label">
+
+                <code>$('[elem:name]').justFlipIt({
+                    FlypY:true
+                    });
                 </code>
-        </td>
-    </tr>
-    <tr>
-        <td>FlipY</td>
-        <td class="negative"> true</td>
-        <td class="positive">false = X</td>
-        <td class="warning">The axis that you want to rotate around. <br/>
-           <code>$('[elem:name]').justFlipIt({
-            FlypY:true
-            }); </code> <br/>
-            Will rotate on the Y axes.
-        </td>
-    </tr>
-    <tr>
-        <td>Template</td>
-        <td class="negative">' [html , text] '<br/> - OR - <br/>' [everything your browser can read] '</td>
-        <td class="positive">None</td>
-        <td class="warning">
-            You can specify the back site <br/>
-            <code>
-                $('.flip-04').justFlipIt({ <br/>
-                Template: ' <br/>
-                < div class="ui card  flip-03"> < div class="image"> <br/>
+                </span>
+                <br/>
+                Will rotate on the Y axes.
+            </td>
+        </tr>
+        <tr>
+            <td>Template</td>
+            <td class="negative">' [html , text] '<br/> - OR - <br/>' [everything your browser can read] '</td>
+            <td class="positive">None</td>
+            <td class="warning">
+                You can specify the back site <br/>
+        <span class="ui black label">
+                <code>
+                    $('.flip-04').justFlipIt({ <br/>
+                    Template: ' <br/>
+                    < div class="ui card flip-03"> < div class="image"> <br/>
                     < img src="img/stevie.jpg"> < /div> <br/>
-                < div class="content">< a class="header">Stevie again :) < /a> <br/>
+                    < div class="content">< a class="header">Stevie again :) < /a> <br/>
                     < /div>< /div> <br/>
-                '
-                });
-            </code>
-        </td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-    </tr></tfoot>
-</table>
+                    '
+                    });
+                </code>
+            </span>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+        </tr>
+        </tfoot>
+    </table>
 
 </div>
 
 <!--FOOTER-->
 <div style="text-align: center" class="container">
 
-<footer>
-    Justflipit is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
-</footer>
+    <footer>
+        Justflipit is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
+    </footer>
 
 </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.1/semantic.min.js"></script>
-    <script src="src/justFlipIt.min.js"></script>
-    <script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.1/semantic.min.js"></script>
+<script src="src/justFlipIt.min.js"></script>
+<script>
 
-        $('.caution').justFlipIt({
-            Template: '  <code style=" font-size:1em;box-shadow:3px 3px 5px grey;margin-left: -100%;margin-top: -130%" class="ui red label caution">' +
-            'CAUTION: on <br/><small>[specify click event]</small><br/><br/>If you also want to change the content on the back.<br/><br/>' +
+    $('.caution').justFlipIt({
+        Template: '  <code style=" font-size:1em;box-shadow:3px 3px 5px grey;margin-left: -100%;margin-top: -130%" class="ui red label caution">' +
+        'CAUTION: on <br/><small>[specify click event]</small><br/><br/>If you also want to change the content on the back.<br/><br/>' +
 
-           '<code> $([elem:name]).justFlipIt({'+
-               ' Click: [elem:name]***, <br>'+
-                'Template:  < a style="cursor:alias" class="[elem:name]***">' +
-                '< img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
-                '< em>< strong style="color: #a4363b;">Now Click here</strong></em></a>'+
-                '});</code> <br/> <br/>'+
+        '<code> $([elem:name]).justFlipIt({' +
+        ' Click: [elem:name]***, <br>' +
+        'Template:  < a style="cursor:alias" class="[elem:name]***">' +
+        '< img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
+        '< em>< strong style="color: #a4363b;">Now Click here</strong></em></a>' +
+        '});</code> <br/> <br/>' +
 
-            '*** You have to name the target element inside your Template:[property] the same as in your Class:[property]'
-        });
+        '*** You have to name the target element inside your Template:[property] the same as in your Class:[property]'
+    });
 
-        $('.flip-01').justFlipIt({
-            Click: '.flip-here',
-            Template: ' <a style="cursor:alias" class="flip-here">' +
-            '<img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
-            '<em><strong style="color: #a4363b;">Now Click here</strong></em></a>'
-        });
+    $('.flip-01').justFlipIt({
+        Click: '.flip-here',
+        Template: ' <a style="cursor:alias" class="flip-here">' +
+        '<img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
+        '<em><strong style="color: #a4363b;">Now Click here</strong></em></a>'
+    });
 
-        $('.flipY').justFlipIt({
-            FlipY: true,
-            Template: '<div class="ui card ">' +
-            '<div class="image dimmable">' +
-            '<div class="ui dimmer">' +
-            '<div class="content">' +
-            '<div class="center">' +
-            '<div class="ui inverted button">Add Friend</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="content">' +
-            '<div class="header">flip[Y]' +
-            '</div>' +
-            '<div class="meta">' +
-            '<a class="group"></a>' +
-            '</div>' +
-            '<div class="description">flip[Y]</div>' +
-            '</div>' +
-            '<div class="extra content">' +
-            '<a class="right floated created">flip[Y]</a>' +
-            '<a class="friends">' +
-            'flip[Y]</a>' +
-            '</div>' +
-            '</div>'
-        });
-        $('.flip-02').justFlipIt({
-            Template: '<div class="ui card ">' +
-            '<div class="image dimmable">' +
-            '<div class="ui dimmer">' +
-            '<div class="content">' +
-            '<div class="center">' +
-            '<div class="ui inverted button">Add Friend</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '</div>' +
-            '<div class="content">' +
-            '<div class="header">Default[hover]' +
-            '</div>' +
-            '<div class="meta">' +
-            '<a class="group"></a>' +
-            '</div>' +
-            '<div class="description">[hover]</div>' +
-            '</div>' +
-            '<div class="extra content">' +
-            '<a class="friends">' +
-            '[hover]</a>' +
-            '</div>' +
-            '</div>'
-        });
+    $('.flipY').justFlipIt({
+        FlipY: true,
+        Template: '<div class="ui card ">' +
+        '<div class="image dimmable">' +
+        '<div class="ui dimmer">' +
+        '<div class="content">' +
+        '<div class="center">' +
+        '<div class="ui inverted button">Add Friend</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="content">' +
+        '<div class="header">flip[Y]' +
+        '</div>' +
+        '<div class="meta">' +
+        '<a class="group"></a>' +
+        '</div>' +
+        '<div class="description">flip[Y]</div>' +
+        '</div>' +
+        '<div class="extra content">' +
+        '<a class="right floated created">flip[Y]</a>' +
+        '<a class="friends">' +
+        'flip[Y]</a>' +
+        '</div>' +
+        '</div>'
+    });
+    $('.flip-02').justFlipIt({
+        Template: '<div class="ui card ">' +
+        '<div class="image dimmable">' +
+        '<div class="ui dimmer">' +
+        '<div class="content">' +
+        '<div class="center">' +
+        '<div class="ui inverted button">Add Friend</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="content">' +
+        '<div class="header">Default[hover]' +
+        '</div>' +
+        '<div class="meta">' +
+        '<a class="group"></a>' +
+        '</div>' +
+        '<div class="description">[hover]</div>' +
+        '</div>' +
+        '<div class="extra content">' +
+        '<a class="friends">' +
+        '[hover]</a>' +
+        '</div>' +
+        '</div>'
+    });
 
-        $('.flip_03').justFlipIt({
-            Click: true,
-            Template: '<div style="cursor: alias" class="ui card flip_03 ">' +
-            '<div class="image">' +
-            '</div>' +
-            '<div class="content">' +
-            '<a class="header">Click Again!</a>' +
-            '<div class="meta">' +
-            '<span class="date"></span>' +
-            '</div>' +
-            '<div class="description">' +
-            '[click]' +
-            '</div>' +
-            '</div>' +
-            '<div class="extra content">' +
-            '<a>' +
-            '[click]' +
-            '</a>' +
-            '</div>' +
-            '</div>'
-        });
+    $('.flip_03').justFlipIt({
+        Click: true,
+        Template: '<div style="cursor: alias" class="ui card flip_03 ">' +
+        '<div class="image">' +
+        '</div>' +
+        '<div class="content">' +
+        '<a class="header">Click Again!</a>' +
+        '<div class="meta">' +
+        '<span class="date"></span>' +
+        '</div>' +
+        '<div class="description">' +
+        '[click]' +
+        '</div>' +
+        '</div>' +
+        '<div class="extra content">' +
+        '<a>' +
+        '[click]' +
+        '</a>' +
+        '</div>' +
+        '</div>'
+    });
 
-        $('.flip-04').justFlipIt({
-            Template: '<div class="ui card  flip-03">' +
-            '<div class="image">' +
-            '<img src="img/stevie.jpg">' +
-            '</div>' +
-            '<div class="content">' +
-            '<a class="header">Stevie again :) </a>' +
-            '</div>' +
-            '</div>'
-        });
-
-
-        $('.template-03').justFlipIt({
-            Template: '[text]'
-        });
-
-        $('.template-04').justFlipIt({
-            Template: '<div class="ui card flip-03">' +
-            '<div class="image">' +
-            '<img src="img/stevie.jpg">' +
-            '</div>' +
-            '<div class="content">' +
-            '<a class="header"> < h1>Stevie again :)< /h1> </a>' +
-            '</div>' +
-            '</div>'
-        });
+    $('.flip-04').justFlipIt({
+        Template: '<div class="ui card  flip-03">' +
+        '<div class="image">' +
+        '<img src="img/stevie.jpg">' +
+        '</div>' +
+        '<div class="content">' +
+        '<a class="header">Stevie again :) </a>' +
+        '</div>' +
+        '</div>'
+    });
 
 
-    </script>
+    $('.template-03').justFlipIt({
+        Template: '[text]'
+    });
+
+    $('.template-04').justFlipIt({
+        Template: '<div class="ui card flip-03">' +
+        '<div class="image">' +
+        '<img src="img/stevie.jpg">' +
+        '</div>' +
+        '<div class="content">' +
+        '<a class="header"> < h1>Stevie again :)< /h1> </a>' +
+        '</div>' +
+        '</div>'
+    });
+
+
+</script>
 </body>
 </html>
