@@ -3,7 +3,7 @@
   
   justFlipIt.min.js  -  3 KB  
   
-  Live demo: http://simhub.github.io/justFlipIt/
+  Documentation && Live demo: http://simhub.github.io/justFlipIt/
   
 # Usage
   Include the Javascript after jQuery
