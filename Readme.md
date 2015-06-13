@@ -1,12 +1,16 @@
-# A simple and lightning fast jQuery plugin 
+#A simple and lightning fast jQuery plugin 
   Designed to flip almost any html5 element!  
   
   justFlipIt.min.js  -  3 KB  
   
-  Documentation && Live demo: http://simhub.github.io/justFlipIt/
-# NPM (optional)
+  Documentation && Live demo: http://simhub.github.io/justFlipIt/  
+  
+#BOWER  
+    $ bower install justFlipIt
+
+#NPM
     $ npm install justflipit
-# Usage
+#Usage
   Include the Javascript after jQuery
   <pre>
   \<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -18,7 +22,7 @@
   $('[element:name]').justFlipIt();
   </pre>
   
-# That's it!!!  
+#That's it!!!  
 
 License <a href="./LICENSE.md">MIT</a>
   
