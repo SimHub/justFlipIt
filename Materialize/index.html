@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>justFlipIt - Materialize</title>
+
+    <!--Font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"/>
+
+
+    <!-- CSS  -->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    <!--CSS STYLE-->
+    <style>
+        .flip-cursor {
+            cursor : alias;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container" style="text-align: center">
+        <a id="logo-container" href="../index.html" class="mdi-action-home brand-logo"></a>
+
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="#">Navbar Link</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    </div>
+</nav>
+
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+
+        <!--Coution-->
+        <div class="row" style="text-align: center">
+            <p>justFlipIt.js Demo</p>
+            <div class="col s12 m12">
+
+                <div class="icon-block default flip-caution flip-cursor ">
+                    <h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>
+                    <h5 class="center">CAUTION</h5>
+
+                    <p ><h5 class="light " style="color: darkred">
+                        This are tested Materialize elements. <br/>
+                        For the Others you need to create some nasty code arounds. <br/>
+                        Some (well i guess many) elements just won't work! <br/>
+                            Explore and find out! </h5></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="row" style="text-align: center">
+        <h1 class="header center orange-text flip-header-h1 flip-cursor">Starter Template</h1>
+    </div>
+    <div class="row center">
+        <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+    </div>
+    <div class="row center">
+            <span href="http://materializecss.com/getting-started.html" id="download-button"
+                  class="btn-large waves-effect waves-light orange get-started flip-cursor">GET STARTED</span>
+
+    </div>
+    <br><br>
+
+</div>
+</div>
+
+<!--CARDS-->
+
+<!--simple card-->
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">FlipX</span>
+
+                <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+                <a href="#!" class="flip-here flip-cursor">Click-It & Flip-It!</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col s12 m6">
+        <div class="card blue-grey darken-2">
+            <div class="card-content white-text">
+                <span class="card-title">FlipY</span>
+
+                <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <div class="card-action">
+                <a href="#!" class="flip-here flip-cursor">Click-It & Flip-It!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--image card-->
+
+<div class="row">
+    <div class="col s12 m6">
+
+        <div class="card flip-img-card1 flip-here flip-cursor" style="width: 560px">
+            <div class="card-image waves-effect waves-block waves-light">
+
+            </div>
+            <div class="card-content" style="text-align: center">
+                <span class="card-title  grey-text text-darken-4">
+                    Card Title
+                </span>
+
+                <p><i class="fa fa-info-circle" style="font-size: 1.8em"></i></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                    <i class="mdi-navigation-close right"></i></span>
+
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col s12 m6">
+
+        <div class="card flip-img-card2 flip-here flip-cursor" style="width: 560px">
+            <div class="card-image waves-effect waves-block waves-light">
+
+            </div>
+            <div class="card-content" style="text-align: center">
+                <span class="card-title  grey-text text-darken-4">
+                    Card Title
+                </span>
+
+                <p><i class="fa fa-info-circle" style="font-size: 1.8em"></i></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title
+                    <i class="mdi-navigation-close right"></i></span>
+
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--small card-->
+<div class="row">
+    <div class="col s12 m3">
+
+        <div class="card-panel teal flip-card1 flip-cursor ">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+        </div>
+    </div>
+
+    <div class="col s12 m3">
+        <div class="card-panel teal flip-card2 flip-cursor">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+        </div>
+    </div>
+
+    <div class="col s12 m3">
+
+        <div class="card-panel teal flip-card3 flip-cursor ">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+        </div>
+    </div>
+
+    <div class="col s12 m3">
+        <div class="card-panel teal flip-card4 flip-cursor">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+        </div>
+    </div>
+
+</div>
+
+
+<!--GRID-->
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+
+            <div class="col s12 m4">
+                <div class="icon-block default flip-block1 flip-cursor">
+                    <h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>
+                    <h5 class="center">Default</h5>
+
+                    <p class="light">We did most of the heavy lifting for you to provide a default stylings that
+                        incorporate our custom components. Additionally, we refined animations and transitions to
+                        provide a smoother experience for developers.</p>
+                </div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block flip-block2 flip-cursor">
+                    <h2 class="center light-blue-text"><i class="mdi-social-group"></i></h2>
+                    <h5 class="center">Click</h5>
+
+                    <p class="light">By utilizing elements and principles of Material Design, we were able to create
+                        a
+                        framework that incorporates components and animations that provide more feedback to users.
+                        Additionally, a single underlying responsive system across all platforms allow for a more
+                        unified user experience.</p>
+                </div>
+            </div>
+
+
+            <div class="col s12 m4">
+                <div class="icon-block template flip-block3 flip-cursor">
+                    <h2 class="center light-blue-text"><i class="mdi-action-settings"></i></h2>
+                    <h5 class="center">Easy to work with</h5>
+
+                    <p class="light">We have provided detailed documentation as well as specific code examples to
+                        help
+                        new users get started. We are also always open to feedback and can answer any questions a
+                        user
+                        may have about Materialize.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+</div>
+
+<footer class="page-footer orange">
+    <div class="footer-copyright">
+        <div class="container" style="text-align: center">
+            justflipit.js is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
+
+        </div>
+    </div>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="js/justFlipIt.min.js"></script>
+<script>
+
+    $('.flip-caution').justFlipIt({
+        Click:true,
+        Template: '<div class="icon-block default flip-caution flip-cursor ">' +
+        '<h2 class="center light-blue-text"><i class="mdi-image-flash-on"></i></h2>' +
+        '<h5 class="center">Caution</h5>' +
+        '<h5 class="light">Now go my friend - explore and find out! </h5>' +
+        '</div>'
+    });
+
+
+
+    $('#download-button').justFlipIt({
+        Click: true,
+        Template: '<div style="margin-top:11%;color:white">justFlipIt :)</div>'
+    });
+
+
+    $('.darken-1').justFlipIt({
+        Click: '.flip-here',
+        FlipX: true
+    });
+    $('.darken-2').justFlipIt({
+        Click: '.flip-here'
+    });
+
+    $('.flip-img-card1').justFlipIt({
+        Click: '.flip-here',
+        FlipX: true,
+        Template: '<div class="card" > ' +
+        '<div class="card-image waves-effect waves-block waves-light">' +
+        '</div>' +
+        '<div class="card-content">' +
+        '<a><span class="card-title activator grey-text text-darken-4">  <i class="mdi-navigation-more-vert right"></i> ' +
+        'Here is some more information about...</span><br/><br/></a>' +
+        '<p><a href="#!" class="flip-here" >Back</a></p>' +
+        '</div>' +
+        '<div class="card-reveal">' +
+        '<span class="card-title grey-text text-darken-4"> ' +
+        '<i class=" mdi-navigation-close right"></i></span>' +
+        '<p>Here is some more information about this product that is only revealed once clicked on.' +
+        'Here is some more information about this product that is only revealed once clicked on.</p>' +
+        '</div>' +
+        '</div>'
+    });
+
+
+    $('.flip-img-card2').justFlipIt({
+        Click: '.flip-here',
+        Template: '<div class="card" > ' +
+        '<div class="card-image waves-effect waves-block waves-light">' +
+        '</div>' +
+        '<div class="card-content">' +
+        '<a><span class="card-title activator grey-text text-darken-4">  <i class="mdi-navigation-more-vert right"></i> ' +
+        'Here is some more information about...</span><br/><br/></a>' +
+        '<p><a href="#!" class="flip-here" >Back</a></p>' +
+        '</div>' +
+        '<div class="card-reveal">' +
+        '<span class="card-title grey-text text-darken-4"> ' +
+        '<i class=" mdi-navigation-close right"></i></span>' +
+        '<p>Here is some more information about this product that is only revealed once clicked on.' +
+        'Here is some more information about this product that is only revealed once clicked on.</p>' +
+        '</div>' +
+        '</div>'
+    });
+
+    $('.flip-header-h1').justFlipIt({
+        Template: ' <h1 class="header center orange-text">WHAAT!</h1>'
+    });
+
+    $('.flip-card1').justFlipIt({});
+
+    $('.flip-card2').justFlipIt({
+        FlipX: true
+    });
+    $('.flip-card3').justFlipIt({
+        Click: true,
+        Template: '<div style="margin: 0;height: 100%;padding: 7%">' +
+        '<span class="white-text">UUPS!' +
+        '</span></div>'
+    });
+    $('.flip-card4').justFlipIt({
+        Click: true,
+        FlipX: true,
+        Template: '<div class="card-panel teal flip-cursor" style="width: 100%;margin: 0;height: 100%">' +
+        '<span class="white-text">WHAAAT!!' +
+        '</span>' +
+        '</div>'
+    });
+
+    $('.flip-block1').justFlipIt({});
+
+    $('.flip-block2').justFlipIt({Click: true});
+
+    $('.flip-block3').justFlipIt({
+        Template: '<div class="icon-block">' +
+        '<h2 class="center light-blue-text"><i class="mdi-action-settings"></i></h2>' +
+        '<h5 class="center">justFlipIt :) </h5>' +
+
+        '<p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>' +
+        '</div>' +
+        '</div>        '
+    });
+
+</script>
+</body>
+</html>

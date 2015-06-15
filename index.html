@@ -20,7 +20,7 @@
 
 
 <div style="position: relative;width: 300px;margin: 0 auto;text-align: center">
-    <p style="font-size: 3em;font-weight: 800">JustFlipIt</p>
+    <p style="font-size: 3em;font-weight: 800">justFlipIt.js</p>
 
     <p class="ui label my-demo-label"> DEMO</p>
     <br/><br/>
@@ -36,7 +36,38 @@
     <a href="https://github.com/SimHub/justFlipIt" id="view-on-github" class="button"><span>View on GitHub</span></a>
 </section>
 
+
+<!--NAV -->
+<div style="text-align: center"><h1>
+    <div class="ui message">
+        <p style="font-size: 0.5em"> If you think Html5 is for beginners then try this.. <br/>
+            -<em>Integration with other web Frameworks</em> - <br/>
+                at one's own risk <i class="smile icon"></i><br/><br/>
+        <i class="pointing down icon"></i>
+        </p>
+
+        <div class="ui secondary pointing menu" style="text-align: center">
+            <br/><br/>
+            <a href="#" class="active item semantic-button">
+                <i class="browser icon"></i> Semantic UI
+            </a>
+            <a href="Materialize/index.html"  class="item">
+                <i class="browser icon"></i> Materialize
+            </a>
+            <a href="Bootstrap/index.html"  class="item">
+                <i class="browser icon"></i> Bootstrap
+            </a>
+        </div>
+    </div>
+    </h1></div>
+
+
+<br/><br/>
+
 <hr/>
+
+<!--SHOWCASE-->
+<h1 class="semantic-h1">Semantic ui</h1>
 <div style="text-align:center">
     <h3>EventListener</h3>
 
@@ -315,7 +346,7 @@
     <hr/>
     <br/>
     <table class="ui sortable celled table">
-    <thead>
+        <thead>
         <tr>
             <th>Attribute</th>
             <th>Possible value</th>
@@ -328,7 +359,7 @@
             <td>Click</td>
             <td class="negative">false , true && '[element:name]'</td>
             <td class="positive">false</td>
-            <td class="">You can specify a element for the clickEventHandler <br/>
+            <td class="warning">You can specify a element for the clickEventHandler <br/>
                 <span class="ui black label">
                     <code  style="color: #d3d3d3">$('[element:name]').justFlipIt({
 
@@ -346,8 +377,8 @@
                 <br/>
                 <span class="ui black label">
 
-                    <code style="color: #d3d3d3"> $([element-pages:name]).justFlipIt({ <br/>
-                        Click: '[elem:name***]', <br>
+                    <code style="color: #d3d3d3"> $([element:name]).justFlipIt({ <br/>
+                        Click: '[element:name***]', <br>
                         Template: ' <br/>
                         < a style="cursor:alias" class="[element:name***]"> <br/>
                         < img class="ui avatar image " src="img/stevie.jpg" alt="<avata></avata>r"> <br/>
@@ -361,7 +392,7 @@
             <td>FlipX</td>
             <td class="negative"> true</td>
             <td class="positive">false = Y</td>
-            <td class="">The axis that you want to rotate around. <br/>
+            <td class="warning">The axis that you want to rotate around. <br/>
                 <span class="ui black label">
 
                 <code  style="color: #d3d3d3">$('[element:name]').justFlipIt({
@@ -377,7 +408,7 @@
             <td>Template</td>
             <td class="negative">' [html , text] '<br/> - OR - <br/>' [everything your browser can read] '</td>
             <td class="positive">None</td>
-            <td class="">
+            <td class="warning">
                 You can specify the back site <br/>
         <span class="ui black label">
                 <code  style="color: #d3d3d3">
@@ -406,7 +437,7 @@
 <div style="text-align: center" class="container">
 
     <footer>
-        Justflipit is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
+        justflipit.js is maintained by <a href="https://github.com/SimHub">SimHub</a><br>
     </footer>
 
 </div>
@@ -421,13 +452,11 @@
         'CAUTION: on <br/><small>[specify click event]</small><br/><br/>If you also want to change the content on the back.<br/><br/>' +
 
         '<code> $([elem:name]).justFlipIt({' +
-        'Click: [elem:name]***, <br>' +
-        'Template: <br> ' +
-        '  \' < a style="cursor:alias" class="[elem:name]***"> ' +
+        ' Click: [elem:name]***, <br>' +
+        'Template:  < a style="cursor:alias" class="[elem:name]***">' +
         '< img class="ui avatar image " src="img/stevie.jpg" alt="avatar">' +
-        '< em>< strong style="color: #a4363b;">Now Click here< /strong>< /em>< /a>' +
-        ' <br/>' +
-        ' \' });</code> <br/> <br/>' +
+        '< em>< strong style="color: #a4363b;">Now Click here</strong></em></a>' +
+        '});</code> <br/> <br/>' +
 
         '*** You have to name the target element inside your Template:[property] the same as in your Class:[property]'
     });
@@ -540,6 +569,14 @@
         '</div>'
     });
 
+//==========SEMANTIC UI =========//
+    $('.ui.secondary.pointing.menu a').click(function () {
+        $('.ui.secondary.pointing.menu a').removeClass('active');
+        if($(this).hasClass('semantic-button')){
+            $('.semantic-h1').css({'color':'white','font-weight':'200','text-shadow':'none','background':'black'});
+        }
+        $(this).addClass('active');
+    });
 
 </script>
 </body>
