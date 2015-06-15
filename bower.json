@@ -1,6 +1,7 @@
 {
   "name": "justFlipIt",
   "version": "1.0.6",
+  "main":"src/justFlipIt.min.js",
   "authors": [
     "SimHub <lackmann.simon@gmail.com>"
   ],
