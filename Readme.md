@@ -1,11 +1,11 @@
 #A simple and lightning fast jQuery plugin 
-  Designed to flip almost any html5 element!  
+  Designed to flip almost any (Bootstrap, Semantic UI, Html5... you name it!) element!  
   
   justFlipIt.min.js  -  3 KB  
   
   Documentation && Live demo: http://simhub.github.io/justFlipIt/  
   
-#BOWER  
+#BOWER 
     $ bower install justFlipIt
 
 #NPM
