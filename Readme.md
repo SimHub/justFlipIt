@@ -1,9 +1,10 @@
 #A simple and lightning fast jQuery plugin 
-  Designed to flip almost any (Bootstrap, Semantic UI, Html5... you name it!) element!  
-  
-  justFlipIt.min.js  -  3 KB  
-  
+  justFlipIt is a lightweight jQuery plugin that allows you to implement CSS3 based flip animations on any DOM elements.  
+
   Documentation && Live demo: http://simhub.github.io/justFlipIt/  
+
+#Size 
+    justFlipIt.min.js  -  3 KB
   
 #BOWER 
     $ bower install justFlipIt
