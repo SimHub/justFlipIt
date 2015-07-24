@@ -1,7 +1,0 @@
-{
-  "name": "justflipit",
-
-  "scripts": {
-    "minify": "minify src/justflipit.js src/justflipit.min.js"
-  }
-}
