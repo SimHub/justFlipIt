@@ -1,0 +1,44 @@
+{
+  "name": "justFlipIt",
+  "version": "1.0.6",
+  "main":"src/justFlipIt.min.js",
+  "authors": [
+    "SimHub <lackmann.simon@gmail.com>"
+  ],
+  "description": "Lightning fast jQuery plugin - designed to flip almost any html5 element",
+  "keywords": [
+    "justFlipIt.js",
+    "justFlipIt.min.js",
+    "flip",
+    "justFlipIt",
+    "flipIt",
+    "jquery",
+    "card",
+    "fast",
+    "3D",
+    "simple",
+    "plugin",
+    "text",
+    "CSS3",
+    "text",
+    "web",
+    "design",
+    "animation",
+    "html5",
+    "tag",
+    "element",
+    "rotate"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/SimHub/justFlipIt",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    ".gitignore",
+    "bower_components",
+    "bower.json",
+    "test",
+    "tests"
+  ]
+}

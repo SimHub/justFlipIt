@@ -174,6 +174,7 @@
 
             var $hoverPanel =
                 $('<div class="hover panel">').css({
+                    'display': 'inline-block',
                     'width': this.element.css('width'),
                     'height': this.element.css('height')
                 });
