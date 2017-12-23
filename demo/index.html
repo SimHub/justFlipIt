@@ -288,7 +288,7 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/retina-1.1.0.js"></script>
-<script src="js/justFlipIt.min.js"></script>
+<script src="js/justFlipIt.js"></script>
 
 <script>
 
@@ -350,7 +350,6 @@
 '        </div>'
     });
 
-
     $('.template').justFlipIt({
         Click: true,
         Style: [{el: 'self', style: {'margin': '0 auto', 'cursor': 'pointer'}}],
@@ -372,35 +371,6 @@
         '                   ); </div>' +
         '            </div>\n' +
         '        </div>'
-    });
-
-    $('.flip').justFlipIt({
-        Click: true,
-        Style: [
-            {el: 'self', style: {'width': '350px', 'cursor': 'alias'}},
-            {el: '.front', style: {'width': '100%'}},
-            {el: '.backY', style: {'width': '100%'}}
-        ],
-        Template:
-        ' <div class="price-table">' +
-        ' <div class="p-head">' +
-        '  Standard' +
-        '</div>' +
-        ' <div class="p-body">' +
-        ' <ul class="features">' +
-        ' <li>10GB Storage Space</li>' +
-        ' <li>Free Support</li>' +
-        ' <li>100 Users</li>' +
-        ' <li>100GB Bandwith</li>' +
-        '</ul>' +
-        '<div class="price">' +
-        '  <span class="sub">$</span>' +
-        '  <span class="detail">29</span>' +
-        '  <span class="sub">/mo.</span>' +
-        '</div><!--/price-->' +
-        '<button class="btn btn-conf-2 btn-green">Subscribe Now</button>' +
-        '</div><!--/p-body-->' +
-        '</div><!--/price-table-->',
     });
 
 </script>
