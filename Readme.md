@@ -3,6 +3,14 @@
 
   Documentation && Live demo: http://simhub.github.io/justFlipIt/  
   
+# Bower — a package manager for the web
+
+    $ bower install justFlipIt  
+
+# Github  
+    
+    clone or download .zip file
+    
 # Usage
   Include the Javascript after jQuery  
 
