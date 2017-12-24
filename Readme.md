@@ -3,11 +3,13 @@
 
   Documentation && Live demo: http://simhub.github.io/justFlipIt/  
   
-# Bower — a package manager for the web
+# Install  
+
+### Bower — a package manager for the web
 
     $ bower install justFlipIt  
 
-# Github  
+### Github  
     
     clone or download .zip file
     
