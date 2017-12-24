@@ -14,7 +14,7 @@
       $('[elementName]').justFlipIt();
   
 # That's it!!!  
-# _________
+
 # License:  MIT
   Copyright (c) 2015 simon Lackmann
   
