@@ -7,7 +7,7 @@
   Include the Javascript after jQuery  
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-      <script src="src/your_path_to/justFlipIt.min.js"></script>
+      <script src="./your_path_to/justFlipIt.min.js"></script>
   
   Initialize the script:   
 
