@@ -2,21 +2,16 @@
   justFlipIt is a lightweight jQuery plugin that allows you to implement CSS3 based flip animations on any DOM elements.  
 
   Documentation && Live demo: http://simhub.github.io/justFlipIt/  
+  
+# Usage
+  Include the Javascript after jQuery  
 
-# Size 
-    justFlipIt.min.js  -  3 KB
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="src/your_path_to/justFlipIt.min.js"></script>
   
-#Usage
-  Include the Javascript after jQuery
-  <pre>
-  \<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  \<script src="src/justFlipIt.min.js"></script>
-  </pre>  
-  
-  Initialize the script:  
-  <pre>
-  $('[elementName]').justFlipIt();
-  </pre>
+  Initialize the script:   
+
+      $('[elementName]').justFlipIt();
   
 # That's it!!!  
 # _________
