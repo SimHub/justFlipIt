@@ -13,6 +13,7 @@
     
     clone or download .zip file  
     
+[![GitHub forks](https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&label=Fork&style=flat-square&style=flat-square)](https://img.shields.io/github/forks/SimHub/justFlipIt)
 
 # Usage
   Include the Javascript after jQuery  
