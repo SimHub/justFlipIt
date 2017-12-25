@@ -13,8 +13,6 @@
     
     clone or download .zip file  
     
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat-square)](https://github.com/SimHub/justFlipIt)    
-
 
 # Usage
   Include the Javascript after jQuery  
