@@ -5,29 +5,29 @@
   
 # Install  
 
-### github  
-    
-    clone or download .zip file  
-    
-[![GitHub forks](https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&label=Fork&style=flat-square&style=flat-square)](https://img.shields.io/github/forks/SimHub/justFlipIt)
-
-### npm  
+### npm [![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  [![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  
+  
 
     $ npm install justflipit
   or  
     
     $ yarn add justflipit  
     
-[![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  
-
-[![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  
 
     
 ### bower — _a package manager for the web_
 
     $ bower install justFlipIt  
     
-[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=social&label=Bower&style=flat-square&style=flat-square)](https://bower.io/search/)
+[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=social&label=Bower&style=flat-square&style=flat-square)](https://bower.io/search/)  
+
+### github  
+    
+    clone or download .zip file  
+    
+[![GitHub forks](https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&label=Fork&style=flat-square&style=flat-square)](https://img.shields.io/github/forks/SimHub/justFlipIt)
+
+
 
 # Usage
   Include the Javascript after jQuery  
