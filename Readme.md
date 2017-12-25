@@ -1,7 +1,9 @@
 # A simple and lightning fast jQuery plugin 
   justFlipIt is a lightweight jQuery plugin that allows you to implement CSS3 based flip animations on any DOM elements.  
 
-  Documentation && Live demo: http://simhub.github.io/justFlipIt/  
+
+# Demo - Documentation
+  ![- GO Here -](http://simhub.github.io/justFlipIt/)  
   
 # Install  
 
