@@ -6,7 +6,7 @@
 # Install  
 
 ## NPM 
-[![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  [![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  
+[![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  [![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit) [![npm](https://img.shields.io/npm/l/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)   
   
     $ npm install justflipit
   or  
