@@ -8,6 +8,8 @@
 ### Bower — a package manager for the web
 
     $ bower install justFlipIt  
+    
+[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=flat-square)](https://bower.io/search/)
 
 ### Github  
     
