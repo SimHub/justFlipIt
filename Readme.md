@@ -5,7 +5,8 @@
   
 # Install  
 
-## NPM - [![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  [![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  
+## NPM 
+[![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  [![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  
   
     $ npm install justflipit
   or  
@@ -13,11 +14,13 @@
     $ yarn add justflipit  
     
     
-### BOWER — _a package manager for the web_ -[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=social&label=Bower&style=flat-square&style=flat-square)](https://bower.io/search/)  
+### BOWER 
+[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=social&label=Bower&style=flat-square&style=flat-square)](https://bower.io/search/)  
 
     $ bower install justFlipIt  
     
-### GITHUB - [![GitHub forks](https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&label=Fork&style=flat-square&style=flat-square)](https://img.shields.io/github/forks/SimHub/justFlipIt)
+### GITHUB 
+[![GitHub forks](https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&label=Fork&style=flat-square&style=flat-square)](https://img.shields.io/github/forks/SimHub/justFlipIt)
   
     clone or download .zip file    
 
