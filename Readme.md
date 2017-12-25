@@ -3,7 +3,7 @@
 
 
 # Demo - Documentation
-  ![- GO Here -](http://simhub.github.io/justFlipIt/)  
+ [_GO HERE_](http://simhub.github.io/justFlipIt/) 
   
 # Install  
 
