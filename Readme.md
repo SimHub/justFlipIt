@@ -9,7 +9,7 @@
 
     $ bower install justFlipIt  
     
-[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=flat-square)](https://bower.io/search/)
+[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=social&label=Bower&style=flat-square&style=flat-square)](https://bower.io/search/)
 
 ### Github  
     
