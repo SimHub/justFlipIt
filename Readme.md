@@ -38,15 +38,15 @@
   
 # That's it! :punch: :blush:   
 
-# Want More?  
+# Want More options?  
 
 | Name/Key      | Possible value             | Default | Description                                              |
 | ------------- |:---------------------------|:-------:|---------------------------------------------------------:|
-| Hover             |             -              |    -    |$('[elementName]').justFlipIt();                      |
+| Hover         |             -              |    -    |$('[elementName]').justFlipIt();                          |
 | Click         | false/true/'\[elementName]'|  false  |$('[elementName]').justFlipIt({ Click:'[elementName]' }); |
-                                                                                    |
+                                                                                    
 
-...[more](http://simhub.github.io/justFlipIt/#g)                         |
+...[there's even more](http://simhub.github.io/justFlipIt/#g)                         
 
    
 # License:  MIT
