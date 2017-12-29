@@ -36,8 +36,19 @@
 
       $('[elementName]').justFlipIt();
   
-# That's it!!!  
+# That's it! :punch: :blush:   
 
+# Want More?  
+
+| Name/Key      | Possible value             | Default | Description                                              |
+| ------------- |:---------------------------|:-------:|---------------------------------------------------------:|
+| Hover             |             -              |    -    |$('[elementName]').justFlipIt();                      |
+| Click         | false/true/'\[elementName]'|  false  |$('[elementName]').justFlipIt({ Click:'[elementName]' }); |
+                                                                                    |
+
+...[more](http://simhub.github.io/justFlipIt/#g)                         |
+
+   
 # License:  MIT
   Copyright (c) 2015 simon Lackmann
   
