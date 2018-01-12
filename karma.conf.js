@@ -30,6 +30,16 @@ module.exports = function (config) {
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {},
 
+        plugins: [
+            'chai',
+            'karma',
+            'karma-chai',
+            'karma-chrome-launcher',
+            'karma-mocha-reporter',
+            'karma-mocha',
+            'mocha'
+        ],
+
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
@@ -83,6 +93,8 @@ module.exports = function (config) {
     if (process.env.TRAVIS) {
         config.browsers = ['Chrome_travis_ci'];
     }
-    else {config.browsers = ['Chrome_local_headless']}
+    else {
+        config.browsers = ['Chrome_local_headless']
+    }
 };
 
