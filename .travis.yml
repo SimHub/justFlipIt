@@ -1,12 +1,8 @@
 anguage: node_js
 sudo: false
 node_js:
-  - 5.1
+  - "7"
 
-addons:
-  apt:
-    packages:
-      - xvfb
 
 before_install:
  - export CHROME_BIN=/usr/bin/google-chrome
