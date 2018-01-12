@@ -69,7 +69,14 @@ module.exports = function (config) {
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         // browsers: ['PhantomJS'],
         // browsers: ['Chrome'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
-        browsers: ['ChromeHeadless'],
+        // browsers: ['ChromeHeadless'],
+        browsers: ['Chrome, ChromeHeadless, ChromeHeadless_without_security'],
+        customLaunchers: {
+            ChromeHeadless_without_security: {
+                base: 'ChromeHeadless',
+                flags: ['--no-sandbox','--disable-web-security']
+            }
+        },
 
         // customLaunchers: {
         //     Chrome_travis_ci: {
