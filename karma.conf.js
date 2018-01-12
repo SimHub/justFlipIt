@@ -70,10 +70,10 @@ module.exports = function (config) {
         // browsers: ['PhantomJS'],
         // browsers: ['Chrome'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
         // browsers: ['ChromeHeadless'],
-        browsers: ['Chrome, ChromeHeadless, ChromeHeadless_without_security'],
+        browsers: ['ChromeHeadless_without_security'],
         customLaunchers: {
             ChromeHeadless_without_security: {
-                base: 'ChromeHeadless',
+                base: 'Chrome',
                 flags: ['--no-sandbox','--disable-web-security']
             }
         },
