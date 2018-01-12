@@ -68,18 +68,18 @@ module.exports = function (config) {
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         // browsers: ['PhantomJS'],
-        // browsers: ['Chrome'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
+        browsers: ['Chrome'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
         // browsers: ['ChromeHeadless'],
 
-        customLaunchers: {
-            Chrome_travis_ci: {
-                base: 'Chrome',
-                flags: ['--no-sandbox']
-            },
-            Chrome_local_headless: {
-                base: 'Chrome'
-            }
-        },
+        // customLaunchers: {
+        //     Chrome_travis_ci: {
+        //         base: 'Chrome',
+        //         flags: ['--no-sandbox']
+        //     },
+        //     Chrome_local_headless: {
+        //         base: 'Chrome'
+        //     }
+        // },
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
@@ -90,11 +90,11 @@ module.exports = function (config) {
         concurrency: Infinity
     })
 
-    if (process.env.TRAVIS) {
-        config.browsers = ['Chrome_travis_ci'];
-    }
-    else {
-        config.browsers = ['Chrome_local_headless']
-    }
+    // if (process.env.TRAVIS) {
+    //     config.browsers = ['Chrome_travis_ci'];
+    // }
+    // else {
+    //     config.browsers = ['Chrome_local_headless']
+    // }
 };
 
