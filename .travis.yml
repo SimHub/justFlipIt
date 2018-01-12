@@ -1,7 +1,7 @@
 anguage: node_js
 sudo: false
 node_js:
-- '5.1'
+  - 5.1
 
 addons:
   apt:
