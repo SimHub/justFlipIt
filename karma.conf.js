@@ -70,23 +70,23 @@ module.exports = function (config) {
         // browsers: ['PhantomJS'],
         // browsers: ['Chrome'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
         // browsers: ['ChromeHeadless'],
-        browsers: ['ChromeHeadless_without_security'],
-        customLaunchers: {
-            ChromeHeadless_without_security: {
-                base: 'Chrome',
-                flags: ['--no-sandbox','--disable-web-security']
-            }
-        },
-
+        // browsers: ['ChromeHeadless_without_security'],
         // customLaunchers: {
-        //     Chrome_travis_ci: {
+        //     ChromeHeadless_without_security: {
         //         base: 'Chrome',
-        //         flags: ['--no-sandbox']
-        //     },
-        //     Chrome_local_headless: {
-        //         base: 'Chrome'
+        //         flags: ['--no-sandbox','--disable-web-security']
         //     }
         // },
+
+        customLaunchers: {
+            Chrome_travis_ci: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            },
+            Chrome_local_headless: {
+                base: 'ChromeHeadless'
+            }
+        },
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
@@ -95,13 +95,13 @@ module.exports = function (config) {
         // Concurrency level
         // how many browser should be started simultaneous
         concurrency: Infinity
-    })
+    });
 
-    // if (process.env.TRAVIS) {
-    //     config.browsers = ['Chrome_travis_ci'];
-    // }
-    // else {
-    //     config.browsers = ['Chrome_local_headless']
-    // }
+    if (process.env.TRAVIS) {
+        config.browsers = ['Chrome_travis_ci'];
+    }
+    else {
+        config.browsers = ['Chrome_local_headless']
+    }
 };
 
