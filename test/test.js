@@ -1,7 +1,6 @@
 let t1 = {}, t2 = {}, t3 = {}, t4 = {}, t5 = {};
 
 describe('justFlipIt', function () {
-
     describe('plugin', function () {
         before(function () {
             $('body').append('<p class="t1">T1</p>');
@@ -12,9 +11,7 @@ describe('justFlipIt', function () {
             let flipPanel = $('body').find('._justFlipIt_panel');
             expect(flipPanel).to.be.ok;
         });
-
     });
-
     /// CLICK ///
     describe('option Click: ', function () {
         before(function () {
@@ -22,7 +19,6 @@ describe('justFlipIt', function () {
             t2.base = $('.t2');
             t2.data = t2.base.data();
         });
-
         it('should be true', function () {
             t2.base.justFlipIt({Click: true});
             t2.opts = t2.data.plugin_justFlipIt.settings;
@@ -43,14 +39,12 @@ describe('justFlipIt', function () {
             expect(t2.class).to.equal('t2 hover _justFlipIt_panel _flipY_');
         });
     });
-
     // TEMPLATE ///
     describe('option Template: ', function (assert) {
         before(function () {
             $('body').append('<p class="t3">T3</p>');
             t3.base = $('.t3');
         });
-
         it('should not be empty', function () {
             t3.base.justFlipIt({Template: '<h3>hello</h3>'});
             t3.template = t3.base.parent().parent().find('.backY h3').text();
@@ -63,10 +57,8 @@ describe('justFlipIt', function () {
             // console.log(t3.template)
             expect(t3.template).to.equal('hello');
         });
-
     });
-
-    ///TEMPLATE///
+    ///FLIPX///
     describe('option FlipX: ', function (assert) {
         before(function () {
             $('body').append('<p class="t4">T4</p>');
@@ -97,7 +89,6 @@ describe('justFlipIt', function () {
         });
 
     });
-
     ///STYLE///
     describe('option Style: ', function (assert) {
         before(function () {
@@ -128,5 +119,4 @@ describe('justFlipIt', function () {
         });
 
     });
-
 });
