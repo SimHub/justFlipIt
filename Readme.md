@@ -1,5 +1,8 @@
 # A simple and lightning fast jQuery plugin  
-[![Travis](https://img.shields.io/travis/SimHub/justFlipIt.svg?style=flat-square)](https://travis-ci.org/SimHub/justFlipIt)  
+[![Travis](https://img.shields.io/travis/SimHub/justFlipIt.svg?style=flat-square)](https://travis-ci.org/SimHub/justFlipIt)  [![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit) [![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  [![npm](https://img.shields.io/npm/l/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)   [![GitHub forks](https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&label=Fork&style=flat-square&style=flat-square)](https://img.shields.io/github/forks/SimHub/justFlipIt) [![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=social&label=Bower&style=flat-square&style=flat-square)](https://bower.io/search/)  
+
+
+
    
   justFlipIt is a lightweight jQuery plugin that allows you to implement CSS3 based flip animations on any DOM elements.  
 
@@ -10,7 +13,6 @@
 # Install  
 
 ## NPM 
-[![npm](https://img.shields.io/npm/dt/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit) [![npm](https://img.shields.io/npm/v/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)  [![npm](https://img.shields.io/npm/l/justflipit.svg?style=flat-square)](https://www.npmjs.com/package/justflipit)   
   
     $ npm install justflipit
   or  
@@ -19,12 +21,10 @@
     
     
 ### BOWER 
-[![Bower](https://img.shields.io/bower/l/justFlipIt.svg?style=social&label=Bower&style=flat-square&style=flat-square)](https://bower.io/search/)  
 
     $ bower install justFlipIt  
     
 ### GITHUB 
-[![GitHub forks](https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&label=Fork&style=flat-square&style=flat-square)](https://img.shields.io/github/forks/SimHub/justFlipIt)
   
     clone or download .zip file    
 
