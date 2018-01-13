@@ -16,7 +16,7 @@ module.exports = function (config) {
         files: [
             // 'test/index.html',
             { pattern: 'test/jquery.js', included: true, watched: false },
-            { pattern: 'justFlipIt.js', included: true, watched: false },
+            { pattern: 'src/justFlipIt.js', included: true, watched: false },
             { pattern: 'test/test.js', included: true, watched: false }
         ],
 
