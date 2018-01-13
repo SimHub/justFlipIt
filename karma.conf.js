@@ -7,7 +7,6 @@ module.exports = function (config) {
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
 
-
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
         frameworks: ['mocha', 'chai'],
@@ -16,11 +15,18 @@ module.exports = function (config) {
         // list of files / patterns to load in the browser
         files: [
             // 'test/index.html',
-            'test/jquery.js',
-            'src/justFlipIt.js',
-            'test/test.js'
+            { pattern: 'test/jquery.js', included: true, watched: false },
+            { pattern: 'justFlipIt.js', included: true, watched: false },
+            { pattern: 'test/test.js', included: true, watched: false }
         ],
 
+
+        plugins: [
+            require('karma-mocha'),
+            require('karma-chai'),
+            require('karma-chrome-launcher'),
+            require('karma-mocha-reporter')
+        ],
 
         // list of files / patterns to exclude
         exclude: [],
@@ -29,16 +35,6 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {},
-
-        plugins: [
-            'chai',
-            'karma',
-            'karma-chai',
-            'karma-chrome-launcher',
-            'karma-mocha-reporter',
-            'karma-mocha',
-            'mocha'
-        ],
 
 
         // test results reporter to use
@@ -70,13 +66,6 @@ module.exports = function (config) {
         // browsers: ['PhantomJS'],
         // browsers: ['Chrome'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
         // browsers: ['ChromeHeadless'],
-        // browsers: ['ChromeHeadless_without_security'],
-        // customLaunchers: {
-        //     ChromeHeadless_without_security: {
-        //         base: 'Chrome',
-        //         flags: ['--no-sandbox','--disable-web-security']
-        //     }
-        // },
 
         customLaunchers: {
             Chrome_travis_ci: {
@@ -100,8 +89,6 @@ module.exports = function (config) {
     if (process.env.TRAVIS) {
         config.browsers = ['Chrome_travis_ci'];
     }
-    else {
-        config.browsers = ['Chrome_local_headless']
-    }
+    else {config.browsers = ['Chrome_local_headless']}
 };
 
