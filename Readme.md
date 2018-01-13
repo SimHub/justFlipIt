@@ -1,5 +1,6 @@
 # A simple and lightning fast jQuery plugin  
-[![Travis](https://img.shields.io/travis/SimHub/justFlipIt.svg?style=flat-square)](https://travis-ci.org/SimHub/justFlipIt)   
+[![Travis](https://img.shields.io/travis/SimHub/justFlipIt.svg?style=flat-square)](https://travis-ci.org/SimHub/justFlipIt)  
+   
   justFlipIt is a lightweight jQuery plugin that allows you to implement CSS3 based flip animations on any DOM elements.  
 
 
