@@ -1,7 +1,7 @@
 {
   "name": "test",
-  "version": "1.1.2",
-  "description": "justFlipIt test_suites",
+  "version": "2.0.0",
+  "description": "justFlipIt",
   "main": "index.js",
   "dependencies": {},
   "scripts": {

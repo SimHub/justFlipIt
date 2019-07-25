@@ -48,6 +48,11 @@
 | Click         | false/true/'\[elementName]'|  false  |$('[elementName]').justFlipIt({ Click:'[elementName]' }); |
                                                                                     
 
+### destroy  
+
+    $('[elementName]').destroy();     
+    
+
 ...[there's even more](http://simhub.github.io/justFlipIt/#g)                         
 
    
