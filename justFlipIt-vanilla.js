@@ -1,0 +1,329 @@
+/*!
+ * Vanilla JS justFlipIt v3.0.0
+ * https://github.com/SimHub/justFlipIt
+ *
+ * Copyright simon Lackmann
+ * Released under the MIT license
+ *
+ * Date: 2023
+ */
+
+(function (root, factory) {
+  if (typeof define === "function" && define.amd) {
+    define([], factory);
+  } else if (typeof module === "object" && module.exports) {
+    module.exports = factory();
+  } else {
+    root.justFlipIt = factory();
+  }
+})(typeof self !== "undefined" ? self : this, function () {
+  "use strict";
+
+  function addStyles() {
+    if (document.querySelector('[data-justflipitstyle="justFlipIt_One"]')) {
+      return;
+    }
+    const styleX = document.createElement("style");
+    styleX.setAttribute("data-justflipitstyle", "justFlipIt_One");
+    styleX.textContent =
+      "._justFlipIt_panel {perspective:1000px;-webkit-perspective:1000px;-moz-perspective:1000px;}" +
+      "._justFlipIt_panel .front{height:inherit;width:inherit;position:absolute;top:0;z-index:900;-webkit-transform:rotateX(0) rotateX(0);-moz-transform:rotateX(0) rotateX(0);-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-ms-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;transition:all .4s ease-in-out}" +
+      "._justFlipIt_panel .back{height:inherit;width:inherit;position:absolute;top:0;z-index:1000;-webkit-transform:rotateX(-180deg);-moz-transform:rotateX(-180deg);-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-ms-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;transition:all .4s ease-in-out}" +
+      "._justFlipIt_panel._flip_ .front{z-index:900;-webkit-transform:rotateX(180deg);-moz-transform:rotateX(180deg)}" +
+      "._justFlipIt_panel._flip_ .back{z-index:1000;-webkit-transform:rotateX(0) rotateX(0);-moz-transform:rotateX(0) rotateX(0)}";
+    const styleY = document.createElement("style");
+    styleY.setAttribute("data-justflipitstyle", "justFlipIt_Two");
+    styleY.textContent =
+      "._justFlipIt_panel .backY{height:inherit;width:inherit;position:absolute;top:0;z-index:1000;-webkit-transform:rotateY(-180deg);-moz-transform:rotateY(-180deg);-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-webkit-transition:all .4s ease-in-out;-moz-transition:all .4s ease-in-out;-ms-transition:all .4s ease-in-out;-o-transition:all .4s ease-in-out;transition:all .4s ease-in-out}" +
+      "._justFlipIt_panel._flipY_ .front{z-index:900;-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg)}" +
+      "._justFlipIt_panel._flipY_ .backY{z-index:1000;-webkit-transform:rotateX(0) rotateY(0);-moz-transform:rotateX(0) rotateY(0)}";
+
+    // PATCH: Füge Transparency-Style hinzu
+    const styleTransparent = document.createElement("style");
+    styleTransparent.setAttribute(
+      "data-justflipitstyle",
+      "justFlipIt_Transparent",
+    );
+    styleTransparent.textContent =
+      "._justFlipIt_panel {background: transparent !important; box-shadow: none !important;}" +
+      "._justFlipIt_panel > * {box-sizing: border-box;}";
+
+    document.head.appendChild(styleX);
+    document.head.appendChild(styleY);
+    document.head.appendChild(styleTransparent);
+  }
+
+  function getStyle(element, property) {
+    return window.getComputedStyle(element, null).getPropertyValue(property);
+  }
+  function addClass(element, className) {
+    if (element.classList) {
+      element.classList.add(className);
+    } else {
+      element.className += " " + className;
+    }
+  }
+  function removeClass(element, className) {
+    if (element.classList) {
+      element.classList.remove(className);
+    } else {
+      element.className = element.className.replace(
+        new RegExp(
+          "(^|\\b)" + className.split(" ").join("|") + "(\\b|$)",
+          "gi",
+        ),
+        " ",
+      );
+    }
+  }
+  function toggleClass(element, className) {
+    if (element.classList) {
+      element.classList.toggle(className);
+    } else {
+      var classes = element.className.split(" ");
+      var existingIndex = classes.indexOf(className);
+      if (existingIndex >= 0) {
+        classes.splice(existingIndex, 1);
+      } else {
+        classes.push(className);
+      }
+      element.className = classes.join(" ");
+    }
+  }
+  function hasClass(element, className) {
+    if (element.classList) {
+      return element.classList.contains(className);
+    } else {
+      return new RegExp("(^| )" + className + "( |$)", "gi").test(
+        element.className,
+      );
+    }
+  }
+
+  // PATCH: Verbesserte Style-Kopierfunktion
+  function copyStyles(src, dest) {
+    const computed = window.getComputedStyle(src);
+    // Kopiere alle visuellen Eigenschaften
+    const properties = [
+      "background",
+      "backgroundColor",
+      "backgroundImage",
+      "backgroundPosition",
+      "backgroundRepeat",
+      "backgroundSize",
+      "borderRadius",
+      "borderTopLeftRadius",
+      "borderTopRightRadius",
+      "borderBottomLeftRadius",
+      "borderBottomRightRadius",
+      "border",
+      "borderTop",
+      "borderRight",
+      "borderBottom",
+      "borderLeft",
+      "boxShadow",
+      "color",
+      "opacity",
+    ];
+    properties.forEach((prop) => {
+      if (
+        computed[prop] &&
+        computed[prop] !== "none" &&
+        computed[prop] !== "initial" &&
+        computed[prop] !== ""
+      ) {
+        dest.style[prop] = computed[prop];
+      }
+    });
+  }
+
+  // NEU: Funktion zur Anwendung der benutzerdefinierten Animationseinstellungen
+  function applyAnimationSettings(element, duration, easing) {
+    const transitionValue = `all ${duration / 1000}s ${easing}`;
+    element.style.transition = transitionValue;
+    element.style.WebkitTransition = transitionValue;
+    element.style.MozTransition = transitionValue;
+    element.style.msTransition = transitionValue;
+    element.style.OTransition = transitionValue;
+  }
+
+  const instanceMap = new WeakMap();
+
+  class JustFlipIt {
+    constructor(element, options = {}) {
+      addStyles();
+      this.element = element;
+      this.settings = Object.assign(
+        {},
+        {
+          Template: "",
+          Click: false,
+          FlipX: false,
+          Style: [],
+          // NEU: Standard-Animationsoptionen
+          Duration: 400,
+          Easing: "ease-in-out",
+        },
+        options,
+      );
+      this.elementWidth = getStyle(element, "width");
+      this.elementHeight = getStyle(element, "height");
+      this.elementBackgroundColor = getStyle(element, "background-color");
+      this.originalClassName = element.className;
+      this.originalTagName = element.tagName.toLowerCase();
+      this.originalId = element.id || "";
+      if (this.settings.FlipX === true) {
+        this.flipClass = "_flip_";
+        this.backClass = "back";
+      } else {
+        this.flipClass = "_flipY_";
+        this.backClass = "backY";
+      }
+      this._init();
+      instanceMap.set(element, this);
+    }
+
+    _init() {
+      const originalElement = this.element;
+      const originalClassName = this.originalClassName;
+      const hoverPanel = document.createElement(this.originalTagName);
+      addClass(hoverPanel, "hover");
+      addClass(hoverPanel, "_justFlipIt_panel");
+      const frontWrapper = document.createElement("div");
+      addClass(frontWrapper, "front");
+      const clone = originalElement.cloneNode(true);
+      clone.className = "";
+      const backWrapper = document.createElement("div");
+      addClass(backWrapper, this.backClass);
+      if (originalClassName) {
+        originalClassName.split(" ").forEach((cls) => {
+          if (cls) addClass(backWrapper, cls);
+        });
+      }
+
+      // PATCH: Styles übernehmen und Original komplett transparent machen
+      copyStyles(originalElement, frontWrapper);
+      copyStyles(originalElement, backWrapper);
+
+      // Mache das Original komplett transparent und ohne Border/Shadow/usw.
+      originalElement.style.all = "inherit"; // Reset alles zur Sicherheit
+      originalElement.style.background = "transparent";
+      originalElement.style.backgroundColor = "transparent";
+      originalElement.style.backgroundImage = "none";
+      originalElement.style.border = "none";
+      originalElement.style.borderRadius = "0";
+      originalElement.style.boxShadow = "none";
+      originalElement.style.outline = "none";
+
+      // NEU: Wende benutzerdefinierte Animationseinstellungen an
+      applyAnimationSettings(
+        frontWrapper,
+        this.settings.Duration,
+        this.settings.Easing,
+      );
+      applyAnimationSettings(
+        backWrapper,
+        this.settings.Duration,
+        this.settings.Easing,
+      );
+
+      if (this.settings.Template) {
+        backWrapper.innerHTML = this.settings.Template;
+      } else {
+        backWrapper.appendChild(clone);
+      }
+      originalElement.parentNode.insertBefore(hoverPanel, originalElement);
+      frontWrapper.appendChild(originalElement);
+      hoverPanel.appendChild(frontWrapper);
+      hoverPanel.appendChild(backWrapper);
+      if (originalClassName) {
+        originalClassName.split(" ").forEach((cls) => {
+          if (cls) addClass(hoverPanel, cls);
+        });
+      }
+      hoverPanel.style.width = this.elementWidth;
+      hoverPanel.style.height = this.elementHeight;
+      if (this.settings.Style && this.settings.Style.length) {
+        this.settings.Style.forEach((styleObj) => {
+          if (styleObj.el) {
+            if (styleObj.el.toLowerCase() === "self") {
+              Object.assign(hoverPanel.style, styleObj.style);
+            } else {
+              const targetElements = hoverPanel.querySelectorAll(styleObj.el);
+              targetElements.forEach((el) => {
+                Object.assign(el.style, styleObj.style);
+              });
+            }
+          }
+        });
+      }
+      this._setupEvents(hoverPanel);
+      this.hoverPanel = hoverPanel;
+      this.frontWrapper = frontWrapper;
+      this.backWrapper = backWrapper;
+    }
+
+    _setupEvents(hoverPanel) {
+      if (this.settings.Click === true) {
+        hoverPanel.addEventListener("click", (e) => {
+          e.preventDefault();
+          toggleClass(hoverPanel, this.flipClass);
+        });
+      } else if (typeof this.settings.Click === "string") {
+        const clickElements = hoverPanel.querySelectorAll(this.settings.Click);
+        clickElements.forEach((el) => {
+          el.addEventListener("click", () => {
+            toggleClass(hoverPanel, this.flipClass);
+          });
+        });
+      } else {
+        hoverPanel.addEventListener("mouseenter", () => {
+          addClass(hoverPanel, this.flipClass);
+        });
+        hoverPanel.addEventListener("mouseleave", () => {
+          removeClass(hoverPanel, this.flipClass);
+        });
+      }
+    }
+
+    destroy() {
+      const hoverPanel = this.hoverPanel;
+      const originalElement = hoverPanel.querySelector(".front > *");
+      originalElement.className = this.originalClassName;
+      hoverPanel.parentNode.insertBefore(originalElement, hoverPanel);
+      hoverPanel.parentNode.removeChild(hoverPanel);
+      instanceMap.delete(this.element);
+    }
+  }
+
+  function justFlipIt(selector, options = {}) {
+    if (typeof selector === "string") {
+      const elements = document.querySelectorAll(selector);
+      return Array.from(elements).map((el) => new JustFlipIt(el, options));
+    } else if (selector instanceof Element) {
+      return new JustFlipIt(selector, options);
+    } else if (selector.length) {
+      return Array.from(selector).map((el) => new JustFlipIt(el, options));
+    }
+  }
+
+  justFlipIt.destroy = function (selector) {
+    if (typeof selector === "string") {
+      const elements = document.querySelectorAll(selector);
+      Array.from(elements).forEach((el) => {
+        const instance = instanceMap.get(el);
+        if (instance) instance.destroy();
+      });
+    } else if (selector instanceof Element) {
+      const instance = instanceMap.get(selector);
+      if (instance) instance.destroy();
+    } else if (selector.length) {
+      Array.from(selector).forEach((el) => {
+        const instance = instanceMap.get(el);
+        if (instance) instance.destroy();
+      });
+    }
+  };
+
+  return justFlipIt;
+});
