@@ -28,7 +28,7 @@ A lightweight JavaScript library that allows you to implement CSS3 based flip an
 ### CDN (Easiest)
 
 ```html
-<script src="dist/justFlipIt.min.js"></script>
+<script src="<path to -> justFlipIt.min.js>"></script>
 <script>
   justFlipIt(".my-card");
 </script>
