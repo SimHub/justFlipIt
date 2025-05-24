@@ -109,7 +109,6 @@
       color: black;
     }
 
-
     .btn {
       height: 50px;
       padding: 5px;
@@ -264,7 +263,6 @@
       inset: auto 0% auto auto;
     }
 
-
     /*------*/
     .color-yellow {
       background: #f5c939;
@@ -299,6 +297,57 @@
     .color-blue {
       background: #2980b9;
       color: #fff;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 900px) {
+      header {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .flip-list-w,
+      .flip-list-w.list {
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .font-c.size-md {
+        font-size: 1.5rem;
+      }
+
+      .flex-wrapper {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .comp {
+        width: 100%;
+        min-width: unset;
+        padding: 0;
+      }
+
+      .flip-list-w,
+      .flip-list-w.list {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .flip-item {
+        padding: 0.75rem;
+      }
+
+      section {
+        padding: 0 0.5rem;
+      }
     }
   </style>
 </head>
