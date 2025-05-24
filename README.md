@@ -10,6 +10,10 @@ A lightweight JavaScript library that allows you to implement CSS3 based flip an
 [![npm downloads](https://img.shields.io/npm/dt/justflipit.svg)](https://www.npmjs.com/package/justflipit)
 [![GitHub stars](https://img.shields.io/github/stars/SimHub/justFlipIt.svg?style=social)](https://github.com/SimHub/justFlipIt)
 
+Hinweis:\*\* justFlipIt v3+ wird unter [@simhub2/justflipit](https://www.npmjs.com/package/@simhub2/justflipit) veröffentlicht.
+
+> Die alte Version (`justflipit`) ist veraltet und wird nicht mehr aktualisiert.
+
 ## Features
 
 - ⚡ **Lightweight & Fast** - Minimal footprint with maximum performance
@@ -25,7 +29,7 @@ A lightweight JavaScript library that allows you to implement CSS3 based flip an
 ### CDN (Easiest)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/justflipit@latest/dist/justFlipIt.min.js"></script>
+<script src="dist/justFlipIt.min.js"></script>
 <script>
   justFlipIt(".my-card");
 </script>
@@ -34,7 +38,7 @@ A lightweight JavaScript library that allows you to implement CSS3 based flip an
 NPM
 
 ```bash
-npm install justflipit
+npm install @simhub2/justflipit
 ```
 
 ```javascript

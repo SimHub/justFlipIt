@@ -1,5 +1,5 @@
 {
-  "name": "@simhub/justflipit",
+  "name": "@simhub2/justflipit",
   "version": "3.0.0",
   "description": "A lightweight JavaScript library that allows you to implement CSS3 based flip animations on any DOM elements",
   "main": "dist/justFlipIt.js",
@@ -68,7 +68,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SimHub/justFlipIt.git"
+    "url": "git+https://github.com/SimHub/justFlipIt.git"
   },
   "bugs": {
     "url": "https://github.com/SimHub/justFlipIt/issues"
