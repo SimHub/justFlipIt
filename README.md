@@ -6,12 +6,11 @@ A lightweight JavaScript library that allows you to implement CSS3 based flip an
 
 > **Try it out!** Click the link above to see justFlipIt in action with interactive examples.
 
-[![npm version](https://img.shields.io/npm/v/justflipit.svg)](https://www.npmjs.com/package/justflipit)
-[![npm downloads](https://img.shields.io/npm/dt/justflipit.svg)](https://www.npmjs.com/package/justflipit)
 [![GitHub stars](https://img.shields.io/github/stars/SimHub/justFlipIt.svg?style=social)](https://github.com/SimHub/justFlipIt)
+[![npm version](https://img.shields.io/npm/v/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
+[![npm downloads](https://img.shields.io/npm/dt/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
 
-Hinweis:\*\* justFlipIt v3+ wird unter [@simhub2/justflipit](https://www.npmjs.com/package/@simhub2/justflipit) veröffentlicht.
-
+> **Hinweis:** justFlipIt v3+ wird unter [@simhub2/justflipit](https://www.npmjs.com/package/@simhub2/justflipit) gepflegt.  
 > Die alte Version (`justflipit`) ist veraltet und wird nicht mehr aktualisiert.
 
 ## Features
