@@ -41,7 +41,7 @@ npm install @simhub2/justflipit
 ```
 
 ```javascript
-import justFlipIt from "justflipit";
+import justFlipIt from "@simhub2/justflipit";
 justFlipIt(".my-card");
 ```
 
