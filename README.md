@@ -2,324 +2,307 @@
 
 A lightweight JavaScript library that allows you to implement CSS3 based flip animations on any DOM elements.
 
+## 🚀 [**Live Demo**](https://SimHub.github.io/justFlipIt/)
+
+> **Try it out!** Click the link above to see justFlipIt in action with interactive examples.
+
+[![GitHub stars](https://img.shields.io/github/stars/SimHub/justFlipIt.svg?style=social)](https://github.com/SimHub/justFlipIt)
+[![npm version](https://img.shields.io/npm/v/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
+[![npm downloads](https://img.shields.io/npm/dt/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
+
+> **Hinweis:** justFlipIt v3+ wird unter [@simhub2/justflipit](https://www.npmjs.com/package/@simhub2/justflipit) gepflegt.  
+> Die alte Version (`justflipit`) ist veraltet und wird nicht mehr aktualisiert.
+
 ## Features
 
-- Works with or without jQuery
-- Multiple import methods (script tag, npm, ES modules)
-- Lightweight and fast
-- Compatible with all modern browsers and legacy browsers (with fallbacks)
-- Uses modern Web Animations API when available
-- Easy to customize with CSS
+- ⚡ **Lightweight & Fast** - Minimal footprint with maximum performance
+- 🎨 **Highly Customizable** - Easy to style with CSS and customize animations
+- 📱 **Modern Browser Support** - Works with all modern browsers and graceful fallbacks
+- 🔧 **Multiple Import Methods** - Script tag, npm, ES modules - use however you prefer
+- 🎯 **Works with or without jQuery** - Choose your preferred approach
+- 🎭 **3D Flip Animations** - Beautiful CSS3 transform-based animations
+- ⚙️ **Easy Configuration** - Simple options for duration, easing, triggers, and more
 
-## Optionen
+## Quick Start
 
-- Template: (String) HTML-Inhalt für die Rückseite. Wenn leer, wird das Originalelement geklont.
-- Click: (Boolean oder String) true für Flip bei Klick auf das Panel, oder ein CSS-Selektor für Flip bei Klick auf bestimmte Elemente. Standard: false (Flip bei Hover).
-- FlipX: (Boolean) true für Flip um die X-Achse (vertikal), false für Flip um die Y-Achse (horizontal). Standard: false.
-- Style: (Array) Array von Style-Objekten, um Styles auf das Panel oder bestimmte Elemente darin anzuwenden. Jedes Objekt hat:
-  - el: "self" oder ein CSS-Selektor (z.B. "self", ".front", ".back")
-  - style: Ein Objekt mit CSS-Eigenschaften und -Werten.
-- Duration: (Number) Dauer der Flip-Animation in Millisekunden. Standard: 400.
-- Easing: (String) CSS-Easing-Funktion für die Animation. Standard: "ease-in-out". Mögliche Werte z.B. "linear", "ease", "ease-in", "ease-out", "cubic-bezier(0.1, 0.7, 1.0, 0.1)".
+### CDN (Easiest)
 
-| Option   | Typ                 | Beschreibung                                                                                                                                                                                                                               | Standardwert           |
-| -------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------- |
-| Template | String              | HTML-Inhalt für die Rückseite. Wenn leer, wird das Originalelement geklont.                                                                                                                                                                | -                      |
-| Click    | Boolean oder String | true für Flip bei Klick auf das Panel, oder ein CSS-Selektor für Flip bei Klick auf bestimmte Elemente.                                                                                                                                    | false (Flip bei Hover) |
-| FlipX    | Boolean             | true für Flip um die X-Achse (vertikal), false für Flip um die Y-Achse (horizontal).                                                                                                                                                       | false                  |
-| Style    | Array               | Array von Style-Objekten, um Styles auf das Panel oder bestimmte Elemente darin anzuwenden. - Jedes Objekt hat: - el: "self" oder ein CSS-Selektor (z.B. "self", ".front", ".back") - style: Ein Objekt mit CSS-Eigenschaften und -Werten. |                        |
-| Duration | Number              | Dauer der Flip-Animation in Millisekunden.                                                                                                                                                                                                 | 400                    |
-| Easing   | String              | CSS-Easing-Funktion für die Animation, z.B. "linear", "ease-in", "cubic-bezier(0.68, -0.55, 0.27, 1.55)".                                                                                                                                  | "ease-in-out"          |
+```html
+<script src="<path to -> justFlipIt.min.js>"></script>
+<script>
+  justFlipIt(".my-card");
+</script>
+```
 
-## Installation
-
-### NPM
+NPM
 
 ```bash
-npm install justflipit
+npm install @simhub2/justflipit
 ```
 
-### Verwendungsbeispiele
+```javascript
+import justFlipIt from "justflipit";
+justFlipIt(".my-card");
+```
 
-Vanilla JavaScript
+## Basic Usage
 
 ```html
 <div class="card">
-  <h3>Vorderseite</h3>
-  <p>Das ist die Vorderseite der Karte</p>
+  <h3>Front Side</h3>
+  <p>Hover over me!</p>
 </div>
 
 <script>
-  // Einfachste Verwendung - Flip bei Hover
+  // Simple hover flip
   justFlipIt(".card");
-</script>
-```
 
-Mit jQuery
-
-```html
-<div class="card">
-  <h3>Vorderseite</h3>
-  <p>Das ist die Vorderseite der Karte</p>
-</div>
-
-<script>
-  // Einfachste Verwendung mit jQuery
-  $(".card").justFlipIt();
-</script>
-```
-
-Anpassung der Animation
-
-```html
-<div class="card-slow">Langsamer Flip</div>
-<div class="card-fast">Schneller Flip</div>
-<div class="card-bounce">Bounce-Effekt</div>
-
-<script>
-  // Langsame Animation (1 Sekunde)
-  justFlipIt(".card-slow", {
-    Duration: 1000,
-    Easing: "ease-in-out",
-  });
-
-  // Schnelle Animation (200ms)
-  justFlipIt(".card-fast", {
-    Duration: 200,
-    Easing: "ease-out",
-  });
-
-  // Bounce-Effekt mit Cubic-Bezier
-  justFlipIt(".card-bounce", {
+  // Click to flip with custom settings
+  justFlipIt(".card", {
+    Click: true,
     Duration: 800,
     Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
   });
 </script>
 ```
 
-Verschiedene Flip-Trigger
+## API Reference
+
+| Option   | Type              | Description                                                                       | Default       |
+| -------- | ----------------- | --------------------------------------------------------------------------------- | ------------- |
+| Template | String            | HTML content for the back side. If empty, the original element will be cloned.    | -             |
+| Click    | Boolean or String | `true` for click on panel, or CSS selector for click on specific elements.        | false (hover) |
+| FlipX    | Boolean           | `true` for flip around X-axis (vertical), `false` for Y-axis (horizontal).        | false         |
+| Style    | Array             | Array of style objects to apply to panel or specific elements within it.          | []            |
+| Duration | Number            | Duration of flip animation in milliseconds.                                       | 400           |
+| Easing   | String            | CSS easing function for animation, e.g. "linear", "ease-in", "cubic-bezier(...)". | "ease-in-out" |
+
+### Style Object Format
+
+```javascript
+{
+  el: "self",  // "self" or CSS selector (e.g. ".front", ".back")
+  style: {
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.2)"
+  }
+}
+```
+
+## Examples
+
+### Hover Effects
 
 ```html
-<div class="card-hover">Hover für Flip</div>
-<div class="card-click">Klick für Flip</div>
-<div class="card-button">
-  Karte mit Button
-  <button class="flip-btn">Flip</button>
-</div>
-
+<div class="hover-card">Hover me!</div>
 <script>
-  // Standard: Flip bei Hover
-  justFlipIt(".card-hover", {
+  justFlipIt(".hover-card", {
     Duration: 500,
-    Easing: "ease",
+    Easing: "ease-out",
   });
+</script>
+```
 
-  // Flip bei Klick auf die Karte
-  justFlipIt(".card-click", {
+### Click Interactions
+
+```html
+<div class="click-card">Click me!</div>
+<script>
+  justFlipIt(".click-card", {
     Click: true,
     Duration: 600,
     Easing: "ease-in-out",
   });
-
-  // Flip bei Klick auf einen Button innerhalb der Karte
-  justFlipIt(".card-button", {
-    Click: ".flip-btn",
-    Duration: 400,
-    Easing: "linear",
-  });
 </script>
 ```
 
-Anpassen der Rückseite
+### Custom Back Content
 
 ```html
-<div class="card-template">Vorderseite mit Template</div>
-<div class="card-clone">Vorderseite mit Klon</div>
-
+<div class="custom-card">Front Content</div>
 <script>
-  // Benutzerdefiniertes HTML für die Rückseite
-  justFlipIt(".card-template", {
+  justFlipIt(".custom-card", {
+    Click: true,
     Template:
-      '<div class="back-content"><h3>Rückseite</h3><p>Benutzerdefinierter Inhalt für die Rückseite</p></div>',
-    Duration: 700,
-    Easing: "ease-out",
+      '<div style="padding: 20px;"><h3>Back Side</h3><p>Custom content!</p></div>',
   });
+</script>
+```
 
-  // Klonen der Vorderseite (Standard)
-  justFlipIt(".card-clone", {
+### Button Trigger
+
+```html
+<div class="button-card">
+  Card Content
+  <button class="flip-btn">Flip</button>
+</div>
+<script>
+  justFlipIt(".button-card", {
+    Click: ".flip-btn",
     Duration: 500,
-    Easing: "ease-in-out",
   });
 </script>
 ```
 
-Flip-Richtung ändern
+### Bounce Effect
 
 ```html
-<div class="card-horizontal">Horizontaler Flip (Y-Achse)</div>
-<div class="card-vertical">Vertikaler Flip (X-Achse)</div>
-
+<div class="bounce-card">Bounce Effect</div>
 <script>
-  // Horizontal (Standard, um Y-Achse)
-  justFlipIt(".card-horizontal", {
-    FlipX: false,
-    Duration: 600,
-    Easing: "ease-in-out",
-  });
-
-  // Vertikal (um X-Achse)
-  justFlipIt(".card-vertical", {
-    FlipX: true,
-    Duration: 600,
-    Easing: "cubic-bezier(0.42, 0, 0.58, 1)",
+  justFlipIt(".bounce-card", {
+    Click: true,
+    Duration: 800,
+    Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
   });
 </script>
 ```
 
-Benutzerdefinierte Stile anwenden
+### Custom Styling
 
 ```html
-<div class="card-styled">Karte mit benutzerdefinierten Stilen</div>
-
+<div class="styled-card">Styled Card</div>
 <script>
-  justFlipIt(".card-styled", {
+  justFlipIt(".styled-card", {
     Style: [
       {
         el: "self",
         style: {
-          borderRadius: "10px",
-          boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+          borderRadius: "15px",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.2)",
         },
       },
       {
         el: ".front",
         style: {
-          background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         },
       },
       {
         el: ".backY",
         style: {
-          background: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)",
-          padding: "20px",
+          background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
         },
       },
     ],
-    Duration: 800,
-    Easing: "ease-in-out",
   });
 </script>
 ```
 
-Komplexes Beispiel
+## Library Versions
+
+justFlipIt offers three different versions to suit your needs:
+
+### Vanilla Version
+
+- **File**: `justFlipIt-vanilla.js` / `.min.js`
+- **Dependencies**: None
+- **Animation**: CSS Transitions
+- **Use case**: Lightweight, no dependencies
+
+### Modern Version
+
+- **File**: `justFlipIt-modern.js` / `.min.js`
+- **Dependencies**: None
+- **Animation**: Web Animations API with CSS fallback
+- **Use case**: Modern browsers, best performance
+
+### Combined Version
+
+- **File**: `justFlipIt-combined.js` / `.min.js`
+- **Dependencies**: Optional jQuery support
+- **Animation**: CSS Transitions
+- **Use case**: jQuery and Vanilla JS compatibility
+
+```html
+<!-- Vanilla -->
+<script src="justFlipIt-vanilla.min.js"></script>
+
+<!-- Modern -->
+<script src="justFlipIt-modern.min.js"></script>
+
+<!-- Combined (with jQuery support) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="justFlipIt-combined.min.js"></script>
+<script>
+  // Both work:
+  $(".card").justFlipIt();
+  justFlipIt(".card");
+</script>
+```
+
+## Advanced Example
 
 ```html
 <div class="product-card">
-  <img src="product.jpg" alt="Produkt" />
-  <h3>Produktname</h3>
-  <p>Kurze Beschreibung</p>
-  <button class="details-btn">Details anzeigen</button>
+  <img src="product.jpg" alt="Product" />
+  <h3>Product Name</h3>
+  <p>Short description</p>
+  <button class="details-btn">Show Details</button>
 </div>
 
 <script>
   justFlipIt(".product-card", {
     Template: `
       <div class="product-details">
-        <h3>Produktdetails</h3>
+        <h3>Product Details</h3>
         <ul>
-          <li>Eigenschaft 1: Wert</li>
-          <li>Eigenschaft 2: Wert</li>
-          <li>Eigenschaft 3: Wert</li>
+          <li>Feature 1: Value</li>
+          <li>Feature 2: Value</li>
+          <li>Feature 3: Value</li>
         </ul>
-        <p class="price">39,99 €</p>
-        <button class="buy-btn">Kaufen</button>
-        <button class="back-btn">Zurück</button>
+        <p class="price">$39.99</p>
+        <button class="buy-btn">Buy Now</button>
+        <button class="back-btn">Back</button>
       </div>
     `,
     Click: ".details-btn",
-    FlipX: false,
     Duration: 800,
     Easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
     Style: [
       {
         el: "self",
         style: {
-          borderRadius: "8px",
-          boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)",
+          borderRadius: "12px",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
         },
       },
       {
         el: ".backY",
         style: {
           background: "#f8f9fa",
-          padding: "15px",
+          padding: "20px",
         },
       },
     ],
   });
 
-  // Zurück-Button auf der Rückseite
+  // Handle back button
   document.addEventListener("click", function (e) {
     if (e.target.classList.contains("back-btn")) {
-      const productCard = e.target.closest(".product-card");
-      const panel = productCard.parentNode;
-      panel.classList.toggle("_flipY_");
+      const panel = e.target.closest("._justFlipIt_panel");
+      if (panel) panel.classList.toggle("_flipY_");
     }
   });
 </script>
 ```
 
-#### Verschiedene Bibliotheksversionen
+## Browser Support
 
-justFlipIt bietet drei verschiedene Versionen, je nach Anforderungen:
+- ✅ Chrome 60+
+- ✅ Firefox 55+
+- ✅ Safari 12+
+- ✅ Edge 79+
+- ✅ iOS Safari 12+
+- ✅ Android Chrome 60+
 
-### Vanilla Version (justFlipIt-vanilla.js)
+## Contributing
 
-Die Vanilla-Version ist unabhängig von externen Bibliotheken und verwendet CSS-Transitionen für die Animation.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-```html
-<script src="path/to/justFlipIt-vanilla.min.js"></script>
-<script>
-  justFlipIt(".card", {
-    Duration: 600,
-    Easing: "ease-out",
-  });
-</script>
-```
+## License
 
-### Modern Version (justFlipIt-modern.js)
+MIT License - see [LICENSE](LICENSE) file for details.
 
-Die moderne Version nutzt die Web Animations API für bessere Performance in modernen Browsern, mit Fallback zu CSS-Transitionen.
+---
 
-```html
-<script src="path/to/justFlipIt-modern.min.js"></script>
-<script>
-  justFlipIt(".card", {
-    Duration: 800,
-    Easing: "cubic-bezier(0.42, 0, 0.58, 1)",
-  });
-</script>
-```
-
-### Combined Version (justFlipIt-combined.js)
-
-Die kombinierte Version unterstützt sowohl jQuery als auch Vanilla JavaScript.
-
-```html
-<!-- Mit jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="path/to/justFlipIt-combined.min.js"></script>
-<script>
-  // jQuery-Methode
-  $(".card").justFlipIt({
-    Duration: 700,
-    Easing: "ease-in-out",
-  });
-
-  // ODER Vanilla-Methode
-  justFlipIt(".another-card", {
-    Duration: 700,
-    Easing: "ease-in-out",
-  });
-</script>
-```
+**[🌟 Star this project on GitHub](https://github.com/SimHub/justFlipIt)** | **[📦 View on NPM](https://www.npmjs.com/package/justflipit)** | \*\*[🚀 Live Demo
