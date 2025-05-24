@@ -45,6 +45,7 @@
     "build:copy:modern": "cp src/justFlipIt-modern.js dist/ && cp src/justFlipIt-modern.min.js dist/",
     "build:copy:combined": "cp src/justFlipIt-combined.js dist/justFlipIt.js && cp src/justFlipIt-combined.min.js dist/justFlipIt.min.js",
     "build:copy:types": "cp src/justFlipIt.d.ts dist/types/justFlipIt.d.ts",
+    "deploy:pages": "./update-gh-pages.sh",
     "prepublishOnly": "npm run build",
     "test": "node_modules/karma/bin/karma start karma.conf.js"
   },
