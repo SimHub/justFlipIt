@@ -160,9 +160,10 @@
           Click: false,
           FlipX: false,
           Style: [],
-          // NEU: Standard-Animationsoptionen
           Duration: 400,
           Easing: "ease-in-out",
+          preserveClasses: true, // NEU
+          preserveStyles: true   // NEU
         },
         options,
       );
@@ -186,63 +187,51 @@
     _init() {
       const originalElement = this.element;
       const originalClassName = this.originalClassName;
+
+      // Panel-Struktur erzeugen
       const hoverPanel = document.createElement(this.originalTagName);
       addClass(hoverPanel, "hover");
       addClass(hoverPanel, "_justFlipIt_panel");
       const frontWrapper = document.createElement("div");
       addClass(frontWrapper, "front");
-      const clone = originalElement.cloneNode(true);
-      clone.className = "";
       const backWrapper = document.createElement("div");
       addClass(backWrapper, this.backClass);
-      if (originalClassName) {
-        originalClassName.split(" ").forEach((cls) => {
-          if (cls) addClass(backWrapper, cls);
+
+      // NEU: Klassen übernehmen (Panel, .front, .backY)
+      if (this.settings.preserveClasses && originalElement.classList.length) {
+        originalElement.classList.forEach(cls => {
+          if (!hoverPanel.classList.contains(cls)) hoverPanel.classList.add(cls);
+          if (frontWrapper && !frontWrapper.classList.contains(cls)) frontWrapper.classList.add(cls);
+          if (backWrapper && !backWrapper.classList.contains(cls)) backWrapper.classList.add(cls);
         });
       }
 
-      // PATCH: Styles übernehmen und Original komplett transparent machen
-      copyStyles(originalElement, frontWrapper);
-      copyStyles(originalElement, backWrapper);
+      // NEU: Inline-Styles übernehmen (nur auf Panel)
+      if (this.settings.preserveStyles && originalElement.getAttribute("style")) {
+        hoverPanel.setAttribute("style", (hoverPanel.getAttribute("style") || "") +
+          ";" + originalElement.getAttribute("style"));
+      }
 
-      // Mache das Original komplett transparent und ohne Border/Shadow/usw.
-      originalElement.style.all = "inherit"; // Reset alles zur Sicherheit
-      originalElement.style.background = "transparent";
-      originalElement.style.backgroundColor = "transparent";
-      originalElement.style.backgroundImage = "none";
-      originalElement.style.border = "none";
-      originalElement.style.borderRadius = "0";
-      originalElement.style.boxShadow = "none";
-      originalElement.style.outline = "none";
-
-      // NEU: Wende benutzerdefinierte Animationseinstellungen an
-      applyAnimationSettings(
-        frontWrapper,
-        this.settings.Duration,
-        this.settings.Easing,
-      );
-      applyAnimationSettings(
-        backWrapper,
-        this.settings.Duration,
-        this.settings.Easing,
-      );
+      // Nur den INHALT übernehmen!
+      frontWrapper.innerHTML = originalElement.innerHTML;
 
       if (this.settings.Template) {
         backWrapper.innerHTML = this.settings.Template;
       } else {
-        backWrapper.appendChild(clone);
+        backWrapper.innerHTML = originalElement.innerHTML;
       }
+
+      // Panel einfügen und Original entfernen
       originalElement.parentNode.insertBefore(hoverPanel, originalElement);
-      frontWrapper.appendChild(originalElement);
       hoverPanel.appendChild(frontWrapper);
       hoverPanel.appendChild(backWrapper);
-      if (originalClassName) {
-        originalClassName.split(" ").forEach((cls) => {
-          if (cls) addClass(hoverPanel, cls);
-        });
-      }
+      originalElement.parentNode.removeChild(originalElement);
+
+      // Panel-Größe und Styles übernehmen
       hoverPanel.style.width = this.elementWidth;
       hoverPanel.style.height = this.elementHeight;
+
+      // Custom Styles aus Option anwenden
       if (this.settings.Style && this.settings.Style.length) {
         this.settings.Style.forEach((styleObj) => {
           if (styleObj.el) {
@@ -257,7 +246,11 @@
           }
         });
       }
+
+      // Events setzen
       this._setupEvents(hoverPanel);
+
+      // Referenzen speichern
       this.hoverPanel = hoverPanel;
       this.frontWrapper = frontWrapper;
       this.backWrapper = backWrapper;
