@@ -11,9 +11,9 @@
   <!--   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" -->
   <!--   crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-  <!-- <script src="./justFlipIt-vanilla.min.js"></script> -->
-  <script src="./justFlipIt-modern.min.js"></script>
-  <!-- <script src="./justFlipIt-combined.min.js"></script> -->
+  <!-- <script src="src/justFlipIt-vanilla.js"></script> -->
+  <script src="src/justFlipIt-modern.js"></script>
+  <!-- <script src="src/justFlipIt-combined.js"></script> -->
 
   <style>
     body {
@@ -31,6 +31,11 @@
       color: whitesmoke;
       -webkit-background-clip: text;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    h3 {
+      font-size: 1.5rem !important;
+      padding: 10px;
     }
 
     .brace {
@@ -97,10 +102,6 @@
       color: black;
     }
 
-    /*------*/
-    h3 {
-      padding: 10px;
-    }
 
     .btn.ghost {
       background-color: transparent;
@@ -206,7 +207,7 @@
 
     .comp ul li {
       box-shadow: 0 2px 8px rgba(231, 76, 60, 0.10);
-      border-radius: 10px;
+      border-radius: 1px;
     }
 
     .flip-list-w {
@@ -229,7 +230,7 @@
       grid-column-gap: .6rem;
       grid-row-gap: .6rem;
       aspect-ratio: 389/193;
-      border-radius: 10px;
+      border-radius: 1px;
       outline-offset: 0px;
       outline: 1px solid #0000000d;
       flex-flow: column;
@@ -263,7 +264,6 @@
       inset: auto 0% auto auto;
     }
 
-    /*------*/
     .color-yellow {
       background: #f5c939;
       color: #222;
@@ -359,7 +359,7 @@
 
       0%,
       100% {
-        transform: rotate(0);
+        transform: rotate(0deg);
       }
 
       20%,
@@ -416,11 +416,10 @@
     <hr class="brace">
     <img src="https://img.shields.io/travis/SimHub/justFlipIt.svg" alt="travis testsuite">
     <img src="https://img.shields.io/npm/v/@simhub2/justflipit.svg" alt="npm version">
-    <img src="https://img.shields.io/npm/dt/@simhub2/justflipit.svg" alt="@simhub2/justflipit">
+    <img src="https://img.shields.io/npm/dw/@simhub2/justflipit.svg" alt="@simhub2/justflipit">
     <img
       src="https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&amp;label=Fork&amp;style=flat-square&amp;style=flat-square"
       alt="justFlipIt">
-
 
   </header>
   <br>
@@ -442,7 +441,7 @@
             </div>
           </div>
         </li>
-        <li class="card-bounce color-light-green" data-flip-id="auto-7" style="">
+        <li class="card-bounce color-green" data-flip-id="auto-7" style="background-color:green">
           <div class="flip-item ">
             <div class="item-num">02</div>
             <h3 class="font-c size-md _w-ch">Click to Bounce</h3>
@@ -526,31 +525,30 @@
       ul.classList.remove('list');
     });
 
-    justFlipIt(".color-orange");
     justFlipIt(".card-slow", {
       Click: true,
-      Duration: 1000, Easing: "ease-in-out"
+      Duration: 2000, Easing: "ease-in-out"
     });
     justFlipIt(".card-fast", {
       Click: true,
-      Duration: 200, Easing: "ease-out"
+      Duration: 300, Easing: "ease-out"
     });
     justFlipIt(".card-bounce", {
       Click: true,
-      Duration: 800, Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)"
+      Duration: 1000, Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)"
     });
-    justFlipIt(".card-hover", {Duration: 500, Easing: "ease"});
+    justFlipIt(".card-hover", {Duration: 600, Easing: "ease"});
     justFlipIt(".card-click", {Click: true, Duration: 600, Easing: "ease-in-out"});
-    justFlipIt(".card-button", {Click: ".flip-btn", Duration: 400, Easing: "linear"});
+    justFlipIt(".card-button", {Click: ".flip-btn", Duration: 600, Easing: "linear"});
     justFlipIt(".card-template", {
       Click: true,
       Template: '<div class="back-content font-c size-md _w-ch"><h3>Rückseite</h3></div>',
-      Duration: 700,
+      Duration: 600,
       Easing: "ease-out",
     });
     justFlipIt(".card-clone", {
       Click: true,
-      Duration: 500, Easing: "ease-in-out"
+      Duration: 600, Easing: "ease-in-out"
     });
     justFlipIt(".card-horizontal", {
       Click: true,
@@ -566,25 +564,24 @@
         {el: ".front", style: {background: "linear-gradient(135deg, #eadd 0%, #c3cfe2 100%)"}},
         {el: ".backY", style: {background: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"}}
       ],
-      Duration: 800,
+      Duration: 600,
       Easing: "ease-in-out",
     });
     justFlipIt(".product-card", {
       Template: `
-          <div class="product-details"style="display: flex;flex-direction: column;justify-content: center;align-items: center">
+          <div class="product-details"style="">
 <p class="price">39,99 €</p>
               <p>Eigenschaft 1: Wert</p>
               <p>Eigenschaft 2: Wert</p>
-              <p>Eigenschaft 3: Wert</p>
-            <button class="btn back-btn">back</button>
+              <p>Eigenschaft 3: Wert  <button class="btn back-btn">back</button></p>
           </div>
         `,
       Click: ".details-btn",
       FlipX: false,
-      Duration: 800,
+      Duration: 600,
       Easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
       Style: [
-        {el: "self", style: {borderRadius: "8px", boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)"}},
+        {el: "self", style: {borderRadius: "1px", boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)"}},
         {el: ".backY", style: {color: "black", background: "#00cfff", padding: "15px"}},
 
       ],

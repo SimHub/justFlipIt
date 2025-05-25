@@ -24,6 +24,16 @@ declare namespace justFlipIt {
      * Custom styles to apply to elements
      */
     Style?: StyleOption[];
+
+    /**
+     * If true, all CSS classes from the original element are copied to the flip panel (default: true)
+     */
+    preserveClasses?: boolean;
+
+    /**
+     * If true, all inline styles from the original element are copied to the flip panel (default: true)
+     */
+    preserveStyles?: boolean;
   }
 
   /**
