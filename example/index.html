@@ -6,14 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Live Grid</title>
   <link rel="stylesheet" href="style.css">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" -->
   <!--   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" -->
   <!--   crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-  <!-- <script src="../src/justFlipIt-vanilla.js"></script> -->
+  <!-- <script src="src/justFlipIt-vanilla.js"></script> -->
   <script src="../src/justFlipIt-modern.js"></script>
-  <!-- <script src="../src/justFlipIt-combined.js"></script> -->
+  <!-- <script src="src/justFlipIt-combined.js"></script> -->
 
   <style>
     body {
@@ -98,7 +101,7 @@
     }
 
     #gridBtn {
-      background-color: whitesmoke;
+      background: #f5c939;
       color: black;
     }
 
@@ -299,6 +302,102 @@
       color: #fff;
     }
 
+    /* cards */
+    .card-elm {
+      border-radius: 10px;
+    }
+
+    .card-bg-01 {
+      background-image: url('img/card-bg-01.png');
+      background-size: cover;
+      background-position: bottom;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-02-top {
+      background-image: url('img/card-bg-02.png');
+      background-size: cover;
+      background-position: top;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-02-middle {
+      background-image: url('img/card-bg-02.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-02-bottom {
+      background-image: url('img/card-bg-02.png');
+      background-size: cover;
+      background-position: bottom;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-02 {
+      background-image: url('img/card-bg-02.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      color: darkblue;
+      font-weight: 900;
+    }
+
+    .card-bg-03 {
+      background-image: url('img/card-bg-03.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-04 {
+      background-image: url('img/card-bg-04.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-05 {
+      background-image: url('img/card-bg-05.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-06 {
+      background-image: url('img/card-bg-06.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
+    .card-bg-07 {
+      background-image: url('img/card-bg-07.png');
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 100%;
+      color: aquamarine;
+    }
+
     /* Responsive Styles */
     @media (max-width: 900px) {
       header {
@@ -414,17 +513,32 @@
     </a>
     <h1 class="header_title">JustFlipIt.js</h1>
     <hr class="brace">
-    <img src="https://img.shields.io/travis/SimHub/justFlipIt.svg" alt="travis testsuite">
-    <img src="https://img.shields.io/npm/v/@simhub2/justflipit.svg" alt="npm version">
-    <img src="https://img.shields.io/npm/dw/@simhub2/justflipit.svg" alt="@simhub2/justflipit">
-    <img
-      src="https://img.shields.io/github/forks/SimHub/justFlipIt.svg?style=social&amp;label=Fork&amp;style=flat-square&amp;style=flat-square"
-      alt="justFlipIt">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;justify-content:center; align-items: center;">
+      <!-- GitHub Stars -->
+      <a href="https://github.com/SimHub/justFlipIt/stargazers" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/github/stars/SimHub/justFlipIt.svg?style=social" alt="GitHub Stars"
+          referrerpolicy="no-referrer" loading="lazy" />
+      </a>
+      <!-- NPM Version -->
+      <a href="https://www.npmjs.com/package/@simhub2/justflipit" target="_blank" rel="noopener">
+        <img src="https://img.shields.io/npm/v/@simhub2/justflipit.svg" alt="NPM Version" referrerpolicy="no-referrer"
+          loading="lazy" />
+      </a>
+
+      <!-- NPM Downloads -->
+      <img src="https://img.shields.io/npm/dw/@simhub2/justflipit.svg" alt="NPM Downloads" referrerpolicy="no-referrer"
+        loading="lazy" />
+
+      <!-- Bundle Size -->
+      <img src="https://img.shields.io/bundlephobia/min/@simhub2/justflipit" alt="Minified Size">
+    </div>
+
+
 
   </header>
   <br>
   <div class="flex-wrapper">
-    <button id="gridBtn" class="btn ghost">Grid</button>
+    <button id="gridBtn" class="btn ghost color-light">Grid</button>
     <button id="listBtn" class="btn ghost">List</button>
   </div>
   <section class="grid-container">
@@ -432,7 +546,7 @@
     <div class="comp">
       <ul data-flip="item" role="list" class="flip-list-w w-list-unstyled">
 
-        <li class="card-hover color-purple" data-flip-id="auto-5" style="">
+        <li class="card-elm  card-hover color-purple" data-flip-id="auto-5" style="">
           <div class="flip-item ">
             <div class="item-num">01</div>
             <h3 class="font-c size-md _w-ch">Hover to Flip</h3>
@@ -441,7 +555,7 @@
             </div>
           </div>
         </li>
-        <li class="card-bounce color-green" data-flip-id="auto-7" style="background-color:green">
+        <li class="card-elm  card-bounce color-yellow" data-flip-id="auto-7" style="background-color:green">
           <div class="flip-item ">
             <div class="item-num">02</div>
             <h3 class="font-c size-md _w-ch">Click to Bounce</h3>
@@ -452,7 +566,7 @@
           </div>
         </li>
 
-        <li class="card-slow color-lila" data-flip-id="auto-4" style="">
+        <li class="card-elm card-bg-02-top  card-slow color-lila" data-flip-id="auto-4" style="">
           <div class="flip-item ">
             <div class="item-num">03</div>
             <h3 class="font-c size-md _w-ch">Click for Slow Flip</h3>
@@ -462,7 +576,7 @@
           </div>
         </li>
 
-        <li class="card-fast color-yellow" data-flip-id="auto-3" style="">
+        <li class="card-elm card-fast color-yellow" data-flip-id="auto-3" style="">
           <div class="flip-item ">
             <div class="item-num">04</div>
             <h3 class="font-c size-md _w-ch">Click for fast Flip</h3>
@@ -471,7 +585,7 @@
             </div>
           </div>
         </li>
-        <li class="card-styled" data-flip-id="auto-6" style="">
+        <li class="card-elm card-bg-02-middle  card-styled" data-flip-id="auto-6" style="">
           <div class="flip-item ">
             <div class="item-num">05</div>
             <h3 class="font-c size-md _w-ch">Custom styled card</h3>
@@ -481,7 +595,7 @@
           </div>
         </li>
 
-        <li class="card-template color-lila" data-flip-id="auto-8" style="">
+        <li class="card-elm  card-template color-blue" data-flip-id="auto-8" style="">
           <div class="flip-item ">
             <div class="item-num">06</div>
             <h3 class="font-c size-md _w-ch">Click to see Custom content </h3>
@@ -492,7 +606,7 @@
           </div>
         </li>
 
-        <li class=" product-card color-light-green" data-flip-id="auto-2" style="">
+        <li class="card-elm card-bg-02-bottom  product-card color-light-green" data-flip-id="auto-2" style="">
           <div class="flip-item ">
             <div class="item-num">07</div>
             <h3 class="font-c size-md _w-ch">Complex example</h3>
@@ -503,11 +617,21 @@
             </div>
           </div>
         </li>
-        <li class="card-jquery color-purple" data-flip-id="auto-9" style="">
+        <li class="card-elm card-horizontal color-purple" data-flip-id="auto-9" style="">
           <div class="flip-item ">
             <div class="item-num">08</div>
+            <h3 class="custom-message font-c size-md _w-ch">🌸 ...</h3>
+            <div class="abs-img" style="">
+              <div class="dual-img">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="card-elm card-jquery color-purple" data-flip-id="auto-9" style="">
+          <div class="flip-item ">
+            <div class="item-num">09</div>
             <h3 class="jquery-message font-c size-md _w-ch">for Jquery</h3>
-            <div class="abs-img">
+            <div class="abs-img" style="">
               <div class="dual-img">
               </div>
             </div>
@@ -527,7 +651,12 @@
 
     justFlipIt(".card-slow", {
       Click: true,
-      Duration: 2000, Easing: "ease-in-out"
+      Duration: 1800, Easing: "ease-in-out",
+      Click: true,
+      Style: [
+        {el: ".front", style: {background: "orange"}},
+        {el: ".backY", style: {background: "url('img/card-bg-02.png')", backgroundSize: "cover", backgroundPosition: "top"}},
+      ],
     });
     justFlipIt(".card-fast", {
       Click: true,
@@ -537,32 +666,32 @@
       Click: true,
       Duration: 1000, Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)"
     });
-    justFlipIt(".card-hover", {Duration: 600, Easing: "ease"});
-    justFlipIt(".card-click", {Click: true, Duration: 600, Easing: "ease-in-out"});
-    justFlipIt(".card-button", {Click: ".flip-btn", Duration: 600, Easing: "linear"});
+    // justFlipIt(".card-hover", {Duration: 600, Easing: "ease"});
+    // justFlipIt(".card-click", {Click: true, Duration: 600, Easing: "ease-in-out"});
+    // justFlipIt(".card-button", {Click: ".flip-btn", Duration: 600, Easing: "linear"});
     justFlipIt(".card-template", {
       Click: true,
       Template: '<div class="back-content font-c size-md _w-ch"><h3>Rückseite</h3></div>',
       Duration: 600,
       Easing: "ease-out",
     });
-    justFlipIt(".card-clone", {
-      Click: true,
-      Duration: 600, Easing: "ease-in-out"
-    });
+    // justFlipIt(".card-clone", {
+    //   Click: true,
+    //   Duration: 600, Easing: "ease-in-out"
+    // });
     justFlipIt(".card-horizontal", {
       Click: true,
-      FlipX: false, Duration: 600, Easing: "ease-in-out"
+      FlipX: true, Duration: 600, Easing: "ease-in-out"
     });
-    justFlipIt(".card-vertical", {
-      Click: true,
-      FlipX: true, Duration: 600, Easing: "cubic-bezier(0.42, 0, 0.58, 1)"
-    });
+    // justFlipIt(".card-vertical", {
+    //   Click: true,
+    //   FlipX: true, Duration: 600, Easing: "cubic-bezier(0.42, 0, 0.58, 1)"
+    // });
     justFlipIt(".card-styled", {
       Click: true,
       Style: [
-        {el: ".front", style: {background: "linear-gradient(135deg, #eadd 0%, #c3cfe2 100%)"}},
-        {el: ".backY", style: {background: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"}}
+        {el: ".front", style: {background: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"}},
+        {el: ".backY", style: {background: "url('img/card-bg-02.png')", backgroundSize: "cover", backgroundPosition: "center"}},
       ],
       Duration: 600,
       Easing: "ease-in-out",
@@ -570,10 +699,8 @@
     justFlipIt(".product-card", {
       Template: `
           <div class="product-details"style="">
-<p class="price">39,99 €</p>
-              <p>Eigenschaft 1: Wert</p>
-              <p>Eigenschaft 2: Wert</p>
-              <p>Eigenschaft 3: Wert  <button class="btn back-btn">back</button></p>
+              <p class="price">🌸</p>
+                <button class="btn back-btn">back</button>
           </div>
         `,
       Click: ".details-btn",
@@ -581,9 +708,7 @@
       Duration: 600,
       Easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
       Style: [
-        {el: "self", style: {borderRadius: "1px", boxShadow: "0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)"}},
-        {el: ".backY", style: {color: "black", background: "#00cfff", padding: "15px"}},
-
+        {el: ".front", style: {background: "blue"}},
       ],
     });
     document.addEventListener("click", function (e) {
@@ -604,9 +729,11 @@
         }
       }
     });
+
+    var cstm = document.querySelector('.custom-message');
+    cstm.textContent = 'click to flip horizontal';
     if (typeof ($) != 'function') {
       var msgElem = document.querySelector('.jquery-message');
-      console.log("msgElem ", msgElem);
       if (msgElem) {
         msgElem.textContent = '☝🏼This component requires jQuery.';
       }
