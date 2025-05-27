@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Live Grid</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -92,6 +91,26 @@
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       margin-top: -5px;
+    }
+
+
+    .btn-modern {
+      background: rgba(255, 255, 255, 0.15);
+      color: dimgrey;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      font-weight: 300;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .btn-modern:hover {
+      background: rgba(255, 255, 255, 0.3);
+      color: #0D0D0D;
     }
 
     #listBtn {
@@ -267,9 +286,41 @@
       inset: auto 0% auto auto;
     }
 
-    .color-yellow {
-      background: #f5c939;
+    /*------Palette----------------*/
+    .color-orange {
+      background-color: #FB8500;
+    }
+
+    .color-darkorange {
+      background-color: #E76F51;
+    }
+
+    .color-darkyellow {
+      background: #FFB703;
       color: #222;
+    }
+
+    .color-red {
+      background-color: #EF476F;
+      color: #fff;
+    }
+
+    .color-coolgreen {
+      background-color: #7CB518
+    }
+
+    .color-mint {
+      background-color: #219EBC;
+    }
+
+    .color-darkblue {
+      background: #023047;
+      color: #fff
+    }
+
+    .color-lightblue {
+      background-color: #8ECAE6;
+      color: #fff;
     }
 
     .color-lila {
@@ -277,14 +328,19 @@
       color: #fff;
     }
 
+    /*----------------------*/
     .color-light {
       background: lightpink;
       color: black;
     }
 
     .color-green {
-      background: #27ae60;
+      background: #2A9D8F;
       color: #fff;
+    }
+
+    .color-deepgreen {
+      background: #5C8001;
     }
 
     .color-purple {
@@ -292,13 +348,14 @@
       color: #fff;
     }
 
-    .color-light-green {
+    .color-lightgreen {
       background: #7ae66a;
       color: #fff;
     }
 
+
     .color-blue {
-      background: #2980b9;
+      background: #3A86FF;
       color: #fff;
     }
 
@@ -306,6 +363,7 @@
     .card-elm {
       border-radius: 10px;
     }
+
 
     .card-bg-01 {
       background-image: url('img/card-bg-01.png');
@@ -340,7 +398,7 @@
       background-position: bottom;
       width: 100%;
       height: 100%;
-      color: aquamarine;
+      color: #EF476F;
     }
 
     .card-bg-02 {
@@ -546,16 +604,7 @@
     <div class="comp">
       <ul data-flip="item" role="list" class="flip-list-w w-list-unstyled">
 
-        <li class="card-elm  card-hover color-purple" data-flip-id="auto-5" style="">
-          <div class="flip-item ">
-            <div class="item-num">01</div>
-            <h3 class="font-c size-md _w-ch">Hover to Flip</h3>
-            <div class="abs-img">
-              <div class="dual-img"></div>
-            </div>
-          </div>
-        </li>
-        <li class="card-elm  card-bounce color-yellow" data-flip-id="auto-7" style="background-color:green">
+        <li class="card-elm  card-bounce color-orange" data-flip-id="auto-7" style="background-color:green">
           <div class="flip-item ">
             <div class="item-num">02</div>
             <h3 class="font-c size-md _w-ch">Click to Bounce</h3>
@@ -566,7 +615,7 @@
           </div>
         </li>
 
-        <li class="card-elm card-bg-02-top  card-slow color-lila" data-flip-id="auto-4" style="">
+        <li class="card-elm card-bg-02-top  card-slow " data-flip-id="auto-4" style="">
           <div class="flip-item ">
             <div class="item-num">03</div>
             <h3 class="font-c size-md _w-ch">Click for Slow Flip</h3>
@@ -576,7 +625,7 @@
           </div>
         </li>
 
-        <li class="card-elm card-fast color-yellow" data-flip-id="auto-3" style="">
+        <li class="card-elm card-fast color-darkblue" data-flip-id="auto-3" style="">
           <div class="flip-item ">
             <div class="item-num">04</div>
             <h3 class="font-c size-md _w-ch">Click for fast Flip</h3>
@@ -585,41 +634,10 @@
             </div>
           </div>
         </li>
-        <li class="card-elm card-bg-02-middle  card-styled" data-flip-id="auto-6" style="">
+
+        <li class="card-elm card-horizontal card-bg-02-middle" data-flip-id="auto-9" style="">
           <div class="flip-item ">
             <div class="item-num">05</div>
-            <h3 class="font-c size-md _w-ch">Custom styled card</h3>
-            <div class="abs-img">
-              <div class="dual-img"></div>
-            </div>
-          </div>
-        </li>
-
-        <li class="card-elm  card-template color-blue" data-flip-id="auto-8" style="">
-          <div class="flip-item ">
-            <div class="item-num">06</div>
-            <h3 class="font-c size-md _w-ch">Click to see Custom content </h3>
-            <div class="abs-img">
-              <div class="dual-img">
-              </div>
-            </div>
-          </div>
-        </li>
-
-        <li class="card-elm card-bg-02-bottom  product-card color-light-green" data-flip-id="auto-2" style="">
-          <div class="flip-item ">
-            <div class="item-num">07</div>
-            <h3 class="font-c size-md _w-ch">Complex example</h3>
-            <div class="abs-img">
-              <div class="dual-img">
-                <button class="btn details-btn">click to see details</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="card-elm card-horizontal color-purple" data-flip-id="auto-9" style="">
-          <div class="flip-item ">
-            <div class="item-num">08</div>
             <h3 class="custom-message font-c size-md _w-ch">🌸 ...</h3>
             <div class="abs-img" style="">
               <div class="dual-img">
@@ -627,16 +645,58 @@
             </div>
           </div>
         </li>
-        <li class="card-elm card-jquery color-purple" data-flip-id="auto-9" style="">
+        <li class="card-elm card-bg-02-middle card-styled" data-flip-id="auto-6" style="">
+          <div class="flip-item ">
+            <div class="item-num">06</div>
+            <h3 class="font-c size-md _w-ch">Custom styled card</h3>
+            <div class="abs-img">
+              <div class="dual-img"></div>
+            </div>
+          </div>
+        </li>
+
+        <li class="card-elm card-bg-02-bottom  product-card " data-flip-id="auto-2" style="">
+          <div class="flip-item ">
+            <div class="item-num">07</div>
+            <h3 class="font-c size-md _w-ch">Complex example</h3>
+            <div class="abs-img">
+              <div class="dual-img">
+                <button class="btn-modern ">click to see the back</button>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="card-elm  card-hover color-red" data-flip-id="auto-5" style="">
+          <div class="flip-item ">
+            <div class="item-num">08</div>
+            <h3 class="font-c size-md _w-ch">Hover to Flip</h3>
+            <div class="abs-img">
+              <div class="dual-img"></div>
+            </div>
+          </div>
+        </li>
+
+        <li class="card-elm  card-template color-green data-flip-id=" auto-8" style="">
           <div class="flip-item ">
             <div class="item-num">09</div>
-            <h3 class="jquery-message font-c size-md _w-ch">for Jquery</h3>
-            <div class="abs-img" style="">
+            <h3 class="font-c size-md _w-ch">Click to see Custom content </h3>
+            <div class="abs-img">
               <div class="dual-img">
               </div>
             </div>
           </div>
         </li>
+        <!-- <li class="card-elm card-jquery color-purple" data-flip-id="auto-9" style=""> -->
+        <!--   <div class="flip-item "> -->
+        <!--     <div class="item-num">09</div> -->
+        <!--     <h3 class="jquery-message font-c size-md _w-ch">for Jquery</h3> -->
+        <!--     <div class="abs-img" style=""> -->
+        <!--       <div class="dual-img"> -->
+        <!--       </div> -->
+        <!--     </div> -->
+        <!--   </div> -->
+        <!-- </li> -->
       </ul>
     </div>
   </section>
@@ -649,12 +709,13 @@
       ul.classList.remove('list');
     });
 
+    justFlipIt(".card-hover", {Duration: 600, Easing: "ease"});
     justFlipIt(".card-slow", {
       Click: true,
       Duration: 1800, Easing: "ease-in-out",
       Click: true,
       Style: [
-        {el: ".front", style: {background: "orange"}},
+        {el: ".front", style: {background: "#FFB703"}},
         {el: ".backY", style: {background: "url('img/card-bg-02.png')", backgroundSize: "cover", backgroundPosition: "top"}},
       ],
     });
@@ -666,7 +727,6 @@
       Click: true,
       Duration: 1000, Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)"
     });
-    // justFlipIt(".card-hover", {Duration: 600, Easing: "ease"});
     // justFlipIt(".card-click", {Click: true, Duration: 600, Easing: "ease-in-out"});
     // justFlipIt(".card-button", {Click: ".flip-btn", Duration: 600, Easing: "linear"});
     justFlipIt(".card-template", {
@@ -681,7 +741,11 @@
     // });
     justFlipIt(".card-horizontal", {
       Click: true,
-      FlipX: true, Duration: 600, Easing: "ease-in-out"
+      FlipX: true, Duration: 600, Easing: "ease-in-out",
+      Style: [
+        {el: ".front", style: {background: "#118AB2"}},
+      ],
+
     });
     // justFlipIt(".card-vertical", {
     //   Click: true,
@@ -690,25 +754,27 @@
     justFlipIt(".card-styled", {
       Click: true,
       Style: [
-        {el: ".front", style: {background: "linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)"}},
-        {el: ".backY", style: {background: "url('img/card-bg-02.png')", backgroundSize: "cover", backgroundPosition: "center"}},
+        {el: ".front", style: {background: "#33658a"}},
+        {el: ".backY", style: {background: "#000814", "color": "white"}},
       ],
       Duration: 600,
       Easing: "ease-in-out",
     });
+
+
     justFlipIt(".product-card", {
       Template: `
           <div class="product-details"style="">
               <p class="price">🌸</p>
-                <button class="btn back-btn">back</button>
+                <button class="btn-modern">click to see the front</button>
           </div>
         `,
-      Click: ".details-btn",
+      Click: ".btn-modern",
       FlipX: false,
       Duration: 600,
       Easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
       Style: [
-        {el: ".front", style: {background: "blue"}},
+        {el: ".front", style: {background: "#FFD60A"}},
       ],
     });
     document.addEventListener("click", function (e) {
@@ -730,19 +796,20 @@
       }
     });
 
-    var cstm = document.querySelector('.custom-message');
+    const cstm = document.querySelector('.custom-message');
     cstm.textContent = 'click to flip horizontal';
-    if (typeof ($) != 'function') {
-      var msgElem = document.querySelector('.jquery-message');
-      if (msgElem) {
-        msgElem.textContent = '☝🏼This component requires jQuery.';
-      }
-    } else {
-      $(function () {
-        $('.jquery-message').text('ready to flip with jQuery');
-      });
-    }
-    $(".card-jquery").justFlipIt();
+    // **Jquery** //
+    // if (typeof ($) != 'function') {
+    //   var msgElem = document.querySelector('.jquery-message');
+    //   if (msgElem) {
+    //     msgElem.textContent = '☝🏼This component requires jQuery.';
+    //   }
+    // } else {
+    //   $(function () {
+    //     $('.jquery-message').text('ready to flip with jQuery');
+    //   });
+    // }
+    // $(".card-jquery").justFlipIt();
   </script>
 </body>
 

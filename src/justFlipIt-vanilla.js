@@ -1,11 +1,11 @@
 /*!
- * Vanilla JS justFlipIt v3.0.0
+ * justFlipIt v3.1.0
  * https://github.com/SimHub/justFlipIt
  *
- * Copyright simon Lackmann
+ * Copyright SimHub
  * Released under the MIT license
  *
- * Date: 2023
+ * Date: 2025
  */
 
 (function (root, factory) {
@@ -163,7 +163,7 @@
           Duration: 400,
           Easing: "ease-in-out",
           preserveClasses: true, // NEU
-          preserveStyles: true   // NEU
+          preserveStyles: true, // NEU
         },
         options,
       );
@@ -199,17 +199,28 @@
 
       // NEU: Klassen übernehmen (Panel, .front, .backY)
       if (this.settings.preserveClasses && originalElement.classList.length) {
-        originalElement.classList.forEach(cls => {
-          if (!hoverPanel.classList.contains(cls)) hoverPanel.classList.add(cls);
-          if (frontWrapper && !frontWrapper.classList.contains(cls)) frontWrapper.classList.add(cls);
-          if (backWrapper && !backWrapper.classList.contains(cls)) backWrapper.classList.add(cls);
+        originalElement.classList.forEach((cls) => {
+          if (!hoverPanel.classList.contains(cls)) {
+            hoverPanel.classList.add(cls);
+          }
+          if (frontWrapper && !frontWrapper.classList.contains(cls)) {
+            frontWrapper.classList.add(cls);
+          }
+          if (backWrapper && !backWrapper.classList.contains(cls)) {
+            backWrapper.classList.add(cls);
+          }
         });
       }
 
       // NEU: Inline-Styles übernehmen (nur auf Panel)
-      if (this.settings.preserveStyles && originalElement.getAttribute("style")) {
-        hoverPanel.setAttribute("style", (hoverPanel.getAttribute("style") || "") +
-          ";" + originalElement.getAttribute("style"));
+      if (
+        this.settings.preserveStyles && originalElement.getAttribute("style")
+      ) {
+        hoverPanel.setAttribute(
+          "style",
+          (hoverPanel.getAttribute("style") || "") +
+          ";" + originalElement.getAttribute("style"),
+        );
       }
 
       // Nur den INHALT übernehmen!

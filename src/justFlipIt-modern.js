@@ -1,11 +1,11 @@
 /*!
- * Modern justFlipIt v3.0.0
+ * justFlipIt v3.1.0
  * https://github.com/SimHub/justFlipIt
  *
- * Copyright simon Lackmann
+ * Copyright SimHub
  * Released under the MIT license
  *
- * Date: 2023
+ * Date: 2025
  */
 
 (function (root, factory) {
@@ -20,14 +20,13 @@
   "use strict";
 
   // Feature detection
-  const supportsGrid =
-    typeof CSS !== "undefined" &&
+  const supportsGrid = typeof CSS !== "undefined" &&
     CSS.supports &&
     CSS.supports("display", "grid");
-  const supportsWebAnimations =
-    typeof Element !== "undefined" && "animate" in Element.prototype;
-  const supportsCustomProperties =
-    window.CSS && CSS.supports && CSS.supports("color", "var(--test)");
+  const supportsWebAnimations = typeof Element !== "undefined" &&
+    "animate" in Element.prototype;
+  const supportsCustomProperties = window.CSS && CSS.supports &&
+    CSS.supports("color", "var(--test)");
 
   // Style generation based on browser support
   function generateStyles() {
@@ -218,7 +217,7 @@
           Duration: 400, // Animation duration in ms
           Easing: "ease-in-out", // Animation easing function
           preserveClasses: true, // NEU
-          preserveStyles: true   // NEU
+          preserveStyles: true, // NEU
         },
         options,
       );
@@ -269,17 +268,28 @@
 
       // NEU: Klassen übernehmen (Panel, .front, .backY)
       if (this.settings.preserveClasses && originalElement.classList.length) {
-        originalElement.classList.forEach(cls => {
-          if (!hoverPanel.classList.contains(cls)) hoverPanel.classList.add(cls);
-          if (frontWrapper && !frontWrapper.classList.contains(cls)) frontWrapper.classList.add(cls);
-          if (backWrapper && !backWrapper.classList.contains(cls)) backWrapper.classList.add(cls);
+        originalElement.classList.forEach((cls) => {
+          if (!hoverPanel.classList.contains(cls)) {
+            hoverPanel.classList.add(cls);
+          }
+          if (frontWrapper && !frontWrapper.classList.contains(cls)) {
+            frontWrapper.classList.add(cls);
+          }
+          if (backWrapper && !backWrapper.classList.contains(cls)) {
+            backWrapper.classList.add(cls);
+          }
         });
       }
 
       // NEU: Inline-Styles übernehmen (nur auf Panel)
-      if (this.settings.preserveStyles && originalElement.getAttribute("style")) {
-        hoverPanel.setAttribute("style", (hoverPanel.getAttribute("style") || "") +
-          ";" + originalElement.getAttribute("style"));
+      if (
+        this.settings.preserveStyles && originalElement.getAttribute("style")
+      ) {
+        hoverPanel.setAttribute(
+          "style",
+          (hoverPanel.getAttribute("style") || "") +
+          ";" + originalElement.getAttribute("style"),
+        );
       }
 
       // Nur den INHALT übernehmen!
