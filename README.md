@@ -41,27 +41,26 @@ justFlipIt(".my-card");
 
 ---
 
-## 🆕 Plug & Play: Automatisches Übernehmen von Klassen und Styles
+## 🆕 Plug & Play: Automatic adoption of classes and styles
 
-Ab Version X übernimmt justFlipIt **automatisch alle CSS-Klassen und Inline-Styles** deines Elements auf das Flip-Panel.
+**This means:**
 
-**Das bedeutet:**  
-Du kannst z.B. einfach
+For example, you can simply
 
 ```js
 justFlipIt(".daisyui-card");
 ```
 
-aufrufen – und alle Farben, Schatten, Abstände usw. bleiben erhalten, egal ob du Tailwind, daisyUI, Bootstrap oder eigene Styles verwendest.
+and all colors, shadows, spacing, etc. are retained, whether you use Tailwind, daisyUI, Bootstrap or your own styles.
 
-### **Optionen**
+### **Options**
 
-| Option          | Typ  | Standard | Beschreibung                                                   |
-| --------------- | ---- | -------- | -------------------------------------------------------------- |
-| preserveClasses | Bool | true     | Übernimmt alle CSS-Klassen vom Originalelement auf das Panel   |
-| preserveStyles  | Bool | true     | Übernimmt alle Inline-Styles vom Originalelement auf das Panel |
+| Option          | Type | Standard | Description                                                         |
+| --------------- | ---- | -------- | ------------------------------------------------------------------- |
+| preserveClasses | Bool | true     | Takes all CSS classes from the original element to the panel        |
+| preserveStyles  | Bool | true     | Takes over all inline styles from the original element to the panel |
 
-**Beispiel:**
+**Example:**
 
 ```js
 // Standard: Plug & Play
@@ -75,7 +74,7 @@ justFlipIt(".meine-karte", { preserveClasses: false, preserveStyles: false });
 
 ## 🎨 Customizing (Erweitert)
 
-Du kannst alle Optionen von justFlipIt wie gewohnt nutzen – z.B. eigene Templates, Flip-Richtung, Animationen, gezielte Styles:
+You can use all options from justFlipIt as usual – e.g. your own templates, flip direction, animations, targeted styles:
 
 ```js
 justFlipIt(".meine-karte", {
@@ -101,10 +100,11 @@ justFlipIt(".meine-karte", {
 });
 ```
 
-**Tipp:**
+**Tip:**
 
-- Mit `preserveClasses: false` und `preserveStyles: false` hast du die volle Kontrolle und kannst alles gezielt per Option oder CSS stylen.
-- Mit den Standardwerten (`true`) bleibt alles wie beim Originalelement – Plug & Play!
+-
+- With preserveClasses: false and preserveStyles: false you have full control and can style everything specifically via option or CSS.
+- With the default values (true) everything remains like the original element – Plug & Play!
 
 ---
 
@@ -115,7 +115,7 @@ justFlipIt(".meine-karte", {
 - 📱 **Modern & Responsive** – Works on all modern browsers and devices
 - 🔧 **Flexible Import** – Use via script tag, npm, or ES modules
 - 🎯 **jQuery Optional** – Works with or without jQuery
-- 🎭 **3D Flip Animations** – Beautiful CSS3 transform-based effects
+- 🎭 **Flip Animations** – Beautiful CSS3 transform-based effects
 - ⚙️ **Simple API** – Easy configuration for duration, easing, triggers, and more
 
 ---
@@ -206,9 +206,3 @@ SOFTWARE.
 **[🌟 Star this project on GitHub](https://github.com/SimHub/justFlipIt)** | **[📦 View on NPM](https://www.npmjs.com/package/@simhub2/justflipit)**
 
 ---
-
-### Notes
-
-- For more practical examples (hover, click, button, custom back, styling, vertical/horizontal, product card, etc.), see the [Live Demo](https://SimHub.github.io/justFlipIt/).
-- The recommended CSS block above ensures robust, flicker-free, and responsive flip animations for all use cases.
-- For questions or suggestions, feel free to open an issue or contribute!
