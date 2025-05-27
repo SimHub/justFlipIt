@@ -102,7 +102,6 @@ justFlipIt(".meine-karte", {
 
 **Tip:**
 
--
 - With preserveClasses: false and preserveStyles: false you have full control and can style everything specifically via option or CSS.
 - With the default values (true) everything remains like the original element – Plug & Play!
 
