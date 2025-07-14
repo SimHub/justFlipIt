@@ -34,6 +34,14 @@ declare namespace justFlipIt {
      * If true, all inline styles from the original element are copied to the flip panel (default: true)
      */
     preserveStyles?: boolean;
+
+    /**
+     * Enables 3D tilt effect. 
+     * - `true`: Combines flip and tilt.
+     * - `'only'`: Enables only tilt.
+     * - `false`: Disables tilt (default).
+     */
+    Tilt?: boolean | 'only';
   }
 
   /**

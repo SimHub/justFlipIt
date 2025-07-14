@@ -1,5 +1,5 @@
-/*5
- * justFlipIt v3.1.1
+/*!
+ * justFlipIt v3.1.0
  * https://github.com/SimHub/justFlipIt
  *
  * Copyright SimHub
@@ -188,6 +188,9 @@
         this.backClass = "backY";
       }
       this._init();
+      if (this.settings.Tilt) {
+        this._setupTilt();
+      }
       instanceMap.set(element, this);
     }
 
@@ -274,7 +277,31 @@
       this.backWrapper = backWrapper;
     }
 
+    _setupTilt() {
+      this.hoverPanel.addEventListener("mousemove", (e) => {
+        const rect = this.hoverPanel.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 10;
+        const rotateY = (-(x - centerX) / centerX) * 10;
+
+        this.hoverPanel.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+      });
+
+      this.hoverPanel.addEventListener("mouseenter", () => {
+        this.hoverPanel.style.transition = "all 0.2s ease-out";
+      });
+
+      this.hoverPanel.addEventListener("mouseleave", () => {
+        this.hoverPanel.style.transform = `perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)`;
+        this.hoverPanel.style.transition = "all 0.5s ease-in-out";
+      });
+    }
+
     _setupEvents(hoverPanel) {
+      if (this.settings.Tilt === 'only') return;
       if (this.settings.Click === true) {
         hoverPanel.addEventListener("click", (e) => {
           e.preventDefault();

@@ -13,9 +13,9 @@
   <!--   integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" -->
   <!--   crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-  <!-- <script src="src/justFlipIt-vanilla.js"></script> -->
+  <!-- <script src="../src/justFlipIt-vanilla.js"></script> -->
   <script src="../src/justFlipIt-modern.js"></script>
-  <!-- <script src="src/justFlipIt-combined.js"></script> -->
+  <!-- <script src="../src/justFlipIt-combined.js"></script> -->
 
   <style>
     body {
@@ -687,6 +687,26 @@
             </div>
           </div>
         </li>
+        <li class="card-elm card-tilt color-lila" data-flip-id="auto-10" style="">
+          <div class="flip-item ">
+            <div class="item-num">10</div>
+            <h3 class="font-c size-md _w-ch">3D Tilt Effect</h3>
+            <div class="abs-img">
+              <div class="dual-img">
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="card-elm card-tilt-only color-coolgreen" data-flip-id="auto-11" style="">
+          <div class="flip-item ">
+            <div class="item-num">11</div>
+            <h3 class="font-c size-md _w-ch">Tilt Only</h3>
+            <div class="abs-img">
+              <div class="dual-img">
+              </div>
+            </div>
+          </div>
+        </li>
         <!-- <li class="card-elm card-jquery color-purple" data-flip-id="auto-9" style=""> -->
         <!--   <div class="flip-item "> -->
         <!--     <div class="item-num">09</div> -->
@@ -777,6 +797,10 @@
         {el: ".front", style: {background: "#FFD60A"}},
       ],
     });
+
+    justFlipIt(".card-tilt", { Tilt: true });
+    justFlipIt(".card-tilt-only", { Tilt: 'only' });
+
     document.addEventListener("click", function (e) {
       if (e.target.classList.contains("back-btn")) {
         e.preventDefault();
