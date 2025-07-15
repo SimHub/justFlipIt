@@ -798,8 +798,8 @@
       ],
     });
 
-    justFlipIt(".card-tilt", { Tilt: true });
-    justFlipIt(".card-tilt-only", { Tilt: 'only' });
+    justFlipIt(".card-tilt", { Tilt: true, Click: true });
+    justFlipIt(".card-tilt-only", { Tilt: 'only', Click: true });
 
     document.addEventListener("click", function (e) {
       if (e.target.classList.contains("back-btn")) {
