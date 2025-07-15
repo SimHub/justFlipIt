@@ -2,89 +2,110 @@
 [![npm version](https://img.shields.io/npm/v/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
 [![npm downloads](https://img.shields.io/npm/dt/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
 
----
-
 # justFlipIt
 
-A lightweight JavaScript library for beautiful, customizable flip animations on any DOM element.
+A lightweight JavaScript library for beautiful, customizable flip and tilt animations on any DOM element.
 
 ---
 
-## 🚀 [Live Demo & Examples](https://SimHub.github.io/justFlipIt/)
+### 🚀 [Live Demo & Examples](https://SimHub.github.io/justFlipIt/)
 
 > **Try it out!**  
-> The interactive [Live Demo](https://SimHub.github.io/justFlipIt/) shows all features and use cases, responsive and ready to play with.
+> The interactive [Live Demo](https://SimHub.github.io/justFlipIt/) shows all features and use cases.
 
 ---
 
-## Quick Start
+### ✨ Features
+
+-   **Plug & Play**: Automatically adopts classes and styles for seamless integration.
+-   **3D Tilt Effect**: Adds an interactive 3D tilt effect on hover and touch.
+-   **Lightweight & Fast**: Minimal footprint, maximum performance.
+-   **Highly Customizable**: Use your own styles, templates, and animations.
+-   **Modern & Responsive**: Works on all modern browsers and devices.
+-   **Flexible**: Use via CDN, NPM, or ES modules.
+
+---
+
+### 📦 Installation
 
 **CDN / Local:**
-
 ```html
-<script src="justFlipIt-modern.min.js"></script>
-<script>
-  justFlipIt(".my-card");
-</script>
+<script src="https://unpkg.com/@simhub2/justflipit/dist/justFlipIt-modern.min.js"></script>
 ```
 
 **NPM:**
-
 ```bash
 npm install @simhub2/justflipit
 ```
-
 ```js
 import justFlipIt from "@simhub2/justflipit";
-justFlipIt(".my-card");
 ```
 
 ---
 
-## 🆕 Plug & Play: Automatic adoption of classes and styles
+### ▶️ Usage
 
-**This means:**
+Initialize the flip effect on your elements. The default trigger is **hover**.
 
-For example, you can simply
+**Hover to Flip (Default)**
+```html
+<div class="card">Hover me!</div>
 
-```js
-justFlipIt(".daisyui-card");
+<script>
+  justFlipIt('.card');
+</script>
 ```
 
-and all colors, shadows, spacing, etc. are retained, whether you use Tailwind, daisyUI, Bootstrap or your own styles.
-
-### **Options**
-
-| Option          | Type | Standard | Description                                                         |
-| --------------- | ---- | -------- | ------------------------------------------------------------------- |
-| preserveClasses | Bool | true     | Takes all CSS classes from the original element to the panel        |
-| preserveStyles  | Bool | true     | Takes over all inline styles from the original element to the panel |
-
-**Example:**
-
+**Click to Flip**
 ```js
-// Standard: Plug & Play
-justFlipIt(".meine-karte");
+justFlipIt('.card', { Click: true });
+```
 
-// Optional: Nur Flip, keine Klassen/Styles übernehmen
-justFlipIt(".meine-karte", { preserveClasses: false, preserveStyles: false });
+**Enable Tilt Effect**
+```js
+// Enable with default settings
+justFlipIt('.card', { tilt: true });
+
+// Customize tilt
+justFlipIt('.card', { 
+  tilt: {
+    max: 15,
+    perspective: 800
+  } 
+});
 ```
 
 ---
 
-## 🎨 Customizing (Erweitert)
+### ⚙️ Options
 
-You can use all options from justFlipIt as usual – e.g. your own templates, flip direction, animations, targeted styles:
+Customize the behavior with these options.
+
+| Option          | Type    | Default  | Description                                                 |
+| --------------- | ------- | -------- | ----------------------------------------------------------- |
+| `tilt`          | Boolean / Object | `false`  | Enables a 3D tilt effect. Customize with `{ max, perspective }`. |
+| `Click`         | Boolean / String | `false`  | `true` for click trigger, or a selector for a custom trigger. |
+| `FlipX`         | Boolean | `false`  | `true` for vertical flip (around X-axis).                   |
+| `Template`      | String  | `null`   | HTML content for the back side.                             |
+| `preserveClasses` | Boolean | `true`   | Inherit all CSS classes from the original element.          |
+| `preserveStyles`| Boolean | `true`   | Inherit all inline styles from the original element.        |
+| `Duration`      | Number  | `400`    | Animation duration in ms.                                   |
+| `Easing`        | String  | `ease-in-out` | CSS easing function for the animation.                 |
+| `Style`         | Array   | `[]`     | Apply custom styles to the flip panels (see demo).          |
+
+
+<details>
+<summary><b>Advanced Example</b></summary>
 
 ```js
-justFlipIt(".meine-karte", {
-  preserveClasses: false, // keine Klassen übernehmen
-  preserveStyles: false, // keine Inline-Styles übernehmen
-  Click: true, // Flip bei Klick
-  FlipX: true, // Flip um X-Achse (vertikal)
-  Duration: 800, // Animationsdauer in ms
-  Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)", // Animationseasing
-  Template: "<div>Meine Rückseite!</div>", // Eigener Rückseiteninhalt
+justFlipIt(".card", {
+  preserveClasses: false, // Start with a clean slate
+  Click: true,
+  FlipX: true,
+  tilt: true,
+  Duration: 800,
+  Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+  Template: "<div>My custom back side!</div>",
   Style: [
     {
       el: "self",
@@ -99,109 +120,26 @@ justFlipIt(".meine-karte", {
   ],
 });
 ```
-
-**Tip:**
-
-- With preserveClasses: false and preserveStyles: false you have full control and can style everything specifically via option or CSS.
-- With the default values (true) everything remains like the original element – Plug & Play!
+</details>
 
 ---
 
-## Features
+### Versions & Compatibility
 
-- ⚡ **Lightweight & Fast** – Minimal footprint, maximum performance
-- 🎨 **Highly Customizable** – Style with CSS, custom animations, and templates
-- 📱 **Modern & Responsive** – Works on all modern browsers and devices
-- 🔧 **Flexible Import** – Use via script tag, npm, or ES modules
-- 🎯 **jQuery Optional** – Works with or without jQuery
-- 🎭 **Flip Animations** – Beautiful CSS3 transform-based effects
-- ⚙️ **Simple API** – Easy configuration for duration, easing, triggers, and more
+-   **modern**: `justFlipIt-modern.js` (Recommended, uses Web Animations API)
+-   **vanilla**: `justFlipIt-vanilla.js` (CSS transitions only)
+-   **combined**: `justFlipIt-combined.js` (Optional jQuery support)
 
----
-
-## Minimal Examples
-
-**Hover to flip:**
-
-```html
-<div class="card">Hover me!</div>
-<script>
-  justFlipIt(".card");
-</script>
-```
-
-**Click to flip:**
-
-```html
-<div class="card">Click me!</div>
-<script>
-  justFlipIt(".card", { Click: true });
-</script>
-```
-
-**Button trigger:**
-
-```html
-<div class="card">
-  Card Content
-  <button class="flip-btn">Flip</button>
-</div>
-<script>
-  justFlipIt(".card", { Click: ".flip-btn" });
-</script>
-```
+**Browser Support:**
+-   ✅ Chrome 60+
+-   ✅ Firefox 55+
+-   ✅ Safari 12+
+-   ✅ Edge 79+
 
 ---
 
-## Full API & Advanced Usage
+### License
 
-See the [Live Demo](https://SimHub.github.io/justFlipIt/) for all options, advanced examples, and interactive playground.
+Released under the **[MIT License](https://opensource.org/licenses/MIT)**.
 
----
-
-## Library Versions
-
-- **Vanilla:** `justFlipIt-vanilla.js` – No dependencies, CSS transitions
-- **Modern:** `justFlipIt-modern.js` – No dependencies, Web Animations API + CSS fallback
-- **Combined:** `justFlipIt-combined.js` – Optional jQuery support
-
----
-
-## Browser Support
-
-- ✅ Chrome 60+
-- ✅ Firefox 55+
-- ✅ Safari 12+
-- ✅ Edge 79+
-- ✅ iOS Safari 12+
-- ✅ Android Chrome 60+
-
----
-
-## License
-
-MIT © [SimHub](https://github.com/SimHub)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
-in the Software without restriction, including without limitation the rights  
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell  
-copies of the Software, and to permit persons to whom the Software is  
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all  
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR  
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,  
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE  
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER  
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  
-SOFTWARE.
-
----
-
-**[🌟 Star this project on GitHub](https://github.com/SimHub/justFlipIt)** | **[📦 View on NPM](https://www.npmjs.com/package/@simhub2/justflipit)**
-
----
+You are free to use, modify, and distribute this project, even for commercial purposes. All that is required is to include the original copyright and license notice in any copy of the software/source.
