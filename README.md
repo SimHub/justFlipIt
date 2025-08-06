@@ -1,6 +1,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/SimHub/justFlipIt.svg?style=social)](https://github.com/SimHub/justFlipIt)
 [![npm version](https://img.shields.io/npm/v/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
-[![npm downloads](https://img.shields.io/npm/dt/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
+[![npm downloads](https://img.shields.io/npm/dt/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)  
+[![Buy me a coffee](https://img.shields.io/badge/-buy_me_a_coffee-yellow?style=flat&social&logo=buymeacoffee&logoColor=white&labelColor=black)](https://www.buymeacoffee.com/simhub)
 
 # justFlipIt
 
@@ -17,26 +18,29 @@ A lightweight JavaScript library for beautiful, customizable flip and tilt anima
 
 ### ✨ Features
 
--   **Plug & Play**: Automatically adopts classes and styles for seamless integration.
--   **3D Tilt Effect**: Adds an interactive 3D tilt effect on hover and touch.
--   **Lightweight & Fast**: Minimal footprint, maximum performance.
--   **Highly Customizable**: Use your own styles, templates, and animations.
--   **Modern & Responsive**: Works on all modern browsers and devices.
--   **Flexible**: Use via CDN, NPM, or ES modules.
+- **Plug & Play**: Automatically adopts classes and styles for seamless integration.
+- **3D Tilt Effect**: Adds an interactive 3D tilt effect on hover and touch.
+- **Lightweight & Fast**: Minimal footprint, maximum performance.
+- **Highly Customizable**: Use your own styles, templates, and animations.
+- **Modern & Responsive**: Works on all modern browsers and devices.
+- **Flexible**: Use via CDN, NPM, or ES modules.
 
 ---
 
 ### 📦 Installation
 
 **CDN / Local:**
+
 ```html
 <script src="https://unpkg.com/@simhub2/justflipit/dist/justFlipIt-modern.min.js"></script>
 ```
 
 **NPM:**
+
 ```bash
 npm install @simhub2/justflipit
 ```
+
 ```js
 import justFlipIt from "@simhub2/justflipit";
 ```
@@ -48,30 +52,33 @@ import justFlipIt from "@simhub2/justflipit";
 Initialize the flip effect on your elements. The default trigger is **hover**.
 
 **Hover to Flip (Default)**
+
 ```html
 <div class="card">Hover me!</div>
 
 <script>
-  justFlipIt('.card');
+  justFlipIt(".card");
 </script>
 ```
 
 **Click to Flip**
+
 ```js
-justFlipIt('.card', { Click: true });
+justFlipIt(".card", { Click: true });
 ```
 
 **Enable Tilt Effect**
+
 ```js
 // Enable with default settings
-justFlipIt('.card', { tilt: true });
+justFlipIt(".card", { tilt: true });
 
 // Customize tilt
-justFlipIt('.card', { 
+justFlipIt(".card", {
   tilt: {
     max: 15,
-    perspective: 800
-  } 
+    perspective: 800,
+  },
 });
 ```
 
@@ -81,18 +88,17 @@ justFlipIt('.card', {
 
 Customize the behavior with these options.
 
-| Option          | Type    | Default  | Description                                                 |
-| --------------- | ------- | -------- | ----------------------------------------------------------- |
-| `tilt`          | Boolean / Object | `false`  | Enables a 3D tilt effect. Customize with `{ max, perspective }`. |
-| `Click`         | Boolean / String | `false`  | `true` for click trigger, or a selector for a custom trigger. |
-| `FlipX`         | Boolean | `false`  | `true` for vertical flip (around X-axis).                   |
-| `Template`      | String  | `null`   | HTML content for the back side.                             |
-| `preserveClasses` | Boolean | `true`   | Inherit all CSS classes from the original element.          |
-| `preserveStyles`| Boolean | `true`   | Inherit all inline styles from the original element.        |
-| `Duration`      | Number  | `400`    | Animation duration in ms.                                   |
-| `Easing`        | String  | `ease-in-out` | CSS easing function for the animation.                 |
-| `Style`         | Array   | `[]`     | Apply custom styles to the flip panels (see demo).          |
-
+| Option            | Type             | Default       | Description                                                      |
+| ----------------- | ---------------- | ------------- | ---------------------------------------------------------------- |
+| `tilt`            | Boolean / Object | `false`       | Enables a 3D tilt effect. Customize with `{ max, perspective }`. |
+| `Click`           | Boolean / String | `false`       | `true` for click trigger, or a selector for a custom trigger.    |
+| `FlipX`           | Boolean          | `false`       | `true` for vertical flip (around X-axis).                        |
+| `Template`        | String           | `null`        | HTML content for the back side.                                  |
+| `preserveClasses` | Boolean          | `true`        | Inherit all CSS classes from the original element.               |
+| `preserveStyles`  | Boolean          | `true`        | Inherit all inline styles from the original element.             |
+| `Duration`        | Number           | `400`         | Animation duration in ms.                                        |
+| `Easing`          | String           | `ease-in-out` | CSS easing function for the animation.                           |
+| `Style`           | Array            | `[]`          | Apply custom styles to the flip panels (see demo).               |
 
 <details>
 <summary><b>Advanced Example</b></summary>
@@ -120,21 +126,23 @@ justFlipIt(".card", {
   ],
 });
 ```
+
 </details>
 
 ---
 
 ### Versions & Compatibility
 
--   **modern**: `justFlipIt-modern.js` (Recommended, uses Web Animations API)
--   **vanilla**: `justFlipIt-vanilla.js` (CSS transitions only)
--   **combined**: `justFlipIt-combined.js` (Optional jQuery support)
+- **modern**: `justFlipIt-modern.js` (Recommended, uses Web Animations API)
+- **vanilla**: `justFlipIt-vanilla.js` (CSS transitions only)
+- **combined**: `justFlipIt-combined.js` (Optional jQuery support)
 
 **Browser Support:**
--   ✅ Chrome 60+
--   ✅ Firefox 55+
--   ✅ Safari 12+
--   ✅ Edge 79+
+
+- ✅ Chrome 60+
+- ✅ Firefox 55+
+- ✅ Safari 12+
+- ✅ Edge 79+
 
 ---
 
@@ -143,3 +151,20 @@ justFlipIt(".card", {
 Released under the **[MIT License](https://opensource.org/licenses/MIT)**.
 
 You are free to use, modify, and distribute this project, even for commercial purposes. All that is required is to include the original copyright and license notice in any copy of the software/source.
+
+---
+
+<script
+  type="text/javascript"
+  src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+  data-name="bmc-button"
+  data-slug="simhub"
+  data-color="#FFDD00"
+  data-emoji="☕"
+  data-font="Cookie"
+  data-text="Buy me a coffee"
+  data-outline-color="#000000"
+  data-font-color="#000000"
+  data-coffee-color="#ffffff"
+></script>
+

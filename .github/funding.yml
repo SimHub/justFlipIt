@@ -1,0 +1,6 @@
+# .github/fundme.yml
+buy_me_a_coffee:
+  # Dein BMC‑Slug (der Teil nach https://www.buymeacoffee.com/)
+  slug: simhub
+  # Optional: kurze Beschreibung, die im Sponsor‑Tab erscheint
+  description: "Fuel my brain with coffee so I can keep pretending I know what I’m doing"
