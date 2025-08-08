@@ -71,11 +71,11 @@ justFlipIt(".card", { Click: true });
 
 ```js
 // Enable with default settings
-justFlipIt(".card", { tilt: true });
+justFlipIt(".card", { Tilt: true });
 
 // Customize tilt
 justFlipIt(".card", {
-  tilt: {
+  Tilt: {
     max: 15,
     perspective: 800,
   },
@@ -90,7 +90,7 @@ Customize the behavior with these options.
 
 | Option            | Type             | Default       | Description                                                      |
 | ----------------- | ---------------- | ------------- | ---------------------------------------------------------------- |
-| `tilt`            | Boolean / Object | `false`       | Enables a 3D tilt effect. Customize with `{ max, perspective }`. |
+| `Tilt`            | Boolean / Object | `false`       | Enables a 3D tilt effect. Customize with `{ max, perspective }`. |
 | `Click`           | Boolean / String | `false`       | `true` for click trigger, or a selector for a custom trigger.    |
 | `FlipX`           | Boolean          | `false`       | `true` for vertical flip (around X-axis).                        |
 | `Template`        | String           | `null`        | HTML content for the back side.                                  |
@@ -108,7 +108,7 @@ justFlipIt(".card", {
   preserveClasses: false, // Start with a clean slate
   Click: true,
   FlipX: true,
-  tilt: true,
+  Tilt: true,
   Duration: 800,
   Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
   Template: "<div>My custom back side!</div>",
@@ -167,4 +167,3 @@ You are free to use, modify, and distribute this project, even for commercial pu
   data-font-color="#000000"
   data-coffee-color="#ffffff"
 ></script>
-
