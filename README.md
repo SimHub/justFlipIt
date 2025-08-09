@@ -153,17 +153,3 @@ Released under the **[MIT License](https://opensource.org/licenses/MIT)**.
 You are free to use, modify, and distribute this project, even for commercial purposes. All that is required is to include the original copyright and license notice in any copy of the software/source.
 
 ---
-
-<script
-  type="text/javascript"
-  src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
-  data-name="bmc-button"
-  data-slug="simhub"
-  data-color="#FFDD00"
-  data-emoji="☕"
-  data-font="Cookie"
-  data-text="Buy me a coffee"
-  data-outline-color="#000000"
-  data-font-color="#000000"
-  data-coffee-color="#ffffff"
-></script>
