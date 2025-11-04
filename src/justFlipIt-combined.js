@@ -310,7 +310,6 @@
       if (this.settings.Tilt === 'only') return;
       if (this.settings.Click === true) {
         hoverPanel.addEventListener("click", (e) => {
-          e.preventDefault();
           toggleClass(hoverPanel, this.flipClass);
         });
       } else if (typeof this.settings.Click === "string") {

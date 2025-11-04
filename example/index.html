@@ -707,6 +707,16 @@
             </div>
           </div>
         </li>
+        <li class="card-elm card-link-test color-blue" data-flip-id="auto-12">
+            <div class="flip-item">
+            <div class="item-num">12</div>
+            <h3  id="clickFront" class="font-c size-md _w-ch">Click to Flip and Link</h3>
+            <!--     <div class="abs-img"> -->
+            <!--         <div class="dual-img"></div> -->
+            <!--     </div> -->
+              <button class="btn-modern" onClick="gotTo()">Go to Google</button>
+            </div>
+        </li>
         <!-- <li class="card-elm card-jquery color-purple" data-flip-id="auto-9" style=""> -->
         <!--   <div class="flip-item "> -->
         <!--     <div class="item-num">09</div> -->
@@ -721,119 +731,104 @@
     </div>
   </section>
   <script>
-    const ul = document.querySelector('ul[data-flip="item"]');
-    document.getElementById('listBtn').addEventListener('click', () => {
-      ul.classList.add('list');
-    });
-    document.getElementById('gridBtn').addEventListener('click', () => {
-      ul.classList.remove('list');
-    });
+          function gotTo() {
+       return  alert("got to");
+      }
 
-    justFlipIt(".card-hover", {Duration: 600, Easing: "ease"});
-    justFlipIt(".card-slow", {
-      Click: true,
-      Duration: 1800, Easing: "ease-in-out",
-      Click: true,
-      Style: [
-        {el: ".front", style: {background: "#FFB703"}},
-        {el: ".backY", style: {background: "url('img/card-bg-02.png')", backgroundSize: "cover", backgroundPosition: "top"}},
-      ],
-    });
-    justFlipIt(".card-fast", {
-      Click: true,
-      Duration: 300, Easing: "ease-out"
-    });
-    justFlipIt(".card-bounce", {
-      Click: true,
-      Duration: 1000, Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)"
-    });
-    // justFlipIt(".card-click", {Click: true, Duration: 600, Easing: "ease-in-out"});
-    // justFlipIt(".card-button", {Click: ".flip-btn", Duration: 600, Easing: "linear"});
-    justFlipIt(".card-template", {
-      Click: true,
-      Template: '<div class="back-content font-c size-md _w-ch"><h3>Rückseite</h3></div>',
-      Duration: 600,
-      Easing: "ease-out",
-    });
-    // justFlipIt(".card-clone", {
-    //   Click: true,
-    //   Duration: 600, Easing: "ease-in-out"
-    // });
-    justFlipIt(".card-horizontal", {
-      Click: true,
-      FlipX: true, Duration: 600, Easing: "ease-in-out",
-      Style: [
-        {el: ".front", style: {background: "#118AB2"}},
-      ],
+    document.addEventListener('DOMContentLoaded', function() {
+      const ul = document.querySelector('ul[data-flip="item"]');
+      document.getElementById('listBtn').addEventListener('click', () => {
+        ul.classList.add('list');
+      });
+      document.getElementById('gridBtn').addEventListener('click', () => {
+        ul.classList.remove('list');
+      });
 
-    });
-    // justFlipIt(".card-vertical", {
-    //   Click: true,
-    //   FlipX: true, Duration: 600, Easing: "cubic-bezier(0.42, 0, 0.58, 1)"
-    // });
-    justFlipIt(".card-styled", {
-      Click: true,
-      Style: [
-        {el: ".front", style: {background: "#33658a"}},
-        {el: ".backY", style: {background: "#000814", "color": "white"}},
-      ],
-      Duration: 600,
-      Easing: "ease-in-out",
-    });
+      justFlipIt(".card-hover", {Duration: 600, Easing: "ease"});
+      justFlipIt(".card-slow", {
+        Click: true,
+        Duration: 1800, Easing: "ease-in-out",
+        Click: true,
+        Style: [
+          {el: ".front", style: {background: "#FFB703"}},
+          {el: ".backY", style: {background: "url('img/card-bg-02.png')", backgroundSize: "cover", backgroundPosition: "top"}},
+        ],
+      });
+      justFlipIt(".card-fast", {
+        Click: true,
+        Duration: 300, Easing: "ease-out"
+      });
+      justFlipIt(".card-bounce", {
+        Click: true,
+        Duration: 1000, Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)"
+      });
+      // justFlipIt(".card-click", {Click: true, Duration: 600, Easing: "ease-in-out"});
+      // justFlipIt(".card-button", {Click: ".flip-btn", Duration: 600, Easing: "linear"});
+      justFlipIt(".card-template", {
+        Click: true,
+        Template: '<div class="back-content font-c size-md _w-ch"><h3>Rückseite</h3></div>',
+        Duration: 600,
+        Easing: "ease-out",
+      });
+      // justFlipIt(".card-clone", {
+      //   Click: true,
+      //   Duration: 600, Easing: "ease-in-out"
+      // });
+      justFlipIt(".card-horizontal", {
+        Click: true,
+        FlipX: true, Duration: 600, Easing: "ease-in-out",
+        Style: [
+          {el: ".front", style: {background: "#118AB2"}},
+        ],
+
+      });
+      // justFlipIt(".card-vertical", {
+      //   Click: true,
+      //   FlipX: true, Duration: 600, Easing: "cubic-bezier(0.42, 0, 0.58, 1)"
+      // });
+      justFlipIt(".card-styled", {
+        Click: true,
+        Style: [
+          {el: ".front", style: {background: "#33658a"}},
+          {el: ".backY", style: {background: "#000814", "color": "white"}},
+        ],
+        Duration: 600,
+        Easing: "ease-in-out",
+      });
 
 
-    justFlipIt(".product-card", {
-      Template: `
+      justFlipIt(".product-card", {
+        Template: `
           <div class="product-details"style="">
               <p class="price">🌸</p>
                 <button class="btn-modern">click to see the front</button>
           </div>
         `,
-      Click: ".btn-modern",
-      FlipX: false,
-      Duration: 600,
-      Easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-      Style: [
-        {el: ".front", style: {background: "#FFD60A"}},
-      ],
+        Click: ".btn-modern",
+        FlipX: false,
+        Duration: 600,
+        Easing: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
+        Style: [
+          {el: ".front", style: {background: "#FFD60A"}},
+        ],
+      });
+
+      justFlipIt(".card-tilt", { Tilt: true, Click: true });
+      justFlipIt(".card-tilt-only", { Tilt: 'only', Click: true });
+
+      justFlipIt(".card-link-test", {
+          Click: ["#clickFront", ".btn-modern-back"],
+      Template: `
+          <div class="product-details"style="">
+              <p class="price">🌸</p>
+                <button class="btn-modern"><a href="https://www.google.com" target="_blank">Go to Google</a></button>
+                <br/><hr/>
+                <button class="btn-modern btn-modern-back">click to see the front</button>
+          </div>
+      `,
+       });
+
     });
-
-    justFlipIt(".card-tilt", { Tilt: true, Click: true });
-    justFlipIt(".card-tilt-only", { Tilt: 'only', Click: true });
-
-    document.addEventListener("click", function (e) {
-      if (e.target.classList.contains("back-btn")) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log("back-btn clicked");
-
-        // Since justFlipIt is configured to Click: ".details-btn",
-        // we simply simulate a click on the details-btn
-        const panel = e.target.closest("._justFlipIt_panel");
-        if (panel) {
-          const detailsBtn = panel.querySelector('.details-btn');
-          if (detailsBtn) {
-            console.log("Simulating details-btn click to toggle back");
-            detailsBtn.click(); // This triggers justFlipIt's own toggle logic
-          }
-        }
-      }
-    });
-
-    const cstm = document.querySelector('.custom-message');
-    cstm.textContent = 'click to flip horizontal';
-    // **Jquery** //
-    // if (typeof ($) != 'function') {
-    //   var msgElem = document.querySelector('.jquery-message');
-    //   if (msgElem) {
-    //     msgElem.textContent = '☝🏼This component requires jQuery.';
-    //   }
-    // } else {
-    //   $(function () {
-    //     $('.jquery-message').text('ready to flip with jQuery');
-    //   });
-    // }
-    // $(".card-jquery").justFlipIt();
   </script>
 </body>
 

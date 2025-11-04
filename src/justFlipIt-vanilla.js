@@ -303,14 +303,22 @@
       if (this.settings.Tilt === 'only') return;
       if (this.settings.Click === true) {
         hoverPanel.addEventListener("click", (e) => {
-          e.preventDefault();
           toggleClass(hoverPanel, this.flipClass);
         });
-      } else if (typeof this.settings.Click === "string") {
-        const clickElements = hoverPanel.querySelectorAll(this.settings.Click);
-        clickElements.forEach((el) => {
-          el.addEventListener("click", () => {
-            toggleClass(hoverPanel, this.flipClass);
+      } else if (
+        typeof this.settings.Click === "string" ||
+        Array.isArray(this.settings.Click)
+      ) {
+        const selectors = Array.isArray(this.settings.Click)
+          ? this.settings.Click
+          : [this.settings.Click];
+        selectors.forEach((selector) => {
+          const clickElements = hoverPanel.querySelectorAll(selector);
+          clickElements.forEach((el) => {
+            el.addEventListener("click", (e) => {
+              e.stopPropagation();
+              toggleClass(hoverPanel, this.flipClass);
+            });
           });
         });
       } else {
