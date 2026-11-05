@@ -5,6 +5,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Gemini 
+GEMINI.md
+
 #.DS_Store
 .DS_Store
 
