@@ -1,61 +1,38 @@
-declare namespace justFlipIt {
-  interface StyleOption {
-    el: string;
-    style: Partial<CSSStyleDeclaration>;
-  }
-
-  interface Options {
-    /**
-     * Template for the back side of the flipped element
-     */
-    Template?: string;
-
-    /**
-     * Click behavior. True for click toggle, selector string for delegated click, false for hover
-     */
-    Click?: boolean | string;
-
-    /**
-     * Flip direction. True for X-axis, false for Y-axis
-     */
-    FlipX?: boolean;
-
-    /**
-     * Custom styles to apply to elements
-     */
-    Style?: StyleOption[];
-
-    /**
-     * If true, all CSS classes from the original element are copied to the flip panel (default: true)
-     */
-    preserveClasses?: boolean;
-
-    /**
-     * If true, all inline styles from the original element are copied to the flip panel (default: true)
-     */
-    preserveStyles?: boolean;
-
-    /**
-     * Enables 3D tilt effect. 
-     * - `true`: Combines flip and tilt.
-     * - `'only'`: Enables only tilt.
-     * - `false`: Disables tilt (default).
-     */
-    Tilt?: boolean | 'only';
-  }
-
-  /**
-   * Destroy flip instances matching the selector
-   */
-  function destroy(selector: string | Element | NodeListOf<Element> | HTMLCollection): void;
+export interface Options {
+  Template?: string;
+  Click?: boolean | string | string[];
+  FlipX?: boolean;
+  Duration?: number;
+  Easing?: string;
+  Effect?: 'flip' | 'fade' | 'scale';
+  ReducedMotion?: boolean;
+  Tilt?: boolean | 'only' | { max?: number; perspective?: number; scale?: number };
+  Faces?: { front: string; back: string };
+  preserveClasses?: boolean;
+  preserveStyles?: boolean;
+  Style?: { el: string; style: Partial<CSSStyleDeclaration> }[];
 }
-
-/**
- * Initialize flip effect on matching elements
- */
-declare function justFlipIt(
-  selector: string | Element | NodeListOf<Element> | HTMLCollection,
-  options?: justFlipIt.Options
-): any;
-
-export = justFlipIt;
+export interface FlipState { flipped: boolean; destroyed: boolean; effect: 'flip' | 'fade' | 'scale' }
+export class FlipController {
+  constructor(element: HTMLElement, options?: Options);
+  readonly element: HTMLElement;
+  readonly hoverPanel: HTMLElement;
+  readonly frontWrapper: HTMLElement;
+  readonly backWrapper: HTMLElement;
+  readonly flipped: boolean;
+  readonly destroyed: boolean;
+  readonly managed: boolean;
+  flip(value?: boolean): this;
+  toggle(): this;
+  update(options?: Omit<Options, 'Faces'>): this;
+  getState(): FlipState;
+  destroy(): void;
+}
+type Targets = string | Iterable<HTMLElement> | ArrayLike<HTMLElement>;
+declare function justFlipIt(target: HTMLElement, options?: Options): FlipController;
+declare function justFlipIt(target: Targets, options?: Options): FlipController[];
+declare namespace justFlipIt {
+  function destroy(target: HTMLElement | Targets): void;
+  function get(element: HTMLElement): FlipController | undefined;
+}
+export default justFlipIt;

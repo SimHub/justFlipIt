@@ -1,155 +1,168 @@
-[![GitHub stars](https://img.shields.io/github/stars/SimHub/justFlipIt.svg?style=social)](https://github.com/SimHub/justFlipIt)
-[![npm version](https://img.shields.io/npm/v/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)
-[![npm downloads](https://img.shields.io/npm/dt/@simhub2/justflipit.svg)](https://www.npmjs.com/package/@simhub2/justflipit)  
-[![Buy me a coffee](https://img.shields.io/badge/-buy_me_a_coffee-yellow?style=flat&social&logo=buymeacoffee&logoColor=white&labelColor=black)](https://www.buymeacoffee.com/simhub)
-
 # justFlipIt
 
-A lightweight JavaScript library for beautiful, customizable flip and tilt animations on any DOM element.
+Responsive 3D flip and tilt animations, with no runtime dependencies in the core.
+ES modules, CommonJS, browser scripts, TypeScript, React, Vue 3, and Svelte 4/5.
 
----
-
-### 🚀 [Live Demo & Examples](https://SimHub.github.io/justFlipIt/)
-
-> **Try it out!**  
-> The interactive [Live Demo](https://SimHub.github.io/justFlipIt/) shows all features and use cases.
-
----
-
-### ✨ Features
-
-- **Plug & Play**: Automatically adopts classes and styles for seamless integration.
-- **3D Tilt Effect**: Adds an interactive 3D tilt effect on hover and touch.
-- **Lightweight & Fast**: Minimal footprint, maximum performance.
-- **Highly Customizable**: Use your own styles, templates, and animations.
-- **Modern & Responsive**: Works on all modern browsers and devices.
-- **Flexible**: Use via CDN, NPM, or ES modules.
-
----
-
-### 📦 Installation
-
-**CDN / Local:**
-
-```html
-<script src="https://unpkg.com/@simhub2/justflipit/dist/justFlipIt-modern.min.js"></script>
-```
-
-**NPM:**
-
-```bash
+```sh
 npm install @simhub2/justflipit
 ```
 
 ```js
-import justFlipIt from "@simhub2/justflipit";
-```
+import justFlipIt from '@simhub2/justflipit';
 
----
-
-### ▶️ Usage
-
-Initialize the flip effect on your elements. The default trigger is **hover**.
-
-**Hover to Flip (Default)**
-
-```html
-<div class="card">Hover me!</div>
-
-<script>
-  justFlipIt(".card");
-</script>
-```
-
-**Click to Flip**
-
-```js
-justFlipIt(".card", { Click: true });
-```
-
-**Enable Tilt Effect**
-
-```js
-// Enable with default settings
-justFlipIt(".card", { Tilt: true });
-
-// Customize tilt
-justFlipIt(".card", {
-  Tilt: {
-    max: 15,
-    perspective: 800,
-  },
-});
-```
-
----
-
-### ⚙️ Options
-
-Customize the behavior with these options.
-
-| Option            | Type             | Default       | Description                                                      |
-| ----------------- | ---------------- | ------------- | ---------------------------------------------------------------- |
-| `Tilt`            | Boolean / Object | `false`       | Enables a 3D tilt effect. Customize with `{ max, perspective }`. |
-| `Click`           | Boolean / String | `false`       | `true` for click trigger, or a selector for a custom trigger.    |
-| `FlipX`           | Boolean          | `false`       | `true` for vertical flip (around X-axis).                        |
-| `Template`        | String           | `null`        | HTML content for the back side.                                  |
-| `preserveClasses` | Boolean          | `true`        | Inherit all CSS classes from the original element.               |
-| `preserveStyles`  | Boolean          | `true`        | Inherit all inline styles from the original element.             |
-| `Duration`        | Number           | `400`         | Animation duration in ms.                                        |
-| `Easing`          | String           | `ease-in-out` | CSS easing function for the animation.                           |
-| `Style`           | Array            | `[]`          | Apply custom styles to the flip panels (see demo).               |
-
-<details>
-<summary><b>Advanced Example</b></summary>
-
-```js
-justFlipIt(".card", {
-  preserveClasses: false, // Start with a clean slate
+const card = justFlipIt(document.querySelector('.card'), {
   Click: true,
-  FlipX: true,
-  Tilt: true,
-  Duration: 800,
-  Easing: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
-  Template: "<div>My custom back side!</div>",
-  Style: [
-    {
-      el: "self",
-      style: {
-        background: "#fff",
-        borderRadius: "1rem",
-        boxShadow: "0 2px 8px #0002",
-      },
-    },
-    { el: ".front", style: { background: "#f5c939", color: "#222" } },
-    { el: ".backY", style: { background: "#ca9dfe", color: "#fff" } },
-  ],
+  Template: '<p>Back of the card</p>', // trusted application HTML only
+  Tilt: { max: 12, perspective: 1000, scale: 1.03 },
+  Effect: 'flip',
+  Duration: 450
 });
+card.flip();
+card.flip(false);
+card.toggle();
+card.update({ Effect: 'fade' });
+card.getState();
+card.destroy();
 ```
 
-</details>
+Passing an element returns one controller; a selector or collection returns an array.
+Repeated initialization returns the existing controller. `justFlipIt.get(element)`
+retrieves it; `justFlipIt.destroy(target)` cleans up. Original nodes and their event
+listeners are preserved. The grid layout adapts to both faces without fixed dimensions.
+The card needs an HTML container, such as a `div`; do not initialize a void element.
 
----
+For script tags, use `dist/justFlipIt.min.js`, which exposes `window.justFlipIt`.
+`/modern`, `/vanilla`, `/combined`, and their historical browser filenames are aliases
+of the same core in v4. There is no jQuery plugin in v4.
 
-### Versions & Compatibility
+## Options
 
-- **modern**: `justFlipIt-modern.js` (Recommended, uses Web Animations API)
-- **vanilla**: `justFlipIt-vanilla.js` (CSS transitions only)
-- **combined**: `justFlipIt-combined.js` (Optional jQuery support)
+| Option | Default | Meaning |
+|---|---|---|
+| `Click` | `false` | Hover; `true` for click; selector or selector array for delegated clicks |
+| `FlipX` | `false` | Rotate on X instead of Y |
+| `Template` | cloned original | Trusted HTML for the generated back face |
+| `Duration` | `400` | Non-negative milliseconds |
+| `Easing` | `cubic-bezier(.22,.61,.36,1)` | CSS easing |
+| `Effect` | `'flip'` | `'flip'`, `'fade'`, or `'scale'` |
+| `Tilt` | `false` | `true`, `'only'`, or `{ max, perspective, scale }` |
+| `ReducedMotion` | `true` | Respect live `prefers-reduced-motion` preferences |
+| `Faces` | omitted | Select two existing direct children: `{ front, back }` |
+| `preserveClasses` | `true` | Copy classes onto generated container |
+| `preserveStyles` | `true` | Copy inline styles onto generated container |
+| `Style` | `[]` | Array of `{ el: 'self' or selector, style: {...} }` |
 
-**Browser Support:**
+Tilt pointer updates are batched into one animation frame; touch scrolling remains
+native. Hover mode also supports touch tap. Focus the card and press Enter/Space to
+toggle, Escape to reset. The hidden face is inert and marked `aria-hidden`.
+Listen for `justflipit:change` on the container; `event.detail` contains the state.
+CSS transitions reverse naturally during rapid input without accumulating animations.
 
-- ✅ Chrome 60+
-- ✅ Firefox 55+
-- ✅ Safari 12+
-- ✅ Edge 79+
+## Frameworks
 
----
+Framework integrations use existing faces. They do not move, clone, or replace framework
+nodes. Render front/back content through your framework, and do not pass `Template`.
+Keep `Faces` selectors stable for the lifetime of an instance. Direct DOM methods
+run only on the client; importing any entry point during SSR is safe.
 
-### License
+React uses an Effect with cleanup, including development StrictMode cycles, following
+[React's external-system lifecycle](https://react.dev/reference/react/useEffect).
 
-Released under the **[MIT License](https://opensource.org/licenses/MIT)**.
+```jsx
+import { useFlip } from '@simhub2/justflipit/react';
 
-You are free to use, modify, and distribute this project, even for commercial purposes. All that is required is to include the original copyright and license notice in any copy of the software/source.
+export function Card({ title }) {
+  const { ref, controller } = useFlip({ Click: true, Tilt: true });
+  return <div>
+    <div ref={ref}>
+      <div data-flip-front>{title}</div>
+      <div data-flip-back>Details</div>
+    </div>
+    <button onClick={() => controller.current?.toggle()}>Flip</button>
+  </div>;
+}
+```
 
----
+Vue 3 uses a [custom directive](https://vuejs.org/guide/reusability/custom-directives.html)
+with mount, update and teardown hooks.
+
+```vue
+<script setup>
+import { vFlip } from '@simhub2/justflipit/vue';
+</script>
+<template>
+  <div v-flip="{ Click: true, Effect: 'scale' }">
+    <div data-flip-front>Front</div>
+    <div data-flip-back>Back</div>
+  </div>
+</template>
+```
+
+Svelte uses an [action](https://svelte.dev/docs/svelte/use) with update and destroy hooks.
+
+```svelte
+<script>
+  import { flip } from '@simhub2/justflipit/svelte';
+</script>
+<div use:flip={{ Click: true, Tilt: true }}>
+  <div data-flip-front>Front</div>
+  <div data-flip-back>Back</div>
+</div>
+```
+
+Other frameworks can call the core on mount with `Faces`, update options when needed,
+and call `destroy()` before unmounting.
+
+## Model-independent agent tools
+
+The optional `/agent` entry exports a JSON-schema tool definition and a synchronous
+executor. Your application registers explicit card IDs, receives a tool call from its
+agent runtime, parses its JSON arguments, and passes the command to `execute`.
+No API key or model SDK is required by this package.
+
+```js
+import { createAgentBridge } from '@simhub2/justflipit/agent';
+const bridge = createAgentBridge({ product: card });
+
+// Adapt this definition to the tool envelope required by your agent runtime.
+const toolDefinition = bridge.tool;
+const result = bridge.execute({ id: 'product', action: 'flip' });
+bridge.execute({ id: 'product', action: 'setText', text: 'Agent-generated details' });
+```
+
+Actions: `state`, `flip`, `reset`, `toggle`, `setText`. Unknown IDs and actions are
+rejected. `setText` uses `textContent` and accepts at most 100000 characters; it never
+interprets model output as HTML. In framework mode update application state for
+content changes; `setText` is rejected there. This bridge runs alongside the DOM in
+the browser; a server-side agent must relay validated tool calls through your app.
+
+## Migration from 3.x
+
+v4 is a major release. Real ESM and CommonJS exports replace the old UMD-only npm
+entry. Use a default ESM import or `const justFlipIt = require('@simhub2/justflipit')`.
+The optional jQuery plugin registration is removed. Generated faces use
+`[data-jfi-face="front"]` and `[data-jfi-face="back"]`; replace `.front`, `.backY`,
+and `._flipY_` custom CSS with these attributes and `[data-jfi-flipped="true"]`.
+Animation options keep their PascalCase names. Dimensions are responsive; give the
+original content explicit sizes if your design requires a fixed card size.
+`destroy()` restores plugin-owned attributes from their initial values; avoid managing
+those same style/class/accessibility attributes from a framework while mounted.
+
+## Development and releases
+
+Node.js 22 or newer is used for development.
+
+```sh
+npm ci
+npm run check
+npm pack --dry-run
+```
+
+`npm run build` produces ESM, CommonJS, minified browser bundles, source maps, and
+TypeScript declarations from one core. CI runs tests and type checks. A GitHub release
+with a `v` version tag runs the npm publishing workflow; configure npm trusted
+publishing for this repository/workflow, or publish locally with an authenticated
+npm account using `npm publish --access public`. Publish only versions not already
+present in the registry.
+
+MIT — see [LICENSE](LICENSE).

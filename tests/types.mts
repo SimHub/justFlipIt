@@ -1,0 +1,10 @@
+import flip, { type Options, FlipController } from '@simhub2/justflipit';
+import { useFlip } from '@simhub2/justflipit/react';
+import { vFlip } from '@simhub2/justflipit/vue';
+import { flip as action } from '@simhub2/justflipit/svelte';
+import { createAgentBridge } from '@simhub2/justflipit/agent';
+const options: Options = { Tilt: { max: 15 }, Duration: 200, Click: ['button'], Effect: 'scale' };
+const card: FlipController = flip(document.createElement('div'), options);
+createAgentBridge({ card }).execute({ id: 'card', action: 'flip' });
+card.update({ Effect: 'fade' });
+useFlip(options); void vFlip; void action;
