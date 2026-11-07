@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.1
+
+- Enable 3D tilt on touch and reset it when the finger lifts or scrolling takes over.
+- Keep tap-to-flip active across flip, fade and scale without immediately flipping back on touch release.
+- Restrict axis rotation to the flip effect so fade also works with `FlipX: true`.
+
 ## 4.0.0
 
 - One SSR-safe, dependency-free core with real ESM/CommonJS/browser exports.
