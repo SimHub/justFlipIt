@@ -81,3 +81,75 @@ test('tilt is batched into one animation frame and cancelled on teardown', () =>
   assert.equal(calls, 1); callback(); assert.match(card.hoverPanel.style.transform, /rotateY\(15deg\)/);
   card.hoverPanel.dispatchEvent(new win.MouseEvent('pointermove')); card.destroy(); assert.equal(cancelled, 1);
 });
+
+function touchEvent(target, type, clientX = 20, clientY = 30) {
+  const event = new win.MouseEvent(type, { bubbles: true, cancelable: true, clientX, clientY });
+  Object.defineProperties(event, {
+    pointerType: { value: 'touch' },
+    pointerId: { value: 1 },
+    isPrimary: { value: true },
+  });
+  return target.dispatchEvent(event);
+}
+
+test('touch taps toggle all effects and survive the release pointerleave', () => {
+  const card = flip(doc.querySelector('#card'), { FlipX: true });
+  for (const Effect of ['flip', 'fade', 'scale']) {
+    card.update({ Effect });
+    for (const flipped of [true, false]) {
+      for (const type of ['pointerdown', 'pointerup', 'pointerleave']) {
+        assert.equal(touchEvent(card.hoverPanel, type), true);
+      }
+      assert.equal(card.flipped, flipped);
+    }
+  }
+});
+
+test('touch tilt follows the finger and resets on release, cancellation and reduced motion', () => {
+  let frame;
+  win.requestAnimationFrame = callback => { frame = callback; return 1; };
+  win.cancelAnimationFrame = () => { frame = undefined; };
+  const card = flip(doc.querySelector('#card'), { Tilt: { max: 12 } });
+  const panel = card.hoverPanel;
+  panel.getBoundingClientRect = () => ({ left: 0, top: 0, width: 100, height: 100 });
+
+  touchEvent(panel, 'pointerdown', 25, 50);
+  frame();
+  assert.match(panel.style.transform, /rotateY\(-6deg\)/);
+  assert.equal(touchEvent(panel, 'pointermove', 75, 25), true);
+  frame();
+  assert.match(panel.style.transform, /rotateX\(6deg\) rotateY\(6deg\)/);
+  touchEvent(panel, 'pointerup', 75, 25);
+  assert.equal(panel.style.transform, '');
+  assert.equal(card.flipped, false);
+
+  touchEvent(panel, 'pointerdown');
+  frame();
+  touchEvent(panel, 'pointermove', 50, 60);
+  touchEvent(panel, 'pointercancel');
+  assert.equal(frame, undefined);
+  assert.equal(panel.style.transform, '');
+  assert.equal(card.flipped, false);
+
+  card.motion = { matches: true };
+  touchEvent(panel, 'pointerdown');
+  assert.equal(frame, undefined);
+  touchEvent(panel, 'pointerup');
+  assert.equal(card.flipped, true);
+});
+
+test('touch tilt respects tilt-only mode and leaves delegated clicks to native events', () => {
+  const card = flip(doc.querySelector('#card'), { Tilt: 'only', Click: ['button'] });
+  const button = card.frontWrapper.querySelector('button');
+  touchEvent(button, 'pointerdown');
+  touchEvent(button, 'pointerup');
+  button.click();
+  assert.equal(card.flipped, false);
+
+  card.update({ Tilt: true });
+  touchEvent(button, 'pointerdown');
+  touchEvent(button, 'pointerup');
+  assert.equal(card.flipped, false);
+  button.click();
+  assert.equal(card.flipped, true);
+});

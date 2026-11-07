@@ -1,6 +1,6 @@
 {
   "name": "@simhub2/justflipit",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Responsive flip and tilt animations with React, Vue, Svelte and agent tool adapters",
   "main": "./dist/justFlipIt.cjs",
   "module": "./dist/justFlipIt.mjs",

@@ -3,14 +3,16 @@ const defaults = { Click: false, FlipX: false, Duration: 400, Easing: 'cubic-bez
 const css = `
 ._justFlipIt_panel{position:relative;display:grid;perspective:var(--jfi-perspective,1000px);isolation:isolate}
 ._justFlipIt_panel>[data-jfi-face]{grid-area:1/1;min-width:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform var(--jfi-duration) var(--jfi-easing),opacity var(--jfi-duration) var(--jfi-easing);transform-origin:center}
-._justFlipIt_panel>[data-jfi-face=front]{transform:rotateY(0deg)}
-._justFlipIt_panel>[data-jfi-face=back]{transform:rotateY(-180deg);pointer-events:none}
-._justFlipIt_panel[data-jfi-flipped=true]>[data-jfi-face=front]{transform:rotateY(180deg);pointer-events:none}
-._justFlipIt_panel[data-jfi-flipped=true]>[data-jfi-face=back]{transform:rotateY(0deg);pointer-events:auto}
-._justFlipIt_panel[data-jfi-axis=x]>[data-jfi-face=back]{transform:rotateX(-180deg)}
-._justFlipIt_panel[data-jfi-axis=x][data-jfi-flipped=true]>[data-jfi-face=front]{transform:rotateX(180deg)}
-._justFlipIt_panel[data-jfi-axis=x][data-jfi-flipped=true]>[data-jfi-face=back]{transform:rotateX(0deg)}
-._justFlipIt_panel[data-jfi-effect=fade]>[data-jfi-face],._justFlipIt_panel[data-jfi-effect=scale]>[data-jfi-face]{transform:none}
+._justFlipIt_panel>[data-jfi-face=back],._justFlipIt_panel[data-jfi-flipped=true]>[data-jfi-face=front]{pointer-events:none}
+._justFlipIt_panel[data-jfi-flipped=true]>[data-jfi-face=back]{pointer-events:auto}
+._justFlipIt_panel[data-jfi-effect=flip]>[data-jfi-face=front]{transform:rotateY(0deg)}
+._justFlipIt_panel[data-jfi-effect=flip]>[data-jfi-face=back]{transform:rotateY(-180deg)}
+._justFlipIt_panel[data-jfi-effect=flip][data-jfi-flipped=true]>[data-jfi-face=front]{transform:rotateY(180deg)}
+._justFlipIt_panel[data-jfi-effect=flip][data-jfi-flipped=true]>[data-jfi-face=back]{transform:rotateY(0deg)}
+._justFlipIt_panel[data-jfi-effect=flip][data-jfi-axis=x]>[data-jfi-face=front]{transform:rotateX(0deg)}
+._justFlipIt_panel[data-jfi-effect=flip][data-jfi-axis=x]>[data-jfi-face=back]{transform:rotateX(-180deg)}
+._justFlipIt_panel[data-jfi-effect=flip][data-jfi-axis=x][data-jfi-flipped=true]>[data-jfi-face=front]{transform:rotateX(180deg)}
+._justFlipIt_panel[data-jfi-effect=flip][data-jfi-axis=x][data-jfi-flipped=true]>[data-jfi-face=back]{transform:rotateX(0deg)}
 ._justFlipIt_panel[data-jfi-effect=fade]>[data-jfi-face=back],._justFlipIt_panel[data-jfi-effect=scale]>[data-jfi-face=back]{opacity:0}
 ._justFlipIt_panel[data-jfi-effect=fade][data-jfi-flipped=true]>[data-jfi-face=front],._justFlipIt_panel[data-jfi-effect=scale][data-jfi-flipped=true]>[data-jfi-face=front]{opacity:0}
 ._justFlipIt_panel[data-jfi-effect=fade][data-jfi-flipped=true]>[data-jfi-face=back],._justFlipIt_panel[data-jfi-effect=scale][data-jfi-flipped=true]>[data-jfi-face=back]{opacity:1}
@@ -103,24 +105,67 @@ export class FlipController {
       if (event.key === 'Escape') this.flip(false);
     });
     this.listen('pointerenter', event => { if (!this.settings.Click && this.settings.Tilt !== 'only' && event.pointerType !== 'touch') this.flip(true); });
-    this.listen('pointerleave', () => { this.resetTilt(); if (!this.settings.Click && this.settings.Tilt !== 'only') this.flip(false); });
-    this.listen('pointercancel', () => this.resetTilt());
-    this.listen('pointerup', event => { if (event.pointerType === 'touch') { this.resetTilt(); if (!this.settings.Click && this.settings.Tilt !== 'only') this.toggle(); } });
-    this.listen('pointermove', event => {
-      if (!this.settings.Tilt || this.reduced || event.pointerType === 'touch') return;
-      this.point = [event.clientX, event.clientY];
-      if (this.frame) return;
-      this.frame = this.win.requestAnimationFrame(() => {
-        this.frame = 0;
-        const rect = this.hoverPanel.getBoundingClientRect();
-        if (!rect.width || !rect.height) return;
-        const t = { max: 10, perspective: 1000, scale: 1.03, ...(typeof this.settings.Tilt === 'object' ? this.settings.Tilt : {}) };
-        const x = Math.max(-1, Math.min(1, (this.point[0] - rect.left) / rect.width * 2 - 1));
-        const y = Math.max(-1, Math.min(1, (this.point[1] - rect.top) / rect.height * 2 - 1));
-        this.hoverPanel.style.transform = `perspective(${t.perspective}px) rotateX(${-y * t.max}deg) rotateY(${x * t.max}deg) scale(${t.scale})`;
-      });
+    this.listen('pointerleave', event => {
+      // Touch release also emits pointerleave. The tap must survive it.
+      if (event.pointerType === 'touch') return;
+      this.resetTilt();
+      if (!this.settings.Click && this.settings.Tilt !== 'only') this.flip(false);
+    });
+    this.listen('pointerdown', event => {
+      if (event.pointerType !== 'touch' || event.isPrimary === false || this.touch) return;
+      this.resetTilt();
+      this.touch = { id: event.pointerId, x: event.clientX, y: event.clientY, moved: false };
+      this.queueTilt(event, this.touch);
     }, { passive: true });
+    this.listen('pointermove', event => {
+      if (event.pointerType !== 'touch') {
+        if (!this.touch) this.queueTilt(event);
+        return;
+      }
+      const touch = this.touch;
+      if (!touch || touch.id !== event.pointerId) return;
+      touch.moved ||= this.touchMoved(event, touch);
+      this.queueTilt(event, touch);
+    }, { passive: true });
+    this.listen('pointerup', event => {
+      const touch = this.finishTouch(event);
+      if (!touch || touch.moved || this.touchMoved(event, touch)) return;
+      // Explicit click triggers continue to use the browser's click event.
+      if (!this.settings.Click && this.settings.Tilt !== 'only') this.toggle();
+    });
+    this.listen('pointercancel', event => {
+      if (event.pointerType === 'touch') this.finishTouch(event);
+      else this.resetTilt();
+    });
+    this.listen('lostpointercapture', event => this.finishTouch(event));
     this.baseTransform = this.hoverPanel.style.transform;
+  }
+  touchMoved(event, touch) {
+    return Math.hypot(event.clientX - touch.x, event.clientY - touch.y) > 10;
+  }
+  finishTouch(event) {
+    const touch = this.touch;
+    if (event.pointerType !== 'touch' || !touch || touch.id !== event.pointerId) return;
+    this.touch = null;
+    this.resetTilt();
+    return touch;
+  }
+  queueTilt(event, touch) {
+    if (!this.settings.Tilt || this.reduced) return;
+    this.point = [event.clientX, event.clientY];
+    if (this.frame) return;
+    this.frame = this.win.requestAnimationFrame(() => {
+      this.frame = 0;
+      // Keep the touch reference box stable as the panel rotates.
+      const rect = touch
+        ? (touch.rect ??= this.hoverPanel.getBoundingClientRect())
+        : this.hoverPanel.getBoundingClientRect();
+      if (!rect.width || !rect.height) return;
+      const { max = 10, perspective = 1000, scale = 1.03 } = this.settings.Tilt;
+      const x = Math.max(-1, Math.min(1, (this.point[0] - rect.left) / rect.width * 2 - 1));
+      const y = Math.max(-1, Math.min(1, (this.point[1] - rect.top) / rect.height * 2 - 1));
+      this.hoverPanel.style.transform = `perspective(${perspective}px) rotateX(${-y * max}deg) rotateY(${x * max}deg) scale(${scale})`;
+    });
   }
   resetTilt() { if (this.frame) this.win.cancelAnimationFrame(this.frame); this.frame = 0; this.hoverPanel.style.transform = this.baseTransform || ''; }
   render() {

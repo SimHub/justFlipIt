@@ -75,7 +75,7 @@ The original node and its event listeners are preserved. Both faces participate 
 
 ```html
 <div class="card">Front of the card</div>
-<script src="https://cdn.jsdelivr.net/npm/@simhub2/justflipit@4.0.0/dist/justFlipIt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@simhub2/justflipit@4.0.1/dist/justFlipIt.min.js"></script>
 <script>
   justFlipIt('.card', { Click: true, Template: '<p>Back of the card</p>' });
 </script>
@@ -264,9 +264,9 @@ justFlipIt(document.querySelector('.card'), {
 ## Motion and accessibility
 
 - **Reversible transitions:** Rapid input reverses the current CSS transition without accumulating animation objects.
-- **Efficient tilt:** Pointer updates share one animation frame; touch scrolling remains native.
+- **Efficient tilt.** Mouse and finger movement share one animation frame. With `Tilt: true` or custom tilt settings, touch tilts the card until release or until the browser takes over a scroll gesture.
 - **Keyboard:** Focus the card, then use Enter or Space to toggle and Escape to reset.
-- **Touch:** Tap to flip in hover mode, or choose `Click: true` explicitly.
+- **Touch.** Tap to switch sides with any effect. Hover mode distinguishes a tap from a drag, and click mode uses the browser’s native click. Use `Tilt: 'only'` for touch tilt without tap-to-flip.
 - **Hidden faces:** The inactive face is inert and marked `aria-hidden`.
 - **Reduced motion:** System preference changes disable transitions and tilt automatically. Set `ReducedMotion: false` only when your application intentionally overrides this preference.
 
@@ -303,7 +303,7 @@ npm pack --dry-run     # Inspect published files
 
 Tests cover original node preservation, teardown, delegated events, agent command validation, reduced motion, tilt batching, React StrictMode, Vue updates, and a compiled Svelte 5 component.
 
-**Releases:** The GitHub release workflow checks the `v` tag against `package.json` and publishes with provenance. Configure npm trusted publishing for this repository and workflow before using it. Local releases use `npm publish --access public` with an authenticated npm account. Each release needs an unpublished version number.
+See the [release guide](https://github.com/SimHub/justFlipIt/blob/main/RELEASING.md) for the GitHub and npm steps.
 
 ---
 
